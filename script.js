@@ -1,3 +1,53 @@
+document.addEventListener("DOMContentLoaded", function () {
+    let menuItems = document.querySelectorAll('.menu-item');
+    let contentBlocks = document.querySelectorAll('.content-block');
+
+    // Function to hide all blocks
+    function hideAllBlocks() {
+        contentBlocks.forEach(block => {
+            block.classList.remove('show');
+            // Keep the blocks hidden with `top: -100%`
+            block.style.top = '-100%';
+        });
+    }
+
+    // Function to show the selected block
+    function showBlock(target) {
+        let block = document.getElementById(target);
+        if (block) {
+            block.classList.add('show');
+            block.style.top = '100px';  // Ensure the block starts its transition
+        }
+    }
+
+    // Event listener for menu items
+    menuItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent the click from triggering the global listener
+            const targetBlock = item.getAttribute('data-target');
+
+            // Hide all blocks first
+            hideAllBlocks();
+
+            // Show the target block
+            showBlock(targetBlock);
+        });
+    });
+
+    // Event listener to hide blocks when clicking outside
+    document.addEventListener('click', function (event) {
+        let clickedInside = Array.from(contentBlocks).some(block => block.contains(event.target));
+        if (!clickedInside) {
+            hideAllBlocks();
+        }
+    });
+});
+
+
+
+
+
+
 // Get all dots and promo containers
 const dots = document.querySelectorAll('.dot');
 const promoContainers = document.querySelectorAll('.promo-container');
