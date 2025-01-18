@@ -233,6 +233,16 @@ body {
     transform: translateY(-100%);
 }
 
+@media (max-width: 768px) {
+    .content-block {
+        z-index: 5000; /* On mobile, set z-index to 5000 */
+    }
+
+    .content-block.show {
+        top: 50px; /* On mobile, set top to 10px */
+    }
+}
+
 
 .containerp {
     display: flex;
@@ -244,6 +254,27 @@ body {
 .sidebar {
     width: 15%;
 }
+
+/* On mobile, ensure the layout remains responsive */
+@media (max-width: 768px) {
+    .content-block {
+        height: auto;
+    }
+    .contentr {
+        display: none; /* Hide the content part */
+    }
+    .sidebar {
+        display: block; /* Only show the sidebar */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        background-color: #f4f4f4;
+        display: block;
+    }
+}
+
 
 .sidebar h2 {
     margin: 0;
@@ -694,6 +725,7 @@ body {
     border-bottom: 1px solid #ddd; /* Border bottom */
 }
 
+
 .menu-items img.menu-icon {
     width: 90px; /* Set image width */
     height: 55px; /* Set image height */
@@ -754,11 +786,28 @@ body {
     transition: right 0.5s ease-in-out; /* Transition applied on 'right' */
     z-index: 1200;
     padding: 20px;
+    padding-top: 50px;
     overflow-y: auto; /* Ensure scrolling if content overflows */
 }
 
 #mobile-menu.show {
     right: 0; /* Move menu to visible position */
+}
+
+#mobile-menu .back-btn {
+    position: absolute;
+    top: 5px; /* Positioning from the top */
+    left: 25px; /* Positioning from the left */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#mobile-menu .close-btn {
+    position: absolute;
+    top: 5px; /* Positioning from the top */
+    right: 20px; /* Positioning from the right */
+    font-size: 18px;
+    cursor: pointer;
 }
 
 #mobile-menu h3 {

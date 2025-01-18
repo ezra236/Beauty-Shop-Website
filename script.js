@@ -73,10 +73,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.querySelectorAll('.menu-items').forEach(item => {
+    item.addEventListener('click', function() {
+        const targetBlock = document.getElementById(item.getAttribute('data-target'));
+        
+        // Hide all content blocks first
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.classList.remove('show');
+        });
+
+        // Show the clicked block
+        targetBlock.classList.add('show');
+        
+        // Hide the content part in the clicked block and show only the sidebar
+        targetBlock.querySelector('.contentr').style.display = 'none';
+        targetBlock.querySelector('.sidebar').style.display = 'block';
+    });
+});
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const dashboardToggle = document.getElementById("dashboard-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
+    const backButton = document.querySelector(".back-btn"); // Select the back button
 
     // Toggle menu visibility
     dashboardToggle.addEventListener("click", function () {
@@ -93,7 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileMenu.classList.remove("show");
         }
     });
+
+    // Close the menu when the back button is clicked
+    backButton.addEventListener("click", function () {
+        mobileMenu.classList.remove("show");
+    });
 });
+
 
 
 
