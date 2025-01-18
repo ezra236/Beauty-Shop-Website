@@ -1,47 +1,75 @@
 document.addEventListener("DOMContentLoaded", function () {
     let menuItems = document.querySelectorAll('.menu-item');
     let contentBlocks = document.querySelectorAll('.content-block');
+    let activeBlock = null; // Track the currently visible block
+    let mouseInsideBlock = false; // Track if the mouse is inside a block
 
     // Function to hide all blocks
     function hideAllBlocks() {
-        contentBlocks.forEach(block => {
-            block.classList.remove('show');
-            // Keep the blocks hidden with `top: -100%`
-            block.style.top = '-100%';
-        });
-    }
-
-    // Function to show the selected block
-    function showBlock(target) {
-        let block = document.getElementById(target);
-        if (block) {
-            block.classList.add('show');
-            block.style.top = '100px';  // Ensure the block starts its transition
+        if (!mouseInsideBlock) { // Only hide if the mouse is truly outside
+            contentBlocks.forEach(block => {
+                block.classList.remove('show');
+                block.style.top = '-100%';
+            });
+            activeBlock = null; // Reset the active block
         }
     }
 
-    // Event listener for menu items
+    // Function to show a specific block
+    function showBlock(target) {
+        let block = document.getElementById(target);
+        if (block && block !== activeBlock) {
+            contentBlocks.forEach(block => block.classList.remove('show')); // Hide others
+            block.classList.add('show');
+            block.style.top = '100px';
+            activeBlock = block; // Update the active block
+        }
+    }
+
+    // Event listeners for menu items
     menuItems.forEach(item => {
-        item.addEventListener('click', function (event) {
-            event.stopPropagation(); // Prevent the click from triggering the global listener
-            const targetBlock = item.getAttribute('data-target');
+        const targetBlock = item.getAttribute('data-target');
 
-            // Hide all blocks first
-            hideAllBlocks();
-
-            // Show the target block
+        // Show block on hover
+        item.addEventListener('mouseover', function () {
             showBlock(targetBlock);
+        });
+
+        // Hide blocks when the mouse leaves the menu item if it's not over a block
+        item.addEventListener('mouseleave', function (event) {
+            if (!activeBlock || !activeBlock.contains(event.relatedTarget)) {
+                hideAllBlocks();
+            }
         });
     });
 
-    // Event listener to hide blocks when clicking outside
-    document.addEventListener('click', function (event) {
-        let clickedInside = Array.from(contentBlocks).some(block => block.contains(event.target));
-        if (!clickedInside) {
+    // Event listeners for content blocks
+    contentBlocks.forEach(block => {
+        // Mark when the mouse enters the block
+        block.addEventListener('mouseenter', function () {
+            mouseInsideBlock = true; // Mouse is inside the block
+        });
+
+        // Detect when the mouse leaves the block
+        block.addEventListener('mouseleave', function (event) {
+            mouseInsideBlock = false; // Mouse has left the block
+            if (!menuItems.some(item => item.contains(event.relatedTarget))) {
+                hideAllBlocks(); // Hide only if not moving to a menu item
+            }
+        });
+    });
+
+    // Fallback global event to ensure blocks hide if needed
+    document.addEventListener('mousemove', function (event) {
+        if (!activeBlock) return; // Skip if no active block
+        const insideBlock = activeBlock.contains(event.target);
+        const insideMenu = Array.from(menuItems).some(item => item.contains(event.target));
+        if (!insideBlock && !insideMenu) {
             hideAllBlocks();
         }
     });
 });
+
 
 
 

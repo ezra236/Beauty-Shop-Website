@@ -79,7 +79,8 @@ body {
     border-bottom: 1px solid #ddd;
     background-color: #ffffff;
     position: fixed;
-    padding: 15px;
+    padding: 10px;
+    height: 25px;
     top: 65px;
     left: 0;
     width: 100%;
@@ -88,6 +89,9 @@ body {
 
 .menu-item {
     position: relative;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .menu-item span {
