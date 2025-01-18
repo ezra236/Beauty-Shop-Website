@@ -74,6 +74,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const dashboardToggle = document.getElementById("dashboard-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    // Toggle menu visibility
+    dashboardToggle.addEventListener("click", function () {
+        if (mobileMenu.classList.contains("show")) {
+            mobileMenu.classList.remove("show");
+        } else {
+            mobileMenu.classList.add("show");
+        }
+    });
+
+    // Close the menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!mobileMenu.contains(event.target) && event.target !== dashboardToggle) {
+            mobileMenu.classList.remove("show");
+        }
+    });
+});
+
+
+
+
 
 
 // Get all dots and promo containers

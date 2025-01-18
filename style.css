@@ -118,6 +118,9 @@ body {
         font-size: 18px;
         font-weight: bold;
         color: #333;
+        white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any text that overflows */
+    text-overflow: ellipsis;
     }
 
     .left-section2 {
@@ -680,6 +683,108 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+
+
+.menu-items {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    align-items: center; /* Vertically align the items */
+    padding: 10px;
+    cursor: pointer;
+    border-top: 1px solid #ddd; /* Border top */
+    border-bottom: 1px solid #ddd; /* Border bottom */
+}
+
+.menu-items img.menu-icon {
+    width: 90px; /* Set image width */
+    height: 55px; /* Set image height */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.menu-items span {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    cursor: default;
+    flex-grow: 1; /* Allow the span to take available space */
+}
+
+.menu-items:first-child span {
+    color: red;
+    font-weight: bold;
+}
+
+.menu-items span:hover {
+    text-decoration: underline;
+}
+
+.plus-sign {
+    font-size: 18px;
+    color: #000;
+    margin-left: 10px; /* Space between text and + sign */
+    cursor: pointer;
+}
+
+/* Mobile Dashboard Button */
+#mobile-dashboard {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    z-index: 1100;
+}
+
+#dashboard-toggle {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    padding: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+/* Sliding Menu */
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -105%; /* Hidden off-screen initially */
+    width: 90%;
+    height: 700px;
+    background-color: white;
+    transition: right 0.5s ease-in-out; /* Transition applied on 'right' */
+    z-index: 1200;
+    padding: 20px;
+    overflow-y: auto; /* Ensure scrolling if content overflows */
+}
+
+#mobile-menu.show {
+    right: 0; /* Move menu to visible position */
+}
+
+#mobile-menu h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#mobile-menu .menu-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide desktop menu */
+    }
+
+    #mobile-dashboard {
+        display: block; /* Show dashboard button */
+    }
+}
+
+
 
 
 .scroll-container {
