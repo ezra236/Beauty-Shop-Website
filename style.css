@@ -21,6 +21,11 @@ body {
     z-index: 1005; 
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
 
 .left-section {
     display: flex;
@@ -79,6 +84,82 @@ body {
     text-decoration: none;
     color: red;
     font-size: 20px;
+}
+
+
+/* Ensure navbar2 is only visible on mobile devices */
+@media (max-width: 768px) {
+    .navbar2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.473);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .center-section2 {
+        display: flex;
+        align-items: center;
+        width: 55%;
+    }
+
+    .center-section2 img {
+        height: 40px;
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .center-section2 h1 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .left-section2 {
+        display: flex;
+        align-items: center;
+        width: 10%;
+    }
+
+    .left-section2 .flag-icon {
+        height: 20px;
+        width: auto;
+        margin-right: 5px;
+    }
+
+
+    .right-section2 {
+        display: flex;
+        align-items: center;
+        width: 35%;
+        gap:  20px;
+        padding-left: 15px;
+    }
+
+    .nav-icon2, .nav-icon3 {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .nav-icon2 svg, .nav-icon3 svg {
+        fill: #333;
+    }
+}
+
+/* Hide the navbar on larger screens */
+@media (min-width: 769px) {
+    .navbar2 {
+        display: none;
+    }
 }
 
 
