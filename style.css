@@ -877,6 +877,12 @@ body {
     position: absolute;
   }
   
+  @media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .promo-text {
+        left: 0%;
+    }
+}
+
   .promo-text h4 {
     font-size: 14px;
     letter-spacing: 2px;
@@ -906,6 +912,13 @@ body {
     position: absolute;
   }
   
+  @media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .promo-text1 {
+        left: 0%;
+        top: 450px;
+    }
+}
+
   .promo-text1 h4 {
     font-size: 14px;
     letter-spacing: 2px;
@@ -935,6 +948,12 @@ body {
     position: absolute;
   }
   
+  @media (max-width: 768px) { /* Adjust the max-width value based on your target mobile screen size */
+    .promo-text5 {
+        left: 0%;
+    }
+}
+
   .promo-text5 h4 {
     font-size: 14px;
     letter-spacing: 2px;
@@ -972,6 +991,7 @@ body {
     height: 100%;
     display: flex; /* Use Flexbox for layout */
     gap: 0; 
+    background-color: rgb(251, 166, 180);
 }
 
 .promo-imagee img {
@@ -979,6 +999,11 @@ body {
     height: 100%; 
 }
 
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .promo-imagee img {
+        height: 60%;
+    }
+}
 
   .promo-text2 {
     background-color: transparent;
@@ -1041,12 +1066,19 @@ body {
   .promo-image {
     width: 100%;
     height: 100%;
+    background-color: rgb(154, 214, 234);
   }
 
   .promo-image img {
     width: 100%;
     height: 100%;
   }
+
+  @media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .promo-image img {
+        height: 70%;
+    }
+}
 
   .nav-dots {
     position: absolute;
@@ -1383,7 +1415,7 @@ body {
 
 .wonderful {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     padding: 50px;
     width: 90%;
@@ -1393,12 +1425,18 @@ body {
     scrollbar-color: #0a0909 #f0efef; /* Firefox */
 }
 
+@media (max-width: 768px) {
+    .wonderful {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
 .wonderful::-webkit-scrollbar {
-    height: 8px; /* Horizontal scrollbar height */
+    height: 8px; 
 }
 
 .wonderful::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Track background */
+    background: #f0f0f0; 
     border-radius: 10px;
 }
 
@@ -1412,7 +1450,6 @@ body {
     background-color: #555; /* Darker on hover */
 }
 
-
   .wonderful-item {
     flex: 0 0 auto;
     scroll-snap-align: start;
@@ -1421,6 +1458,12 @@ body {
     border-radius: 8px;
     padding: 20px;
   }
+
+  @media (max-width: 768px) {
+    .wonderful-item {
+        width: 80%; /* Width of 80% on mobile */
+    }
+}
 
   .wonderful-item img {
     width: 100%;

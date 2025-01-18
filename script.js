@@ -73,23 +73,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.querySelectorAll('.menu-items').forEach(item => {
-    item.addEventListener('click', function() {
-        const targetBlock = document.getElementById(item.getAttribute('data-target'));
-        
-        // Hide all content blocks first
+document.addEventListener("DOMContentLoaded", function () {
+    // Toggle content blocks based on menu items
+    document.querySelectorAll('.menu-items').forEach(item => {
+        item.addEventListener('click', function() {
+            const targetBlock = document.getElementById(item.getAttribute('data-target'));
+            
+            // Hide all content blocks first
+            document.querySelectorAll('.content-block').forEach(block => {
+                block.classList.remove('show');
+            });
+
+            // Show the clicked block
+            targetBlock.classList.add('show');
+            
+            // Hide the content part in the clicked block and show only the sidebar
+            targetBlock.querySelector('.contentr').style.display = 'none';
+            targetBlock.querySelector('.sidebar').style.display = 'block';
+        });
+    });
+
+    // Close button functionality to hide all content blocks
+    const closeButton = document.querySelector('.close-btn'); // Select the close button
+
+    closeButton.addEventListener('click', function() {
+        // Hide all content blocks when the 'X' button is clicked
         document.querySelectorAll('.content-block').forEach(block => {
             block.classList.remove('show');
         });
-
-        // Show the clicked block
-        targetBlock.classList.add('show');
-        
-        // Hide the content part in the clicked block and show only the sidebar
-        targetBlock.querySelector('.contentr').style.display = 'none';
-        targetBlock.querySelector('.sidebar').style.display = 'block';
     });
 });
+
 
 
 
