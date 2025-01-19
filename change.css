@@ -58,3 +58,25 @@ button {
 button:hover {
     background-color: #4cae4c;
 }
+
+.h3 {
+    text-align: center;
+}
+
+.centered-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.centered-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.centered-list li {
+    margin: 5px;
+    font-size: 18px;
+}

@@ -1696,7 +1696,7 @@ body {
     color: white;
     padding: 30px;
     border-radius: 0px;
-    width: 30%;
+    width: auto;
     text-align: left;
 }
 
@@ -1742,7 +1742,7 @@ body {
 
   .imagek img {
     width: 100%;
-    height: 90%;
+    height: 100%;
     border-radius: 0px;
   }
 

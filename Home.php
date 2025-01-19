@@ -937,63 +937,54 @@
 
 
 
-<div class="s">
-<div class="wonderful">
-    <div class="wonderful-item">
-      <img src="br.jpg" alt="Lip Products">
-      <h3>UP TO 50% OFF LIP</h3>
-      <p>So many lip faves to play with—what are you picking?</p>
-      <a href="#">SHOP NOW</a>
-    </div>
-
-    <div class="wonderful-item">
-      <img src="pinj.jpg" alt="Face Products">
-      <h3>UP TO 40% OFF FACE</h3>
-      <p>No routine is complete without them.</p>
-      <a href="#">SHOP NOW</a>
-    </div>
-
-    <div class="wonderful-item">
-      <img src="purp.jpg" alt="Eye Products">
-      <h3>UP TO 60% OFF EYE</h3>
-      <p>Essentials that enhance every eye look.</p>
-      <a href="#">SHOP NOW</a>
-    </div>
-
-    <div class="wonderful-item">
-        <img src="pu.jpg" alt="Lip Products">
-        <h3>UP TO 50% OFF LIP</h3>
-        <p>So many lip faves to play with—what are you picking?</p>
-        <a href="#">SHOP NOW</a>
-      </div>
-
-      <div class="wonderful-item">
-        <img src="lipss.jpg" alt="Lip Products">
-        <h3>UP TO 50% OFF LIP</h3>
-        <p>So many lip faves to play with—what are you picking?</p>
-        <a href="#">SHOP NOW</a>
-      </div>
-
-      <div class="wonderful-item">
-        <img src="pi.jpg" alt="Lip Products">
-        <h3>UP TO 50% OFF LIP</h3>
-        <p>So many lip faves to play with—what are you picking?</p>
-        <a href="#">SHOP NOW</a>
-      </div>
-  </div>
-</div>  
+<?php include 'wonderful.php'; ?>
 
 
 
 <div class="containerd">
     <div class="contentd">
-      <h1>CKARY BEAUTY</h1>
-      <h2>SNATCH THE FENTY FACE</h2>
-      <p>Ckary's real-life routine that's the base to every showstopping look</p>
-      <button>SHOP NOW</button>
-    </div>
-    <div class="imagek">
-      <img src="t1.jpg" alt="Fenty Beauty Products">
+    <?php
+    // PHP Code to Fetch Detail Content
+    $conn = new mysqli('localhost', 'root', '', 'website_db');
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM detail WHERE id=1"; // Fetch content with ID 1
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
+        echo '<h2>' . htmlspecialchars($row['subheading']) . '</h2>';
+        echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
+    } else {
+        echo '<h1>Default Heading</h1>';
+        echo '<h2>Default Subheading</h2>';
+        echo '<p>Default description content goes here.</p>';
+    }
+
+    $conn->close();
+    ?>
+    <button>SHOP NOW</button>
+</div>
+<div class="imagek">
+    <?php
+    // PHP Code to Display Image
+    $conn = new mysqli('localhost', 'root', '', 'website_db');
+    $sql = "SELECT * FROM detail WHERE id=1";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if (!empty($row['image_path'])) {
+            echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
+        } else {
+            echo '<img src="default.jpg" alt="Default Promo Image">';
+        }
+    }
+    $conn->close();
+    ?>
     </div>
   </div>
 
@@ -1207,3 +1198,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
