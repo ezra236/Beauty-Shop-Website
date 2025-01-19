@@ -681,13 +681,48 @@
 
     <div class="promo-container">
         <div class="promo-text0">
-            <h4>THE HOLIDAY HANGOVER</h4>
-            <h1>UP TO 60% OFF SELECT ITEMS</h1>
-            <p>Hit refresh + save on routine faves.<br>Exclusions apply.</p>
-            <a href="#" class="promo-button">SHOP NOW</a>
-        </div>
-        <div class="promo-image0">
-            <img src="b22.jpg" alt="Fenty Beauty Products">
+        <?php
+        // PHP Code to Fetch Promo Content
+        $conn = new mysqli('localhost', 'root', '', 'website_db');
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM promo_content4 WHERE id=1"; // Fetch content with ID 1
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
+            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
+            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
+        } else {
+            echo '<h4>Default Subheading</h4>';
+            echo '<h1>Default Heading</h1>';
+            echo '<p>Default description content goes here.</p>';
+        }
+
+        $conn->close();
+        ?>
+        <a href="#" class="promo-button">SHOP NOW</a>
+    </div>
+    <div class="promo-image0">
+        <?php
+        // PHP Code to Display Image
+        $conn = new mysqli('localhost', 'root', '', 'website_db');
+        $sql = "SELECT * FROM promo_content4 WHERE id=1";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if (!empty($row['image_path'])) {
+                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
+            } else {
+                echo '<img src="default.jpg" alt="Default Promo Image">';
+            }
+        }
+        $conn->close();
+        ?>
         </div>
 
         <div class="nav-dots">
