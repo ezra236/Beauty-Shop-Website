@@ -736,13 +736,48 @@
 
     <div class="promo-container">
         <div class="promo-text2">
-            <h4>THE HOLIDAY HANGOVER</h4>
-            <h1>UP TO 60% OFF SELECT ITEMS</h1>
-            <p>Hit refresh + save on routine faves.<br>Exclusions apply.</p>
-            <a href="#" class="promo-button">SHOP NOW</a>
-        </div>
-        <div class="promo-imageed">
-            <img src="t3.jpg" alt="Fenty Beauty Products">
+        <?php
+        // PHP Code to Fetch Promo Content
+        $conn = new mysqli('localhost', 'root', '', 'website_db');
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM promo5 WHERE id=1"; // Fetch content with ID 1
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
+            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
+            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
+        } else {
+            echo '<h4>Default Subheading</h4>';
+            echo '<h1>Default Heading</h1>';
+            echo '<p>Default description content goes here.</p>';
+        }
+
+        $conn->close();
+        ?>
+        <a href="#" class="promo-button">SHOP NOW</a>
+    </div>
+    <div class="promo-imageed">
+        <?php
+        // PHP Code to Display Image
+        $conn = new mysqli('localhost', 'root', '', 'website_db');
+        $sql = "SELECT * FROM promo5 WHERE id=1";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if (!empty($row['image_path'])) {
+                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
+            } else {
+                echo '<img src="default.jpg" alt="Default Promo Image">';
+            }
+        }
+        $conn->close();
+        ?>
         </div>
 
         <div class="nav-dots">
@@ -762,8 +797,10 @@
 </div>
 
 
+
 <button class="nav-arrow left" id="leftBtn" aria-label="Scroll Left">⇐ </button>
 <button class="nav-arrow right" id="rightBtn" aria-label="Scroll Right">⇒ </button>
+
 
 
 <div class="classic-container">
@@ -780,6 +817,7 @@
         </div>
         <p>2 Sizes</p>
         <p class="price">KSH 4,800.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -794,6 +832,7 @@
         </div>
         <p>2 Sizes</p>
         <p class="price">KSH 3,300.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -808,6 +847,7 @@
         </div>
         <p>5 Sizes</p>
         <p class="price">KSH 3,300.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -822,6 +862,7 @@
         </div>
         <p>2 Sizes</p>
         <p class="price">KSH 4,000.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -836,6 +877,7 @@
         </div>
         <p>3 Sizes</p>
         <p class="price">KSH 1,100.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -850,6 +892,7 @@
         </div>
         <p>2 Sizes</p>
         <p class="price">KSH 5,200.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -864,6 +907,7 @@
         </div>
         <p>4 Sizes</p>
         <p class="price">KSH 2,500.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
 
       <div class="classic-item">
@@ -878,6 +922,7 @@
         </div>
         <p>2 Sizes</p>
         <p class="price">KSH 6,800.00</p>
+        <button class="ezra-button">Quick Shop</button>
       </div>
     </div>
 </div>
