@@ -569,14 +569,50 @@
   
     <div class="promo-container">
         <div class="promo-text1">
-            <h4>THE HOLIDAY HANGOVER</h4>
-            <h1>UP TO 60% OFF SELECT ITEMS</h1>
-            <p>Hit refresh + save on routine faves.<br>Exclusions apply.</p>
-            <a href="#" class="promo-button">SHOP NOW</a>
-        </div>
-        <div class="promo-imagee">
-            <img src="pl.jpg" alt="Fenty Beauty Products">
-            <img src="beae.jpg" alt="Fenty Beauty Products">
+        <?php
+        // PHP Code to Fetch Promo Content
+        $conn = new mysqli('localhost', 'root', '', 'website_db');
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM promo_content WHERE id=1"; // Fetch content with ID 1
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
+            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
+            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
+        } else {
+            echo '<h4>Default Subheading</h4>';
+            echo '<h1>Default Heading</h1>';
+            echo '<p>Default description content goes here.</p>';
+        }
+
+        $conn->close();
+        ?>
+        <a href="#" class="promo-button">SHOP NOW</a>
+    </div>
+    <div class="promo-imagee">
+        <?php
+        // PHP Code to Display Images
+        $conn = new mysqli('localhost', 'root', '', 'website_db');
+        $sql = "SELECT * FROM promo_content WHERE id=1";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if (!empty($row['image_path1']) && !empty($row['image_path2'])) {
+                echo '<img src="' . htmlspecialchars($row['image_path1']) . '" alt="Promo Image 1">';
+                echo '<img src="' . htmlspecialchars($row['image_path2']) . '" alt="Promo Image 2">';
+            } else {
+                echo '<img src="default.jpg" alt="Default Image 1">';
+                echo '<img src="default.jpg" alt="Default Image 2">';
+            }
+        }
+        $conn->close();
+        ?>
         </div>
 
         <div class="nav-dots">
