@@ -120,8 +120,6 @@ $result = $conn->query($sql);
 ?>
 
 
-<!-- Centered Available Item IDs -->
-<h3>Available Item IDs (1-based):</h3>
 <div class="centered-list">
     <ul>
         <?php
@@ -139,21 +137,22 @@ $result = $conn->query($sql);
     </ul>
 </div>
 
-    <form action="change_item.php" method="POST">
-        <label for="position">Enter Item Position (1-based):</label>
-        <input type="number" id="position" name="position" min="1" required><br><br>
+<form action="change_item.php" method="POST" enctype="multipart/form-data">
+    <label for="position">Enter Item Position (1-based):</label>
+    <input type="number" id="position" name="position" min="1" required><br><br>
 
-        <label for="image">New Image Path:</label>
-        <input type="text" id="image" name="image" required><br><br>
+    <label for="image">Upload New Image:</label>
+    <input type="file" id="image" name="image" accept="image/*" required><br><br>
 
-        <label for="heading">New Heading (H3):</label>
-        <input type="text" id="heading" name="heading" required><br><br>
+    <label for="heading">New Heading (H3):</label>
+    <input type="text" id="heading" name="heading" required><br><br>
 
-        <label for="description">New Description:</label>
-        <textarea id="description" name="description" required></textarea><br><br>
+    <label for="description">New Description:</label>
+    <textarea id="description" name="description" required></textarea><br><br>
 
-        <button type="submit">Update Item</button>
-    </form>
+    <button type="submit">Update Item</button>
+</form>
+
 
 
 
