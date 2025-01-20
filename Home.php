@@ -22,7 +22,7 @@
         </div>
         <div class="left-section">
             <img src="kenya.jpg" alt="US Flag" class="flag-icon">
-            <span>Kenya | English</span>
+            <span>Kenya </span>
         </div>
         <div class="right-section">
             <a href="#" class="nav-link">Sign In</a>
@@ -70,9 +70,6 @@
 
 
 <nav class="menu">
-    <div class="menu-item" data-target="block1">
-        <span>Up to 60% Off</span>
-    </div>
     <div class="menu-item" data-target="block2">
         <span>New + Bestsellers</span>
     </div>
@@ -85,69 +82,16 @@
     <div class="menu-item" data-target="block5">
         <span>Hair</span>
     </div>
-    <div class="menu-item" data-target="block6">
-        <span>Fragrance</span>
-    </div>
-    <div class="menu-item" data-target="block7">
-        <span>Replen + Save</span>
-    </div>
-    <div class="menu-item" data-target="block8">
-        <span>Discover</span>
-    </div>
 </nav>
 
 
 <!-- Blocks to display -->
-<div id="block1" class="content-block">
-    <div class="containerp">
-        <div class="sidebar">
-            <h2>UP TO 60% OFF</h2>
-            <a href="#" class="sidebar-link"><p>Up to 60% Off Select Items</p></a>
-            <a href="#" class="sidebar-link"><p>Sale</p></a>
-            <a href="#" class="sidebar-link"><p>Offer Details</p></a>
-        </div>
-        
-        <div class="contentr">
-            <div class="offer">
-                <div class="offer-box">
-                    <h2>Special Offer</h2>
-                    <p>Get up to 50% off on select items!</p>
-                    <button>Shop Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="t5.jpg" alt="Product 1">
-                <h3>Fenty Skin Travel-Size Start'r Set with Mineral SPF</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.5)</span>
-                </div>
-                <p><span class="old-price">$49</span> <span class="price">$24.50</span></p>
-            </div>
-            <div class="product">
-                <img src="t6.jpg" alt="Product 2">
-                <h3>Ckary Icon Velvet Liquid Lipstick</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.0)</span>
-                </div>
-                <p><span class="old-price">$29</span> <span class="price">$20.30</span></p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div id="block2" class="content-block">
     <div class="containerp">
         <div class="sidebar">
             <h2>New + Bestsellers</h2>
-            <a href="#" class="sidebar-link"><p>Limited Edition: Fenty Beauty x Arcane </p></a>
-            <a href="#" class="sidebar-link"><p>Holidaze Hustle Collection </p></a>
             <a href="#" class="sidebar-link"><p>New Arrivals </p></a>
             <a href="#" class="sidebar-link"><p>Bestsellers  </p></a>
-            <a href="#" class="sidebar-link"><p>Bestsellers Ckary beauty Exclusives </p></a>
-            <a href="#" class="sidebar-link"><p>Gloss Bomb Lip Gloss  </p></a>
         </div>
         
         <div class="contentr">
@@ -185,15 +129,14 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>Makeup</h2>
-            <a href="#" class="sidebar-link"><p>Explore Ckary Beauty  </p></a>
             <a href="#" class="sidebar-link"><p>Lip Gloss  </p></a>
             <a href="#" class="sidebar-link"><p>Lip Liner </p></a>
-            <a href="#" class="sidebar-link"><p>Lipstick + Lip Stain  </p></a>
+            <a href="#" class="sidebar-link"><p>Lipstick </p></a>
             <a href="#" class="sidebar-link"><p>Foundation </p></a>
-            <a href="#" class="sidebar-link"><p>Concealer + Corrector   </p></a>
+            <a href="#" class="sidebar-link"><p>Concealer </p></a>
             <a href="#" class="sidebar-link"><p>Blush + Highlighter   </p></a>
             <a href="#" class="sidebar-link"><p>Eye Makeup   </p></a>
-            <a href="#" class="sidebar-link"><p>Shop All Makeup   </p></a>
+            <a href="#" class="sidebar-link button-link"><p>Shop All Makeup</p></a>
         </div>
         
         <div class="contentr">
@@ -238,16 +181,11 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>SkinCare</h2>
-            <a href="#" class="sidebar-link"><p>Explore Ckary Skin  </p></a>
-            <a href="#" class="sidebar-link"><p>Fenty Skin Start'r Bundles   </p></a>
-            <a href="#" class="sidebar-link"><p>Face Moisturizer  </p></a>
             <a href="#" class="sidebar-link"><p>Body   </p></a>
             <a href="#" class="sidebar-link"><p>Lip Care </p></a>
-            <a href="#" class="sidebar-link"><p>Masks + Treatments </p></a>
-            <a href="#" class="sidebar-link"><p>Cleanser </p></a>
-            <a href="#" class="sidebar-link"><p>Toner </p></a>
+            <a href="#" class="sidebar-link"><p>Masks  </p></a>
             <a href="#" class="sidebar-link"><p>Eye Care  </p></a>
-            <a href="#" class="sidebar-link"><p>Shop All Skincare  </p></a>
+            <a href="#" class="button-link"><p>Shop All Skincare</p></a>
         </div>
         
         <div class="contentr">
@@ -292,17 +230,8 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>Hair</h2>
-            <a href="#" class="sidebar-link"><p>Explore Fenty Hair </p></a>
-            <a href="#" class="sidebar-link"><p>Shop All Hair </p></a>
-            <a href="#" class="sidebar-link"><p>Fenty Hair Bundles </p></a>
-            <a href="#" class="sidebar-link"><p>Hair Minis </p></a>
             <a href="#" class="sidebar-link"><p>Shampoo </p></a>
             <a href="#" class="sidebar-link"><p>Condition</p></a>
-            <a href="#" class="sidebar-link"><p>Treat </p></a>
-            <a href="#" class="sidebar-link"><p>Styles</p></a>
-            <a href="#" class="sidebar-link"><p>Tools</p></a>
-            <a href="#" class="sidebar-link"><p>Behind the Brand </p></a>
-            <a href="#" class="sidebar-link"><p>Hair Lookbook</p></a>
         </div>
         
         <div class="contentr">
@@ -343,124 +272,6 @@
     </div>
 </div>
 
-<div id="block6" class="content-block">
-    <div class="containerp">
-        <div class="sidebar">
-            <h2>Fragrance</h2>
-            <a href="#" class="sidebar-link"><p>Shop all Fragrance </p></a>
-            <a href="#" class="sidebar-link"><p>Exclusive Fragrance Sets  </p></a>
-            <a href="#" class="sidebar-link"><p>Ckary Parfum Body Creme </p></a>
-            <a href="#" class="sidebar-link"><p>Explore Ckary Eau de Parfum </p></a>
-        </div>
-        
-        <div class="contentr">
-            <div class="offersf">
-                <div class="offer-boxsd">
-                    <h2>Ckary Beauty</h2>
-                </div>
-            </div>
-
-            <div class="products">
-                <img src="sc.jpg" alt="Product 1">
-                <h3>Ckary Skin Travel-Size Start'r Set with Mineral SPF</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.5)</span>
-                </div>
-                <p><span class="old-price">$49</span> <span class="price">$24.50</span></p>
-            </div>
-            <div class="products">
-                <img src="sc1.jpg" alt="Product 1">
-                <h3>Ckary Skin Travel-Size Start'r Set with Mineral SPF</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.5)</span>
-                </div>
-                <p><span class="old-price">$49</span> <span class="price">$24.50</span></p>
-            </div>
-            <div class="products">
-                <img src="sc2.jpg" alt="Product 2">
-                <h3>Ckary Icon Velvet Liquid Lipstick</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.0)</span>
-                </div>
-                <p><span class="old-price">$29</span> <span class="price">$20.30</span></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="block7" class="content-block">
-    <div class="containerp">
-        <div class="sidebar">
-            <h2>Replen + Save</h2>
-            <a href="#" class="sidebar-link"><p>Replen + Save</p></a>
-        </div>
-        
-        <div class="contentr">
-            <div class="offer4">
-                <div class="offer-boxsg">
-                    <h2>Get Your HAir repair</h2>
-                    <p>Dont get caught slippin on washday. Save 10%</p>
-                    <button>Explore Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="blue.jpg" alt="Product 1">
-                <h3>Ckary Skin Travel-Size Start'r Set with Mineral SPF</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.5)</span>
-                </div>
-                <p><span class="old-price">$49</span> <span class="price">$24.50</span></p>
-            </div>
-            <div class="product">
-                <img src="blue1.jpg" alt="Product 2">
-                <h3>Ckary Icon Velvet Liquid Lipstick</h3>
-                <div class="rating">
-                    ★★★★☆
-                    <span>(4.0)</span>
-                </div>
-                <p><span class="old-price">$29</span> <span class="price">$20.30</span></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="block8" class="content-block">
-    <div class="containerp">
-        <div class="sidebar">
-            <h2>Discover</h2>
-            <a href="#" class="sidebar-link"><p>Limited Edition: Fenty Beauty x Arcane </p></a>
-            <a href="#" class="sidebar-link"><p>As Seen On Tiktok </p></a>
-            <a href="#" class="sidebar-link"><p>Lip Library </p></a>
-            <a href="#" class="sidebar-link"><p>Ckary Artistry Tips </p></a>
-            <a href="#" class="sidebar-link"><p>Gifts </p></a>
-            <a href="#" class="sidebar-link"><p>Accessories </p></a>
-            <a href="#" class="sidebar-link"><p>Ckary Minis  </p></a>
-        </div>
-     <div class="contentr">
-        <div class="offerst">
-            <div class="offer-boxsdt">
-                <h2>Ckary Hair Vision of haicare for all </h2>
-                <p>Get up to 50% off on select items!</p>
-                <button>Shop Now</button>
-            </div>
-        </div>
-
-        <div class="offersty">
-            <div class="offer-boxsdty">
-                <h2>Ckary GO TO ROUTINE</h2>
-                <p>Four steps away from your best look</p>
-                <button>Shop Now</button>
-            </div>
-        </div>
-      </div>
-    </div>
-</div>
-
 
 
 
@@ -474,11 +285,6 @@
     <p class="back-btn">Back</p>
     <p class="close-btn">X</p>
 
-    <div class="menu-items" data-target="block1">
-        <img src="bl.jpg" alt="Image 1" class="menu-icon">
-        <span>Up to 60% Off</span>
-        <p class="plus-sign">+</p>
-    </div>
     <div class="menu-items" data-target="block2">
         <img src="sp2.jpg" alt="Image 2" class="menu-icon">
         <span>New + Bestsellers</span>
@@ -497,21 +303,6 @@
     <div class="menu-items" data-target="block5">
         <img src="h3.jpg" alt="Image 5" class="menu-icon">
         <span>Hair</span>
-        <p class="plus-sign">+</p>
-    </div>
-    <div class="menu-items" data-target="block6">
-        <img src="dis2.jpg" alt="Image 6" class="menu-icon">
-        <span>Fragrance</span>
-        <p class="plus-sign">+</p>
-    </div>
-    <div class="menu-items" data-target="block7">
-        <img src="b2.jpg" alt="Image 7" class="menu-icon">
-        <span>Replen + Save</span>
-        <p class="plus-sign">+</p>
-    </div>
-    <div class="menu-items" data-target="block8">
-        <img src="bea.jpg" alt="Image 8" class="menu-icon">
-        <span>Discover</span>
         <p class="plus-sign">+</p>
     </div>
 </div>
@@ -930,6 +721,20 @@
 
 
 
+<div class="block-pay" id="blockPay">
+    <div class="pay-content">
+    <button id="closePay" class="ezra-button">Close</button>
+        <img id="payImage" src="" alt="Selected Item">
+        <h3 id="payName">Item Name</h3>
+        <p id="payPrice">Price</p>
+
+        <button class="bag-button">ADD TO BAG</button>
+    </div>
+</div>
+
+
+
+
 <div class="sale-banners">
     <h1>DIP INTO THESE DEALZ</h1>
     <p>Better snatch your staples before someone else does.</p>
@@ -1070,31 +875,7 @@
 
 
 
-  <div class="brands-container">
-    <h1>The Ckary Beauty Brands</h1>
-    <p>Ckary vision of haircare, makeup, skincare + fragrance for all.</p>
-    <div class="brands">
-      <div class="brand-item">
-        <img src="mod.jpg" alt="Fenty Hair">
-        <h3>Ckary Hair</h3>
-      </div>
-      <div class="brand-item">
-        <img src="mod1.jpg" alt="Fenty Beauty">
-        <h3>Ckary Beauty</h3>
-      </div>
-      <div class="brand-item">
-        <img src="mod2.jpg" alt="Fenty Skin">
-        <h3>Ckary Skin</h3>
-      </div>
-      <div class="brand-item">
-        <img src="mod3.jpg" alt="Fenty Fragrance">
-        <h3>Ckary Fragrance</h3>
-      </div>
-    </div>
-  </div>
-
-
-
+  
   <footer class="footer">
     <div class="footer-left">
         <h2>DOWN FOR MORE? WE GOT YOU.</h2>

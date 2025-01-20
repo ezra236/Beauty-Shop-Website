@@ -403,3 +403,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+const buttons = document.querySelectorAll('.ezra-button');
+    const blockPay = document.getElementById('blockPay');
+    const payImage = document.getElementById('payImage');
+    const payName = document.getElementById('payName');
+    const payPrice = document.getElementById('payPrice');
+    const closePay = document.getElementById('closePay');
+
+    // Add click event listeners to all buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Get the parent classic-item container
+            const item = button.closest('.classic-item');
+
+            // Get the details of the clicked item
+            const imageSrc = item.querySelector('img').src;
+            const name = item.querySelector('h3').innerText;
+            const price = item.querySelector('.price').innerText;
+
+            // Update block pay with the item's details
+            payImage.src = imageSrc;
+            payName.textContent = name;
+            payPrice.textContent = price;
+
+            // Show block pay with a transition
+            blockPay.classList.add('active');
+        });
+    });
+
+    // Add click event listener to close button
+    closePay.addEventListener('click', () => {
+        blockPay.classList.remove('active');
+    });
