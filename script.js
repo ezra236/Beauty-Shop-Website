@@ -525,3 +525,19 @@ closeCheck.addEventListener('click', () => {
 window.addEventListener('load', () => {
     displayCheckItems();
 });
+
+
+
+
+const icon1 = document.getElementById('icon1');
+const icon2 = document.getElementById('icon2');
+const blockChecks = document.getElementById('blockCheck');
+
+// Function to show block-check with a transition
+function showBlockCheck() {
+    blockChecks.classList.add('active');
+}
+
+// Add click event listeners to both icons
+icon1.addEventListener('click', showBlockCheck);
+icon2.addEventListener('click', showBlockCheck);
