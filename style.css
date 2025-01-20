@@ -1214,6 +1214,12 @@ padding: 25px;
 z-index: 10000;
 }
 
+@media (max-width: 768px) {
+  .block-pay {
+      width: 65%; /* Width changes to 60% on mobile */
+  }
+}
+
 .block-pay.active {
 right: 0; /* Move into view */
 }
@@ -1272,6 +1278,18 @@ transition: right 0.3s ease-in-out;
 box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
 z-index: 12000;
 overflow-y: auto; 
+}
+
+@media (max-width: 768px) {
+  .block-check {
+      width: 80%; /* Width changes to 65% on mobile */
+  }
+}
+
+@media (min-width: 355px) and (max-width: 392px) {
+  .block-check {
+      width: 90%; /* Width changes to 80% for small phones */
+  }
 }
 
 .block-check.active {
