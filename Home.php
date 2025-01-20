@@ -736,7 +736,7 @@
 
 <div class="block-check" id="blockCheck">
     <div class="check-content">
-        <button id="closeCheck" class="ezra-buttons">Close</button>
+    <button id="closeCheck" class="ezra-buttons">Close</button>
         <div id="checkItems"></div> <!-- Dynamically populated content will go here -->
     </div>
 </div>

@@ -406,7 +406,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 const buttons = document.querySelectorAll('.ezra-button');
 const blockPay = document.getElementById('blockPay');
 const payImage = document.getElementById('payImage');
@@ -432,8 +431,10 @@ function displayCheckItems() {
         itemElement.classList.add('check-item');
         itemElement.innerHTML = `
             <img src="${item.image}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <p class="price">${item.price}</p>
+            <div class="text">
+                <h3>${item.name}</h3>
+                <p class="price">${item.price}</p>
+            </div>
         `;
         checkItems.appendChild(itemElement);
     });
