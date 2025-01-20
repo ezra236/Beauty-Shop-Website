@@ -407,7 +407,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 const buttons = document.querySelectorAll('.ezra-button');
 const blockPay = document.getElementById('blockPay');
 const payImage = document.getElementById('payImage');
@@ -424,10 +423,10 @@ function getStoredItems() {
     return items;
 }
 
-// Function to remove an item from localStorage by its name
-function removeItemFromLocalStorage(itemName) {
+// Function to remove an item from localStorage by its unique ID
+function removeItemFromLocalStorage(itemId) {
     const items = getStoredItems();
-    const updatedItems = items.filter(item => item.name !== itemName);
+    const updatedItems = items.filter(item => item.id !== itemId); // Remove by ID
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
 }
 
@@ -451,7 +450,7 @@ function displayCheckItems() {
         const removeButton = itemElement.querySelector('.remove-button');
         removeButton.addEventListener('click', () => {
             // Remove item from localStorage
-            removeItemFromLocalStorage(item.name);
+            removeItemFromLocalStorage(item.id);
 
             // Re-render the check items list after removal
             displayCheckItems();
@@ -495,11 +494,14 @@ addToBagButton.addEventListener('click', () => {
     const image = payImage.src;
     const price = payPrice.textContent;
 
+    // Create a unique ID for the item (based on timestamp)
+    const itemId = Date.now();
+
     // Get existing items from localStorage, or create an empty array if none exist
     const items = getStoredItems();
 
-    // Add the new item to the array
-    items.push({ name, image, price });
+    // Add the new item to the array with its unique ID
+    items.push({ id: itemId, name, image, price });
 
     // Store the updated array in localStorage
     localStorage.setItem('cartItems', JSON.stringify(items));
