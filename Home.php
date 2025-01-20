@@ -723,7 +723,7 @@
 
 <div class="block-pay" id="blockPay">
     <div class="pay-content">
-    <button id="closePay" class="ezra-button">Close</button>
+       <button id="closePay" class="ezra-button">Close</button>
         <img id="payImage" src="" alt="Selected Item">
         <h3 id="payName">Item Name</h3>
         <p id="payPrice">Price</p>
@@ -732,6 +732,14 @@
     </div>
 </div>
 
+
+
+<div class="block-check" id="blockCheck">
+    <div class="check-content">
+        <button id="closeCheck" class="ezra-buttons">Close</button>
+        <div id="checkItems"></div> <!-- Dynamically populated content will go here -->
+    </div>
+</div>
 
 
 

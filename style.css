@@ -1260,6 +1260,89 @@ margin-top: 20px;
   background-color: #171818; /* Darker blue on hover */
 }
 
+
+.block-check {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Initially hidden off to the right */
+  width: 45%;
+  height: 100%;
+  background-color: #fff;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 12000;
+  overflow-y: auto; 
+}
+
+.block-check.active {
+  right: 0; /* Move it to the original position */
+}
+
+.check-content {
+  padding: 20px;
+  width: 90%;
+}
+
+.check-content .check-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.check-content .check-item img {
+  width: 100px;
+  height: auto;
+}
+
+.check-content .check-item .price {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+.ezra-button {
+  display: block;              
+  width: 100%;               
+  padding: 10px;             
+  font-size: 18px; 
+  font-weight: 900;           
+  background-color: #080808;  
+  color: white;               
+  border: none;               
+  text-align: center;         
+  cursor: pointer;           
+  border-radius: 0px;        
+  transition: background-color 0.3s ease; 
+}
+
+.ezra-button:hover {
+  background-color: #ccccd4;  /* Darkens background color on hover */
+  color: #000;
+}
+
+.ezra-buttons {
+  display: block;              
+  width: 100%;               
+  padding: 10px;             
+  font-size: 18px; 
+  font-weight: 900;           
+  background-color: #080808;  
+  color: white;               
+  border: none;               
+  text-align: center;         
+  cursor: pointer;           
+  border-radius: 0px;        
+  margin-bottom: 90px;
+  transition: background-color 0.3s ease; 
+}
+
+.ezra-buttons:hover {
+  background-color: #ccccd4;  /* Darkens background color on hover */
+  color: #000;
+}
+
+
 .classic-container {
     position: relative;
     width: 95%;
@@ -1359,27 +1442,6 @@ margin-top: 20px;
     right: 30px;
     font-size: 50px;
 }
-
-.ezra-button {
-    display: block;              
-    width: 100%;               
-    padding: 10px;             
-    font-size: 18px; 
-    font-weight: 900;           
-    background-color: #080808;  
-    color: white;               
-    border: none;               
-    text-align: center;         
-    cursor: pointer;           
-    border-radius: 0px;        
-    transition: background-color 0.3s ease; 
-}
-
-.ezra-button:hover {
-    background-color: #ccccd4;  /* Darkens background color on hover */
-    color: #000;
-}
-
 
 
 

@@ -408,34 +408,96 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const buttons = document.querySelectorAll('.ezra-button');
-    const blockPay = document.getElementById('blockPay');
-    const payImage = document.getElementById('payImage');
-    const payName = document.getElementById('payName');
-    const payPrice = document.getElementById('payPrice');
-    const closePay = document.getElementById('closePay');
+const blockPay = document.getElementById('blockPay');
+const payImage = document.getElementById('payImage');
+const payName = document.getElementById('payName');
+const payPrice = document.getElementById('payPrice');
+const closePay = document.getElementById('closePay');
+const blockCheck = document.getElementById('blockCheck');
+const checkItems = document.getElementById('checkItems');
+const closeCheck = document.getElementById('closeCheck');
 
-    // Add click event listeners to all buttons
-    buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Get the parent classic-item container
-            const item = button.closest('.classic-item');
+// Function to get stored items from localStorage
+function getStoredItems() {
+    const items = JSON.parse(localStorage.getItem('cartItems')) || [];
+    return items;
+}
 
-            // Get the details of the clicked item
-            const imageSrc = item.querySelector('img').src;
-            const name = item.querySelector('h3').innerText;
-            const price = item.querySelector('.price').innerText;
-
-            // Update block pay with the item's details
-            payImage.src = imageSrc;
-            payName.textContent = name;
-            payPrice.textContent = price;
-
-            // Show block pay with a transition
-            blockPay.classList.add('active');
-        });
+// Function to display items in the block-check container
+function displayCheckItems() {
+    const items = getStoredItems();
+    checkItems.innerHTML = ''; // Clear the container before adding new items
+    items.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('check-item');
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p class="price">${item.price}</p>
+        `;
+        checkItems.appendChild(itemElement);
     });
+}
 
-    // Add click event listener to close button
-    closePay.addEventListener('click', () => {
-        blockPay.classList.remove('active');
+// Add click event listeners to all buttons
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Get the parent classic-item container
+        const item = button.closest('.classic-item');
+
+        // Get the details of the clicked item
+        const imageSrc = item.querySelector('img').src;
+        const name = item.querySelector('h3').innerText;
+        const price = item.querySelector('.price').innerText;
+
+        // Update block pay with the item's details
+        payImage.src = imageSrc;
+        payName.textContent = name;
+        payPrice.textContent = price;
+
+        // Show block pay with a transition
+        blockPay.classList.add('active');
     });
+});
+
+// Add click event listener to close button (blockPay)
+closePay.addEventListener('click', () => {
+    blockPay.classList.remove('active');
+});
+
+// Add click event listener to 'Add to Bag' button
+const addToBagButton = document.querySelector('.bag-button');
+addToBagButton.addEventListener('click', () => {
+    // Get the details of the selected item
+    const name = payName.textContent;
+    const image = payImage.src;
+    const price = payPrice.textContent;
+
+    // Get existing items from localStorage, or create an empty array if none exist
+    const items = getStoredItems();
+
+    // Add the new item to the array
+    items.push({ name, image, price });
+
+    // Store the updated array in localStorage
+    localStorage.setItem('cartItems', JSON.stringify(items));
+
+    // Display the updated list in block-check
+    displayCheckItems();
+
+    // Show block-check with a transition
+    blockCheck.classList.add('active');
+
+    // Close the block-pay
+    blockPay.classList.remove('active');
+});
+
+// Add click event listener to close button (blockCheck)
+closeCheck.addEventListener('click', () => {
+    blockCheck.classList.remove('active');
+});
+
+// Display stored items on page load (for persistence across refreshes)
+window.addEventListener('load', () => {
+    displayCheckItems();
+});
