@@ -406,6 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
 const buttons = document.querySelectorAll('.ezra-button');
 const blockPay = document.getElementById('blockPay');
 const payImage = document.getElementById('payImage');
@@ -422,6 +424,13 @@ function getStoredItems() {
     return items;
 }
 
+// Function to remove an item from localStorage by its name
+function removeItemFromLocalStorage(itemName) {
+    const items = getStoredItems();
+    const updatedItems = items.filter(item => item.name !== itemName);
+    localStorage.setItem('cartItems', JSON.stringify(updatedItems));
+}
+
 // Function to display items in the block-check container
 function displayCheckItems() {
     const items = getStoredItems();
@@ -434,8 +443,20 @@ function displayCheckItems() {
             <div class="text">
                 <h3>${item.name}</h3>
                 <p class="price">${item.price}</p>
+                <button class="remove-button">Remove</button> <!-- Remove Button -->
             </div>
         `;
+
+        // Add event listener to remove button
+        const removeButton = itemElement.querySelector('.remove-button');
+        removeButton.addEventListener('click', () => {
+            // Remove item from localStorage
+            removeItemFromLocalStorage(item.name);
+
+            // Re-render the check items list after removal
+            displayCheckItems();
+        });
+
         checkItems.appendChild(itemElement);
     });
 }
