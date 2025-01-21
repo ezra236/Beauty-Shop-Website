@@ -1323,9 +1323,9 @@ right: 0; /* Move it to the original position */
 /* Add this new rule */
 .check-content .check-item .text {
   display: flex;
-  flex-direction: column;  /* Stack the name and price vertically */
-  justify-content: flex-start; /* Align text at the top */
-  margin-left: 20px;  /* Optional: Add some space between the image and the text */
+  flex-direction: column;  
+  justify-content: flex-start; 
+  margin-left: 20px; 
 }
 
 .check-content .check-item h3 {
@@ -1344,7 +1344,7 @@ right: 0; /* Move it to the original position */
   background-color: red;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 8px 10px;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -1354,7 +1354,22 @@ right: 0; /* Move it to the original position */
 }
 
 
+.total-price .checkout-button {
+  background-color: #884e21; 
+  color: white; 
+  font-size: 16px; /* Font size */
+  padding: 12px 84px; 
+  border: none; 
+  border-radius: 0px; 
+  cursor: pointer; /* Pointer cursor on hover */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
 
+.total-price .checkout-button:hover {
+  background-color: #74380b; 
+}
 
 .ezra-button {
 display: block;              

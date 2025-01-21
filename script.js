@@ -407,6 +407,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
 const buttons = document.querySelectorAll('.ezra-button');
 const blockPay = document.getElementById('blockPay');
 const payImage = document.getElementById('payImage');
@@ -430,10 +432,23 @@ function removeItemFromLocalStorage(itemId) {
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
 }
 
+// Function to calculate the total price
+function calculateTotalPrice(items) {
+    return items.reduce((total, item) => {
+        // Extract numeric value from the price string, removing any non-numeric characters except '.'
+        const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
+        if (!isNaN(price)) {
+            return total + price;
+        }
+        return total; // Skip invalid prices
+    }, 0).toFixed(2); // Return total price rounded to 2 decimal places
+}
+
 // Function to display items in the block-check container
 function displayCheckItems() {
     const items = getStoredItems();
     checkItems.innerHTML = ''; // Clear the container before adding new items
+
     items.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.classList.add('check-item');
@@ -442,7 +457,7 @@ function displayCheckItems() {
             <div class="text">
                 <h3>${item.name}</h3>
                 <p class="price">${item.price}</p>
-                <button class="remove-button">Remove</button> <!-- Remove Button -->
+                <button class="remove-button">Remove</button>
             </div>
         `;
 
@@ -457,6 +472,37 @@ function displayCheckItems() {
         });
 
         checkItems.appendChild(itemElement);
+    });
+
+    // Calculate and display the total price
+    const totalPrice = calculateTotalPrice(items);
+
+    const totalPriceElement = document.createElement('div');
+    totalPriceElement.classList.add('total-price');
+    totalPriceElement.innerHTML = `
+        <h3>Total Price: $${totalPrice}</h3>
+        <button class="checkout-button">CHECKOUT</button>
+    `;
+    checkItems.appendChild(totalPriceElement);
+
+    // Add event listener to the checkout button
+    const checkoutButton = totalPriceElement.querySelector('.checkout-button');
+    checkoutButton.addEventListener('click', () => {
+        // Fetch remaining items and total price
+        const remainingItems = getStoredItems();
+        const totalPrice = calculateTotalPrice(remainingItems);
+
+        // Prepare the data to pass to the new page
+        const paymentDetails = {
+            items: remainingItems,
+            totalPrice: totalPrice
+        };
+
+        // Store the payment details in localStorage for use in pay.html
+        localStorage.setItem('paymentDetails', JSON.stringify(paymentDetails));
+
+        // Redirect to pay.html
+        window.location.href = 'pay.html';
     });
 }
 
