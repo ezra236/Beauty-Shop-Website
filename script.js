@@ -409,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 const buttons = document.querySelectorAll('.ezra-button');
 const blockPay = document.getElementById('blockPay');
 const payImage = document.getElementById('payImage');
@@ -587,3 +588,60 @@ function showBlockCheck() {
 // Add click event listeners to both icons
 icon1.addEventListener('click', showBlockCheck);
 icon2.addEventListener('click', showBlockCheck);
+
+
+
+
+
+
+
+const carouselTrack = document.getElementById('carouselTrack');
+const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+const scrollRightBtn = document.getElementById('scrollRightBtn');
+
+const scrollStep = 200; // Adjust scroll step here
+
+scrollLeftBtn.addEventListener('click', function () {
+    carouselTrack.scrollLeft -= scrollStep; // Scroll left
+});
+
+scrollRightBtn.addEventListener('click', function () {
+    carouselTrack.scrollLeft += scrollStep; // Scroll right
+});
+
+// Update hover image functionality
+const hoverImages = {
+    carouselItem1: { original: 'purp.jpg', hover: 'ap.jpg' },
+    carouselItem2: { original: 't4.jpg', hover: 'b11.jpg' },
+    carouselItem3: { original: 't10.jpg', hover: 'lip2.jpg' },
+    carouselItem4: { original: 't1w.jpg', hover: 'ap2.jpg' },
+    carouselItem5: { original: 'drop.jpg', hover: 'ap3.jpg' },
+    carouselItem6: { original: 'lip.jpg', hover: 'ap1.jpg' },
+    carouselItem7: { original: 'bm3.jpg', hover: 'lips.jpg' },
+    carouselItem8: { original: 'g.jpg', hover: 'ap3.jpg' }
+};
+
+function updateImage(itemId, newSrc) {
+    const image = document.getElementById(itemId);
+    image.classList.add('fade-out');
+    setTimeout(() => {
+        image.src = newSrc;
+        image.classList.remove('fade-out');
+    }, 100);
+}
+
+document.querySelectorAll('.carousel-item img').forEach(image => {
+    const itemId = image.id;
+
+    image.addEventListener('mouseenter', () => {
+        updateImage(itemId, hoverImages[itemId].hover);
+    });
+
+    image.addEventListener('mouseleave', () => {
+        updateImage(itemId, hoverImages[itemId].original);
+    });
+});
+
+
+
+

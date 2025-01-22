@@ -78,6 +78,7 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .nav-icons {
@@ -151,6 +152,7 @@ body {
       justify-content: center;
       color: #333;
       text-decoration: none;
+      cursor: pointer;
   }
 
   .nav-icon2 svg, .nav-icon3 svg {
@@ -1202,14 +1204,15 @@ background-color: #052d56; /* Darker blue on hover */
 position: fixed;
 top: 0;
 right: -100%; /* Start offscreen */
-width: 20%;
+width: 30%;
 height: 100%;
-background: #f8f9fa;
+background: #83dbf8;
 box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
 transition: right 0.4s ease-in-out; /* Smooth transition */
 display: flex;
 align-items: flex-start;
 justify-content: flex-start;
+flex-direction: column;
 padding: 25px;
 z-index: 10000;
 }
@@ -1228,14 +1231,14 @@ right: 0; /* Move into view */
 text-align: center;
 width: 95%;
 display: flex;
-align-items: flex-start;
-justify-content: flex-start;
+align-items: center;
+justify-content: center;
 flex-direction: column;
 }
 
 .pay-content img {
-width: 80%;
-height: 15%;
+width: 40%;
+height: 200px;
 margin-bottom: 20px;
 margin-top: 20px;
 }
@@ -1270,10 +1273,11 @@ background-color: #171818; /* Darker blue on hover */
 .block-check {
 position: fixed;
 top: 0;
-right: -100%; /* Initially hidden off to the right */
-width: 30%;
+right: -120%; /* Initially hidden off to the right */
+width: 35%;
 height: 100%;
-background-color: #fff;
+padding: 25px;
+background-color: #83dbf8;
 transition: right 0.3s ease-in-out;
 box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
 z-index: 12000;
@@ -1306,8 +1310,8 @@ right: 0; /* Move it to the original position */
   flex-direction: row;
   align-items: flex-start;
   margin-bottom: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.358);
-  border-top: 1px solid rgba(0, 0, 0, 0.336);
+  border-bottom: 1px solid rgba(234, 232, 241, 0.959);
+  border-top: 1px solid rgba(241, 234, 234, 0.968);
 }
 
 .check-content .check-item img {
@@ -1341,7 +1345,7 @@ right: 0; /* Move it to the original position */
 }
 
 .check-content .check-item .remove-button {
-  background-color: red;
+  background-color: rgb(197, 87, 18);
   color: white;
   border: none;
   padding: 8px 10px;
@@ -1350,12 +1354,12 @@ right: 0; /* Move it to the original position */
 }
 
 .check-content .check-item .remove-button:hover {
-  background-color: darkred;
+  background-color: rgb(139, 60, 0);
 }
 
 
 .total-price .checkout-button {
-  background-color: #884e21; 
+  background-color: #130d88; 
   color: white; 
   font-size: 16px; /* Font size */
   padding: 12px 84px; 
@@ -1368,12 +1372,12 @@ right: 0; /* Move it to the original position */
 }
 
 .total-price .checkout-button:hover {
-  background-color: #74380b; 
+  background-color: #160ccb; 
 }
 
 .ezra-button {
-display: block;              
-width: 100%;               
+display: block;     
+width: 100%;           
 padding: 10px;             
 font-size: 18px; 
 font-weight: 900;           
@@ -1403,15 +1407,31 @@ border: none;
 text-align: center;         
 cursor: pointer;           
 border-radius: 0px;        
-margin-bottom: 90px;
+margin-bottom: 5px;
 transition: background-color 0.3s ease; 
 }
 
 .ezra-buttons:hover {
-background-color: #ccccd4;  /* Darkens background color on hover */
+background-color: #e6e6f3;  /* Darkens background color on hover */
 color: #000;
 }
 
+.c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.quick-shop-heading {
+  color: #9a1eab; /* White text */
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+}
 
 .classic-container {
   position: relative;
@@ -1512,6 +1532,128 @@ img.fade-out {
   right: 30px;
   font-size: 50px;
 }
+
+
+
+.carousel-container {
+  position: relative;
+  width: 95%;
+  margin: 20px auto;
+  overflow: hidden;
+  margin-top: 130px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 320px;
+  background: #fff;
+  border-radius: 0px;
+  padding: 10px;
+  text-align: left;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 350px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+}
+
+img.fade-out {
+  opacity: 0;
+}
+
+.carousel-item h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.carousel-item p {
+  font-size: 15px;
+  color: #040404;
+}
+
+.carousel-item .product-price {
+  font-size: 16px;
+  color: #e60000;
+  font-weight: bold;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: lightgray;
+}
+
+.star.filled {
+  background-color: black;
+}
+
+.star.half {
+  background: linear-gradient(to right, black 50%, lightgray 50%);
+}
+
+.scroll-arrow {
+  position: absolute;
+  margin-top: 5px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.scroll-arrow.left-arrow {
+  left: 30px;
+  font-size: 50px;
+}
+
+.scroll-arrow.right-arrow {
+  right: 30px;
+  font-size: 50px;
+}
+
+.shop-button {
+  display: block;     
+  width: 100%;           
+  padding: 10px;             
+  font-size: 18px; 
+  font-weight: 900;           
+  background-color: #080808;  
+  color: white;               
+  border: none;               
+  text-align: center;         
+  cursor: pointer;           
+  border-radius: 0px;        
+  transition: background-color 0.3s ease; 
+  }
+  
+  .shop-button:hover {
+  background-color: #ccccd4;  /* Darkens background color on hover */
+  color: #000;
+  }
 
 
 

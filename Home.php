@@ -588,7 +588,6 @@
 </div>
 
 
-
 <button class="nav-arrow left" id="leftBtn" aria-label="Scroll Left">⇐ </button>
 <button class="nav-arrow right" id="rightBtn" aria-label="Scroll Right">⇒ </button>
 
@@ -722,8 +721,11 @@
 
 
 <div class="block-pay" id="blockPay">
+    <button id="closePay" class="ezra-button">Close</button>
+    <div class="c">
+    <h1 class="quick-shop-heading">Quick Shop</h1>
+    </div>
     <div class="pay-content">
-       <button id="closePay" class="ezra-button">Close</button>
         <img id="payImage" src="" alt="Selected Item">
         <h3 id="payName">Item Name</h3>
         <p id="payPrice">Price</p>
@@ -735,8 +737,8 @@
 
 
 <div class="block-check" id="blockCheck">
+<button id="closeCheck" class="ezra-buttons">Close</button>
     <div class="check-content">
-    <button id="closeCheck" class="ezra-buttons">Close</button>
         <div id="checkItems"></div> <!-- Dynamically populated content will go here -->
     </div>
 </div>
@@ -801,6 +803,148 @@
     </div>
   </div>
 
+
+
+
+
+
+<div class="sale-banner">
+    <h1>TURN UP THE EXTRA(S)</h1>
+    <p>Add these to make your routine even more special.</p>
+</div>
+
+
+<button class="scroll-arrow left-arrow" id="scrollLeftBtn" aria-label="Scroll Left">⇐</button>
+<button class="scroll-arrow right-arrow" id="scrollRightBtn" aria-label="Scroll Right">⇒</button>
+
+<div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-item">
+            <img id="carouselItem1" src="purp.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+        <div class="carousel-item">
+            <img id="carouselItem2" src="t4.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+
+        <div class="carousel-item">
+            <img id="carouselItem3" src="t10.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+
+        <div class="carousel-item">
+            <img id="carouselItem4" src="t1w.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+
+        <div class="carousel-item">
+            <img id="carouselItem5" src="drop.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+
+        <div class="carousel-item">
+            <img id="carouselItem6" src="lip.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+        <div class="carousel-item">
+            <img id="carouselItem7" src="bm3.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+        
+        <div class="carousel-item">
+            <img id="carouselItem8" src="g.jpg" alt="Item 1">
+            <h3>Diamond Bomb</h3>
+            <div class="rating-stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="product-price">KSH 4,800.00</p>
+            <button class="shop-button">Quick Shop</button>
+        </div>
+
+    </div>
+</div>
 
 
 <div class="container">
