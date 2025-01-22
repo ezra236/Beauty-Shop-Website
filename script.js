@@ -598,8 +598,8 @@ document.getElementById('checkoutButton').addEventListener('click', function () 
     const bagItems = JSON.parse(localStorage.getItem('bagItems')) || [];
 
     // Prepare the URL for pay.html and pass the item details as query parameters
-    const itemDetails = bagItems.map(item => {
-        return `name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}&imageSrc=${encodeURIComponent(item.imageSrc)}`;
+    const itemDetails = bagItems.map((item, index) => {
+        return `item${index + 1}_name=${encodeURIComponent(item.name)}&item${index + 1}_price=${encodeURIComponent(item.price)}&item${index + 1}_imageSrc=${encodeURIComponent(item.imageSrc)}`;
     }).join('&');
 
     // Redirect to pay.html with the item details
@@ -620,6 +620,7 @@ document.querySelectorAll('.ezra-button').forEach(button => {
 
 // Initialize bag items on page load
 document.addEventListener('DOMContentLoaded', displayBagItems);
+
 
 
 

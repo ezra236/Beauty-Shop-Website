@@ -57,39 +57,40 @@ body {
 .display {
 width: 50%;
 }
-
-.display .item {
-  display: flex; 
-  align-items: center; /* Vertically center the content */
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 0px;
+.payment-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
-
-.display .item img {
-  width: 150px; 
-  height: 150px; /* Maintain aspect ratio */
-  margin-right: 15px; /* Add space between the image and the text */
-  border-radius: 0px;
-}
-
-.display .item .item-details {
+.item {
   display: flex;
-  flex-direction: column;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
 }
-
-.display .item h4 {
-  font-size: 1.2em;
+.item img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+.item-info {
+  flex-grow: 1;
+}
+.total-price {
+  font-size: 18px;
   font-weight: bold;
-  margin: 0;  /* Removes any extra margin */
+  margin-top: 20px;
 }
 
-/* Styling for the item price (p) */
-.display .item p {
-  font-size: 1em;
-  margin-top: 75px;  /* Adds space between the name and price */
-  margin-left: -120px;
-  color: #0f0e0e;
+.checkout-button {
+  display: none;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {

@@ -948,7 +948,7 @@
         <button id="closeBlockCheck">X</button>
     </div>
     <div class="c">
-            <h1>Quick Shop</h1>
+            <h1>Your Bag</h1>
         </div>
     <div id="bagItems"></div>
 

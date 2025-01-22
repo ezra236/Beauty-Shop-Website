@@ -1346,7 +1346,7 @@ color: #000;
     width: 35%;
     z-index: 13500;
     height: 100%;
-    background: #fff;
+    background: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease;
     overflow-y: auto;
