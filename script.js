@@ -474,65 +474,6 @@ document.getElementById('closeBlockPay').addEventListener('click', function() {
     document.getElementById('blockPay').style.right = '-100%';
 });
 
-// Function to show the Bag Block and display the items
-function showBlockBag() {
-    document.getElementById('blockBag').style.right = '0';
-}
-
-// Close the Block Bag div when the close button is clicked
-document.getElementById('closeBlockBag').addEventListener('click', function() {
-    document.getElementById('blockBag').style.right = '-100%';
-});
-
-// Function to store the bag items in local storage
-function saveToLocalStorage(bagItems) {
-    localStorage.setItem('bagItems', JSON.stringify(bagItems));
-}
-
-// Function to load items from local storage
-function loadFromLocalStorage() {
-    const storedItems = localStorage.getItem('bagItems');
-    return storedItems ? JSON.parse(storedItems) : [];
-}
-
-// Initialize an array to store products in the bag (load from localStorage if available)
-let bagItems = loadFromLocalStorage();
-
-// Function to add the item to the bag
-function addToBag(name, price, imageSrc) {
-    // Check if the item already exists in the bag
-    const existingItem = bagItems.find(item => item.name === name && item.price === price && item.imageSrc === imageSrc);
-
-    if (!existingItem) {
-        // Add the item to the bagItems array if it doesn't exist
-        bagItems.push({ name, price, imageSrc });
-
-        // Save the updated items to local storage
-        saveToLocalStorage(bagItems);
-    }
-
-    // Update the bag content
-    const bagContent = document.getElementById('bagContent');
-    bagContent.innerHTML = ''; // Clear current items
-
-    // Loop through the bagItems array to display all items
-    bagItems.forEach(item => {
-        const productDiv = document.createElement('div');
-        productDiv.classList.add('product-item');
-        productDiv.innerHTML = `
-            <img src="${item.imageSrc}" alt="${item.name}">
-            <div>
-                <h4>${item.name}</h4>
-                <p>${item.price}</p>
-            </div>
-        `;
-        bagContent.appendChild(productDiv);
-    });
-
-    // Show the Block Bag
-    showBlockBag();
-}
-
 // Attach the event listeners to all Quick Shop buttons
 const quickShopButtons = document.querySelectorAll('.ezra-button');
 
@@ -548,32 +489,108 @@ quickShopButtons.forEach(button => {
 
         // Call the function to display the details in the sliding panel
         showBlockPay(name, price, image);
-
-        // Set up the "Add to Bag" button functionality
-        document.getElementById('addToBagButton').addEventListener('click', function() {
-            addToBag(name, price, image);
-        });
     });
 });
 
-// Load stored items into the bag when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Display the items from local storage in the bag
-    const storedItems = loadFromLocalStorage();
-    if (storedItems.length > 0) {
-        const bagContent = document.getElementById('bagContent');
-        storedItems.forEach(item => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('product-item');
-            productDiv.innerHTML = `
-                <img src="${item.imageSrc}" alt="${item.name}">
-                <div>
-                    <h4>${item.name}</h4>
-                    <p>${item.price}</p>
-                </div>
-            `;
-            bagContent.appendChild(productDiv);
-        });
-        showBlockBag();
-    }
+
+
+
+
+
+
+
+// Function to show the Block Pay div with the item details
+function showBlockPay(name, price, imageSrc) {
+    document.getElementById('blockName').textContent = name;
+    document.getElementById('blockPrice').textContent = price;
+    document.getElementById('blockImage').src = imageSrc;
+
+    document.getElementById('blockPay').style.right = '0';
+}
+
+// Close the Block Pay div
+document.getElementById('closeBlockPay').addEventListener('click', function () {
+    document.getElementById('blockPay').style.right = '-100%';
 });
+
+// Show the Block Check div
+function showBlockCheck() {
+    document.getElementById('blockCheck').style.right = '0';
+}
+
+// Close the Block Check div
+document.getElementById('closeBlockCheck').addEventListener('click', function () {
+    document.getElementById('blockCheck').style.right = '-100%';
+});
+
+// Add item to bag and store locally
+document.getElementById('addToBag').addEventListener('click', function () {
+    const name = document.getElementById('blockName').textContent;
+    const price = document.getElementById('blockPrice').textContent;
+    const imageSrc = document.getElementById('blockImage').src;
+
+    // Generate a unique ID for the item
+    const itemId = Date.now();
+
+    // Store item details locally
+    const item = { id: itemId, name, price, imageSrc };
+    const bagItems = JSON.parse(localStorage.getItem('bagItems')) || [];
+    bagItems.push(item);
+    localStorage.setItem('bagItems', JSON.stringify(bagItems));
+
+    // Display the Block Check
+    showBlockCheck();
+    displayBagItems();
+});
+
+// Display bag items in Block Check
+function displayBagItems() {
+    const bagItems = JSON.parse(localStorage.getItem('bagItems')) || [];
+    const bagItemsContainer = document.getElementById('bagItems');
+    bagItemsContainer.innerHTML = '';
+
+    bagItems.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('bag-item');
+        itemDiv.innerHTML = `
+            <img src="${item.imageSrc}" alt="${item.name}">
+            <div>
+                <h4>${item.name}</h4>
+                <p>${item.price}</p>
+            </div>
+            <button class="removeItem" data-id="${item.id}">Remove</button>
+        `;
+        bagItemsContainer.appendChild(itemDiv);
+    });
+
+    // Attach event listeners to Remove buttons
+    document.querySelectorAll('.removeItem').forEach(button => {
+        button.addEventListener('click', function () {
+            const itemId = parseInt(this.dataset.id);
+            removeBagItem(itemId);
+        });
+    });
+}
+
+// Remove item from bag and update the UI
+function removeBagItem(itemId) {
+    let bagItems = JSON.parse(localStorage.getItem('bagItems')) || [];
+    bagItems = bagItems.filter(item => item.id !== itemId);
+    localStorage.setItem('bagItems', JSON.stringify(bagItems));
+    displayBagItems();
+}
+
+// Attach event listeners to Quick Shop buttons
+document.querySelectorAll('.ezra-button').forEach(button => {
+    button.addEventListener('click', function () {
+        const item = button.closest('.classic-item') || button.closest('.carousel-item');
+        const name = item.querySelector('h3').textContent;
+        const price = item.querySelector('.price, .product-price').textContent;
+        const image = item.querySelector('img').src;
+
+        showBlockPay(name, price, image);
+    });
+});
+
+// Initialize bag items on page load
+document.addEventListener('DOMContentLoaded', displayBagItems);

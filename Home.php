@@ -938,17 +938,21 @@
         <img id="blockImage" src="" alt="Product Image">
         <h3 id="blockName"></h3>
         <p id="blockPrice"></p>
-        <button id="addToBagButton">Add to Bag</button>
+        <button id="addToBag">Add to Bag</button>
     </div>
 </div>
 
 
-<div class="block-bag" id="blockBag">
-    <div class="block-bag-header">
-        <button id="closeBlockBag">X</button>
+<div class="block-check" id="blockCheck">
+    <div class="block-check-header">
+        <button id="closeBlockCheck">X</button>
     </div>
-    <div id="bagContent"></div>
+    <div class="c">
+            <h1>Quick Shop</h1>
+        </div>
+    <div id="bagItems"></div>
 </div>
+
 
 
 <div class="container">
@@ -1135,5 +1139,4 @@
 <script src="script.js"></script>
 </body>
 </html>
-
 

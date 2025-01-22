@@ -1242,97 +1242,97 @@ color: #000;
 }
 
 
-.block-pay {
+.block-pay  {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 30%;
-  height: 100vh;
-  background-color: rgb(89, 197, 236);
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 12999;
-  padding: 20px;
-  transition: right 0.5s ease-in-out;
-  overflow-y: auto; /* Enable vertical scrolling */
-  overflow-x: hidden;
+  width: 35%;
+  z-index: 12000;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  padding: 25px;
+}
+
+#blockImage {
+  width: 40%;
+  height: 200px;
 }
 
 .block-pay-header {
   display: flex;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
-.c {
-  color: palevioletred;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.block-check {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 35%;
+    z-index: 13500;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    padding: 25px;
 }
 
-#closeBlockPay {
-  font-size: 20px;
-  background: none;
+.block-check-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+
+.bag-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.bag-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px; /* Space between the image and the text */
+}
+
+.bag-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* Ensures the div takes up remaining space */
+}
+
+.bag-item h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.bag-item p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.bag-item button {
+  padding: 8px 10px;
+  background-color: #f44336; /* Red background for the remove button */
+  color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#blockContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+.bag-item button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
 }
-
-#blockImage {
-  width: 35%;
-  height: 150px;
-  margin-bottom: 20px;
-}
-
-#blockName, #blockPrice {
-  text-align: center;
-}
-
-
-/* Style for block-bag */
-.block-bag {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 30%;
-  height: 100vh;
-  background-color: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 13000;
-  padding: 20px;
-  transition: right 0.5s ease-in-out;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.block-bag .block-bag-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.block-bag #bagContent {
-  padding-top: 20px;
-}
-
-.block-bag .product-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.block-bag .product-item img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
 
 
 .classic-container {
