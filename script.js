@@ -496,9 +496,6 @@ quickShopButtons.forEach(button => {
 
 
 
-
-
-
 // Function to show the Block Pay div with the item details
 function showBlockPay(name, price, imageSrc) {
     document.getElementById('blockName').textContent = name;
@@ -526,8 +523,11 @@ document.getElementById('closeBlockCheck').addEventListener('click', function ()
 // Add item to bag and store locally
 document.getElementById('addToBag').addEventListener('click', function () {
     const name = document.getElementById('blockName').textContent;
-    const price = document.getElementById('blockPrice').textContent;
+    const priceText = document.getElementById('blockPrice').textContent;
     const imageSrc = document.getElementById('blockImage').src;
+
+    // Ensure price is a valid number, strip any non-numeric characters
+    const price = parseFloat(priceText.replace(/[^0-9.-]+/g, "")) || 0; // Default to 0 if parsing fails
 
     // Generate a unique ID for the item
     const itemId = Date.now();
@@ -549,6 +549,8 @@ function displayBagItems() {
     const bagItemsContainer = document.getElementById('bagItems');
     bagItemsContainer.innerHTML = '';
 
+    // Calculate total price
+    let totalPrice = 0;
     bagItems.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.classList.add('bag-item');
@@ -556,12 +558,21 @@ function displayBagItems() {
             <img src="${item.imageSrc}" alt="${item.name}">
             <div>
                 <h4>${item.name}</h4>
-                <p>${item.price}</p>
+                <p>$${item.price.toFixed(2)}</p> <!-- Ensure correct price format -->
             </div>
             <button class="removeItem" data-id="${item.id}">Remove</button>
         `;
         bagItemsContainer.appendChild(itemDiv);
+
+        // Add to total price
+        totalPrice += item.price;
     });
+
+    // Display total price
+    const totalDiv = document.createElement('div');
+    totalDiv.classList.add('total-price');
+    totalDiv.innerHTML = `<h4>Total: $${totalPrice.toFixed(2)}</h4>`; // Ensure correct total format
+    bagItemsContainer.appendChild(totalDiv);
 
     // Attach event listeners to Remove buttons
     document.querySelectorAll('.removeItem').forEach(button => {
