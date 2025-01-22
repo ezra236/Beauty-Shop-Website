@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="refresh" content="320">
+        <meta http-equiv="refresh" content="32000">
         <link rel="icon" href="ckayy.jpg" type="image/png">
         <title>Ckary Beauty</title>
         <link rel="stylesheet" href="style.css">
@@ -720,28 +720,7 @@
 
 
 
-<div class="block-pay" id="blockPay">
-    <button id="closePay" class="ezra-button">Close</button>
-    <div class="c">
-    <h1 class="quick-shop-heading">Quick Shop</h1>
-    </div>
-    <div class="pay-content">
-        <img id="payImage" src="" alt="Selected Item">
-        <h3 id="payName">Item Name</h3>
-        <p id="payPrice">Price</p>
 
-        <button class="bag-button">ADD TO BAG</button>
-    </div>
-</div>
-
-
-
-<div class="block-check" id="blockCheck">
-<button id="closeCheck" class="ezra-buttons">Close</button>
-    <div class="check-content">
-        <div id="checkItems"></div> <!-- Dynamically populated content will go here -->
-    </div>
-</div>
 
 
 
@@ -831,7 +810,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
         <div class="carousel-item">
@@ -846,7 +825,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
 
@@ -862,7 +841,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
 
@@ -878,7 +857,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
 
@@ -894,7 +873,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
 
@@ -910,7 +889,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
         <div class="carousel-item">
@@ -925,7 +904,7 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
         
         <div class="carousel-item">
@@ -940,10 +919,35 @@
             </div>
             <p>2 Sizes</p>
             <p class="product-price">KSH 4,800.00</p>
-            <button class="shop-button">Quick Shop</button>
+            <button class="ezra-button">Quick Shop</button>
         </div>
 
     </div>
+</div>
+
+
+
+<div class="block-pay" id="blockPay">
+    <div class="block-pay-header">
+        <button id="closeBlockPay">X</button>
+    </div>
+    <div class="c">
+        <h1>Quick Shop</h1>
+    </div>
+    <div id="blockContent">
+        <img id="blockImage" src="" alt="Product Image">
+        <h3 id="blockName"></h3>
+        <p id="blockPrice"></p>
+        <button id="addToBagButton">Add to Bag</button>
+    </div>
+</div>
+
+
+<div class="block-bag" id="blockBag">
+    <div class="block-bag-header">
+        <button id="closeBlockBag">X</button>
+    </div>
+    <div id="bagContent"></div>
 </div>
 
 
@@ -1131,6 +1135,5 @@
 <script src="script.js"></script>
 </body>
 </html>
-
 
 

@@ -1199,181 +1199,6 @@ background-color: #052d56; /* Darker blue on hover */
 }
 
 
-/* Block Pay Styling */
-.block-pay {
-position: fixed;
-top: 0;
-right: -100%; /* Start offscreen */
-width: 30%;
-height: 100%;
-background: #83dbf8;
-box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
-transition: right 0.4s ease-in-out; /* Smooth transition */
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-padding: 25px;
-z-index: 10000;
-}
-
-@media (max-width: 768px) {
-  .block-pay {
-      width: 65%; /* Width changes to 60% on mobile */
-  }
-}
-
-.block-pay.active {
-right: 0; /* Move into view */
-}
-
-.pay-content {
-text-align: center;
-width: 95%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-}
-
-.pay-content img {
-width: 40%;
-height: 200px;
-margin-bottom: 20px;
-margin-top: 20px;
-}
-
-#closePay {
-margin-top: 20px;
-background-color: rgb(11, 4, 4);
-color: white;
-border: none;
-padding: 10px 20px;
-cursor: pointer;
-}
-
-.bag-button {
-background-color: #000000; /* Blue background */
-color: white;
-border: none;
-border-radius: 0px;
-padding: 12px 50px;
-font-size: 18px;
-font-weight: bold;
-cursor: pointer;
-transition: all 0.3s ease;
-margin-top: 20px;
-}
-
-.bag-button:hover {
-background-color: #171818; /* Darker blue on hover */
-}
-
-
-.block-check {
-position: fixed;
-top: 0;
-right: -120%; /* Initially hidden off to the right */
-width: 35%;
-height: 100%;
-padding: 25px;
-background-color: #83dbf8;
-transition: right 0.3s ease-in-out;
-box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
-z-index: 12000;
-overflow-y: auto; 
-}
-
-@media (max-width: 768px) {
-  .block-check {
-      width: 80%; /* Width changes to 65% on mobile */
-  }
-}
-
-@media (min-width: 355px) and (max-width: 392px) {
-  .block-check {
-      width: 90%; /* Width changes to 80% for small phones */
-  }
-}
-
-.block-check.active {
-right: 0; /* Move it to the original position */
-}
-
-.check-content {
-  padding: 25px;
-  width: 90%;
-  }
-
-.check-content .check-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(234, 232, 241, 0.959);
-  border-top: 1px solid rgba(241, 234, 234, 0.968);
-}
-
-.check-content .check-item img {
-  width: 50%;
-  height: 150px;
-}
-
-.check-content .check-item .price {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/* Add this new rule */
-.check-content .check-item .text {
-  display: flex;
-  flex-direction: column;  
-  justify-content: flex-start; 
-  margin-left: 20px; 
-}
-
-.check-content .check-item h3 {
-  margin: 0;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.check-content .check-item .price {
-  margin-top: 5px;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.check-content .check-item .remove-button {
-  background-color: rgb(197, 87, 18);
-  color: white;
-  border: none;
-  padding: 8px 10px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.check-content .check-item .remove-button:hover {
-  background-color: rgb(139, 60, 0);
-}
-
-
-.total-price .checkout-button {
-  background-color: #130d88; 
-  color: white; 
-  font-size: 16px; /* Font size */
-  padding: 12px 84px; 
-  border: none; 
-  border-radius: 0px; 
-  cursor: pointer; /* Pointer cursor on hover */
-  text-transform: uppercase; /* Uppercase text */
-  font-weight: bold; /* Bold text */
-  transition: background-color 0.3s ease, transform 0.3s ease; 
-}
-
-.total-price .checkout-button:hover {
-  background-color: #160ccb; 
-}
 
 .ezra-button {
 display: block;     
@@ -1416,22 +1241,99 @@ background-color: #e6e6f3;  /* Darkens background color on hover */
 color: #000;
 }
 
-.c {
+
+.block-pay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 30%;
+  height: 100vh;
+  background-color: rgb(89, 197, 236);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 12999;
+  padding: 20px;
+  transition: right 0.5s ease-in-out;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden;
+}
+
+.block-pay-header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+}
+
+.c {
+  color: palevioletred;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#closeBlockPay {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#blockContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
-.quick-shop-heading {
-  color: #9a1eab; /* White text */
-  font-family: Arial, sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: inline-block;
+#blockImage {
+  width: 35%;
+  height: 150px;
+  margin-bottom: 20px;
 }
+
+#blockName, #blockPrice {
+  text-align: center;
+}
+
+
+/* Style for block-bag */
+.block-bag {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 30%;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 13000;
+  padding: 20px;
+  transition: right 0.5s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.block-bag .block-bag-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.block-bag #bagContent {
+  padding-top: 20px;
+}
+
+.block-bag .product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.block-bag .product-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+
 
 .classic-container {
   position: relative;
@@ -1540,7 +1442,8 @@ img.fade-out {
   width: 95%;
   margin: 20px auto;
   overflow: hidden;
-  margin-top: 130px;
+  margin-top: 50px;
+  margin-bottom: 70px;
 }
 
 .carousel-track {
@@ -1634,27 +1537,6 @@ img.fade-out {
   right: 30px;
   font-size: 50px;
 }
-
-.shop-button {
-  display: block;     
-  width: 100%;           
-  padding: 10px;             
-  font-size: 18px; 
-  font-weight: 900;           
-  background-color: #080808;  
-  color: white;               
-  border: none;               
-  text-align: center;         
-  cursor: pointer;           
-  border-radius: 0px;        
-  transition: background-color 0.3s ease; 
-  }
-  
-  .shop-button:hover {
-  background-color: #ccccd4;  /* Darkens background color on hover */
-  color: #000;
-  }
-
 
 
 .container {
