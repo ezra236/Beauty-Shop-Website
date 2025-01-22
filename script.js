@@ -496,6 +496,7 @@ quickShopButtons.forEach(button => {
 
 
 
+
 // Function to show the Block Pay div with the item details
 function showBlockPay(name, price, imageSrc) {
     document.getElementById('blockName').textContent = name;

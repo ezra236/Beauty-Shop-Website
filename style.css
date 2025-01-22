@@ -1242,6 +1242,13 @@ color: #000;
 }
 
 
+#blockContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .block-pay  {
   position: fixed;
   top: 0;
@@ -1264,6 +1271,51 @@ color: #000;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+}
+
+.c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #782804;
+  margin-bottom: 10px;
+}
+
+.block-pay-header button {
+  background-color: transparent; 
+  border: none; 
+  color: #050303; 
+  font-size: 25px; /* Set the font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  padding: 5px 10px; 
+  border-radius: 0px; /* Rounded corners */
+}
+
+.block-check-header button {
+  background-color: transparent; 
+  border: none; 
+  color: #050303; 
+  font-size: 25px; /* Set the font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  padding: 5px 10px; 
+  border-radius: 0px; /* Rounded corners */
+}
+
+#addToBag {
+  background-color: #052d56; 
+  border: none; 
+  color: #ffffff; 
+  font-size: 25px; /* Set the font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  padding: 11px 40px; 
+  border-radius: 0px; /* Rounded corners */
+}
+
+#addToBag:hover {
+  background-color: #cb3c03; /* Change the background color to red on hover */
 }
 
 .block-check {
