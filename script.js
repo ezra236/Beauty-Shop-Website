@@ -508,7 +508,7 @@ function showBlockPay(name, price, imageSrc) {
 
 // Close the Block Pay div
 document.getElementById('closeBlockPay').addEventListener('click', function () {
-    document.getElementById('blockPay').style.right = '-100%';
+    document.getElementById('blockPay').style.right = '-150%';
 });
 
 // Show the Block Check div
@@ -518,7 +518,7 @@ function showBlockCheck() {
 
 // Close the Block Check div
 document.getElementById('closeBlockCheck').addEventListener('click', function () {
-    document.getElementById('blockCheck').style.right = '-100%';
+    document.getElementById('blockCheck').style.right = '-150%';
 });
 
 // Add item to bag and store locally
@@ -592,6 +592,20 @@ function removeBagItem(itemId) {
     displayBagItems();
 }
 
+// Event listener for the Checkout button
+document.getElementById('checkoutButton').addEventListener('click', function () {
+    // Get all items in the bag from localStorage
+    const bagItems = JSON.parse(localStorage.getItem('bagItems')) || [];
+
+    // Prepare the URL for pay.html and pass the item details as query parameters
+    const itemDetails = bagItems.map(item => {
+        return `name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}&imageSrc=${encodeURIComponent(item.imageSrc)}`;
+    }).join('&');
+
+    // Redirect to pay.html with the item details
+    window.location.href = `pay.html?${itemDetails}`;
+});
+
 // Attach event listeners to Quick Shop buttons
 document.querySelectorAll('.ezra-button').forEach(button => {
     button.addEventListener('click', function () {
@@ -606,3 +620,17 @@ document.querySelectorAll('.ezra-button').forEach(button => {
 
 // Initialize bag items on page load
 document.addEventListener('DOMContentLoaded', displayBagItems);
+
+
+
+
+
+
+
+// Event listener for the nav-icon (icon1)
+document.getElementById('icon1').addEventListener('click', showBlockCheck);
+
+
+
+// Event listener to show Block Check when the nav-icon3 is clicked
+document.getElementById('icon2').addEventListener('click', showBlockCheck);

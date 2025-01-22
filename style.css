@@ -1252,14 +1252,20 @@ color: #000;
 .block-pay  {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -150%;
   width: 35%;
   z-index: 12000;
   height: 100%;
-  background: #fff;
+  background: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
   padding: 25px;
+}
+
+@media (max-width: 768px) {
+  .block-pay {
+    width: 90%;  /* Adjusted width for mobile screens */
+  }
 }
 
 #blockImage {
@@ -1318,10 +1324,25 @@ color: #000;
   background-color: #cb3c03; /* Change the background color to red on hover */
 }
 
+#checkoutButton {
+  background-color: #21012b; 
+  border: none; 
+  color: white; 
+  font-size: 25px; /* Set the font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  padding: 11px 40px; 
+  border-radius: 0px; /* Rounded corners */
+}
+
+#checkoutButton:hover {
+  background-color: #3a024b; /* Change the background color to red on hover */
+}
+
 .block-check {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -150%;
     width: 35%;
     z-index: 13500;
     height: 100%;
@@ -1330,6 +1351,12 @@ color: #000;
     transition: right 0.3s ease;
     overflow-y: auto;
     padding: 25px;
+}
+
+@media (max-width: 768px) {
+  .block-check {
+    width: 90%;  /* Adjusted width for mobile screens */
+  }
 }
 
 .block-check-header {

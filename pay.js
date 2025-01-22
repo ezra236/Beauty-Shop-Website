@@ -1,48 +1,31 @@
-// Get stored payment details from localStorage
-function getPaymentDetails() {
-    const paymentDetails = JSON.parse(localStorage.getItem('paymentDetails')) || { items: [], totalPrice: '0.00' };
-    return paymentDetails;
-}
+ // Get the URL query parameters
+ const urlParams = new URLSearchParams(window.location.search);
+        
+ // Function to display the item details
+ function displayItems() {
+     const paymentDetailsContainer = document.getElementById('paymentDetails');
+     let itemsHTML = '';
 
-// Display the payment items and total price
-function displayPaymentDetails() {
-    const paymentDetails = getPaymentDetails();
-    const itemsList = document.getElementById('itemsList');
-    const totalPriceElement = document.getElementById('totalPrice');
+     // Loop through all query parameters
+     urlParams.forEach((value, key) => {
+         if (key.startsWith('name')) {
+             const index = key.replace('name', '');
+             const name = decodeURIComponent(value);
+             const price = decodeURIComponent(urlParams.get(`price${index}`));
+             const imageSrc = decodeURIComponent(urlParams.get(`imageSrc${index}`));
 
-    // Clear previous items
-    itemsList.innerHTML = '';
+             itemsHTML += `
+                 <div class="item">
+                     <img src="${imageSrc}" alt="${name}">
+                     <h4>${name}</h4>
+                     <p>Price: $${price}</p>
+                 </div>
+             `;
+         }
+     });
 
-    // Display each item in the cart
-    paymentDetails.items.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('item');
-        itemElement.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <span>${item.name}</span>
-            <span>${item.price}</span>
-        `;
-        itemsList.appendChild(itemElement);
-    });
+     paymentDetailsContainer.innerHTML = itemsHTML;
+ }
 
-    // Display total price
-    totalPriceElement.textContent = `Ksh${paymentDetails.totalPrice}`;
-}
-
-// Complete Payment - This can redirect to a success page or show a confirmation
-document.getElementById('completePaymentButton').addEventListener('click', () => {
-    alert("Payment Complete!");
-    localStorage.removeItem('cartItems'); // Clear the cart after payment
-    localStorage.removeItem('paymentDetails'); // Clear payment details
-    window.location.href = 'thank_you.html'; // Redirect to a thank you page (create this page if necessary)
-});
-
-// Back to Cart - Go back to the cart page
-document.getElementById('backButton').addEventListener('click', () => {
-    window.location.href = 'cart.html'; // Go back to the cart page (create this page if necessary)
-});
-
-// Load and display payment details on page load
-window.addEventListener('load', () => {
-    displayPaymentDetails();
-});
+ // Display the items when the page loads
+ displayItems();

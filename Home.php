@@ -951,6 +951,8 @@
             <h1>Quick Shop</h1>
         </div>
     <div id="bagItems"></div>
+
+    <button id="checkoutButton">Checkout</button>
 </div>
 
 
