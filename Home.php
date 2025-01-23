@@ -336,7 +336,7 @@
 
             $conn->close();
             ?>
-            <a href="#" class="promo-button">SHOP NOW</a>
+            <a href="productA.php" class="promo-button">SHOP NOW</a>
         </div>
         <div class="promo-images">
             <?php

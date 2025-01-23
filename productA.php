@@ -341,176 +341,194 @@ $conn->close();
 
 
 <div class="scroll-display">
-    <div class="small-scroll">
-        <div class="left-class">
-          <div class="scroll-containers">
-          <div class="scroll-items">
+<div class="small-scroll">
+    <div class="left-class">
+        <div class="scroll-containers">
+            <div class="scroll-items" onclick="changeImage('mod1.jpg')">
                 <img src="mod1.jpg" alt="Image 1">
             </div>
-            <div class="scroll-items">
+            <div class="scroll-items" onclick="changeImage('mod2.jpg')">
                 <img src="mod2.jpg" alt="Image 2">
             </div>
-            <div class="scroll-items">
+            <div class="scroll-items" onclick="changeImage('lips.jpg')">
                 <img src="lips.jpg" alt="Image 3">
             </div>
-            <div class="scroll-items">
+            <div class="scroll-items" onclick="changeImage('pip.jpeg')">
                 <img src="pip.jpeg" alt="Image 4">
             </div>
-            <div class="scroll-items">
-                <img src="pip.jpeg" alt="Image 5">
+            <div class="scroll-items" onclick="changeImage('li.jpeg')">
+                <img src="li.jpeg" alt="Image 5">
             </div>
-            <div class="scroll-items">
+            <div class="scroll-items" onclick="changeImage('Pink lip gloss💗.jpg')">
                 <img src="Pink lip gloss💗.jpg" alt="Image 6">
             </div>
-          </div>
-        </div>
-        <div class="right-class">
-                   <!-- Display the image -->
-            <img src="<?php echo $image_path; ?>" alt="Home Content Image" style="width: 100%; height: 460px;">
         </div>
     </div>
-    <div class="inform">
-        <!-- Content for inform goes here -->
-        <p>Information Area</p>
+    <div class="right-class">
+        <!-- Display the image -->
+        <img id="main-image" src="<?php echo $image_path; ?>" alt="Home Content Image" style="width: 100%; height: 550px;">
     </div>
 </div>
+
+<div class="inform">
+    <div class="product-page">
+    <nav class="breadcrumb">
+      <a href="Home.php">Home</a> / <a href="productA.php">Cherry Dub Pore Purify'r Gel Cleanser with Niacinamide + Aloe Juice</a>
+    </nav>
+
+    <div class="product-info">
+      <span class="badge">NEW</span>
+      <h1>LipBalm</h1>
+      <p class="price">Ksh 3,500.00 </p>
+      
+      <div class="reviews">
+        <span class="stars">★★★★★</span>
+        <a href="#">14 Reviews</a>
+      </div>
+
+      <p class="description">
+        Keep surface oil under control + brighten up with a Triple Cherry Complex, Niacinamide, and Aloe cleanser.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <img src="p1.jpeg" alt="Cruelty-free">
+          <span>Cruelty-free</span>
+        </div>
+        <div class="feature">
+          <img src="p2.jpeg" alt="Non-comedogenic">
+          <span>Non-comedogenic</span>
+        </div>
+        <div class="feature">
+          <img src="p3.jpeg" alt="Brightening">
+          <span>Brightening</span>
+        </div>
+        <div class="feature">
+          <img src="p4.jpeg" alt="Vegan">
+          <span>Vegan</span>
+        </div>
+        <div class="feature">
+          <img src="p5.jpeg" alt="Recyclable">
+          <span>Recyclable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="purchase-section">
+    <div class="subscribe-options">
+      <h3>Subscribe:</h3>
+      <label>
+        <input type="radio" name="purchase-type" checked>
+        One-time purchase
+      </label>
+      <label>
+        <input type="radio" name="purchase-type">
+        Subscribe to save 10% on every recurring order + free shipping!
+      </label>
+      <div class="delivery-frequency">
+        Delivery every 
+        <select>
+          <option>1 month</option>
+          <option>2 months</option>
+          <option selected>3 months</option>
+          <option>4 months</option>
+        </select>
+      </div>
+      <a href="#" class="subscription-details">Subscription Details</a>
+    </div>
+
+    <hr>
+
+    <div class="add-to-cart">
+      <button class="add-to-cart-btn">ADD TO CART</button>
+    </div>
+
+    <p class="payment-info">or 4 payments of $8.50 with <a href="#">afterpay</a></p>
+
+    <div class="account-info">
+      <p>Account holders unlock free standard shipping on all Kenya orders. <a href="#">Sign in</a> or <a href="#">sign up</a>.</p>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h2>DETAILS</h2>
+    <h3>LATHER. BRIGHTEN. DE-SLICK—QUICK.</h3>
+    <h4>STRAIGHT UP:</h4>
+    <p>
+      Lather up for fresh, glowing skin with our foaming gel cleanser that instantly improves surface oil and brightens as you wash away dirt, oil, and impurities. This Triple Cherry Complex gel cleanser is straight outta Barbados, where the cherries hit different.
+    </p>
+  </div>
+
+  <div class="ingredients-section">
+    <h2>INGREDIENTS</h2>
+    <div class="ingredient-cards">
+      <div class="ingredient-card">
+        <img src="ingr.jpeg" alt="Triple Cherry Complex">
+        <h3>Triple Cherry Complex</h3>
+        <p>Three forms of Vitamin C-rich Barbados Cherry (enzyme, ferment + fruit water); brighten, clarify + renew skin</p>
+      </div>
+      <div class="ingredient-card">
+        <img src="ingr1.jpeg" alt="Niacinamide (Vitamin B3)">
+        <h3>Niacinamide (Vitamin B3)</h3>
+        <p>Refines pores + skin's texture</p>
+      </div>
+      <div class="ingredient-card">
+        <img src="ingr1.jpeg" alt="Aloe Juice">
+        <h3>Aloe Juice</h3>
+        <p>Soothes + conditions</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+<div class="how-to-use-section">
+    <div class="header">
+      <h2>HOW TO USE IT</h2>
+      <p>STEP 1: Lather. Brighten. De-slick—quick.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <img src="st.jpeg" alt="Step 1 - Cleanse">
+        <h3>STEP 1</h3>
+        <p>Cleanse</p>
+      </div>
+      <div class="step">
+        <img src="st1.jpeg" alt="Step 2 - Tone">
+        <h3>STEP 2</h3>
+        <p>Tone</p>
+      </div>
+      <div class="step">
+        <img src="st2.jpeg" alt="Step 3 - Protect">
+        <h3>STEP 3</h3>
+        <p>Protect</p>
+      </div>
+      <div class="step">
+        <img src="st2.jpeg" alt="Step 4 - Invisimatte">
+        <h3>STEP 4</h3>
+        <p>Invisimatte</p>
+      </div>
+    </div>
+    <div class="instructions">
+      <h3>HOW TO APPLY</h3>
+      <p>Wet skin, lather, rinse, then pat dry. Avoid eye area.</p>
+      <h3>WHEN TO APPLY</h3>
+      <p>Use day and night to remove dirt, oil, impurities, sunscreen, and makeup.</p>
+    </div>
+  </div>
+
+
 
 
 <div class="sale-banner">
     <h1>UP TO 60% OFF SELECT ITEMS</h1>
     <p>Now’s your chance to save big during the Holiday Hangover Sale.</p>
 </div>
-
-
-<button class="nav-arrow left" id="leftBtn" aria-label="Scroll Left">⇐ </button>
-<button class="nav-arrow right" id="rightBtn" aria-label="Scroll Right">⇒ </button>
-
-
-
-<div class="classic-container">
-    <div class="classic-scroll" id="classicScroll">
-      <div class="classic-item">
-        <img id="item1" src="b7.jpg" alt="Item 1">
-        <h3>Diamond Bomb</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 4,800.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item2" src="drop.jpg" alt="Item 2">
-        <h3>Eaze Drop Lit</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 3,300.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item3" src="lip.jpg" alt="Item 3">
-        <h3>Fenty Icon Lipstick</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>5 Sizes</p>
-        <p class="price">KSH 3,300.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item4" src="bm3.jpg" alt="Item 4">
-        <h3>Travel-Sized Set</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 4,000.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item5" src="g.jpg" alt="Item 5">
-        <h3>Flash Nap</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>3 Sizes</p>
-        <p class="price">KSH 1,100.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item6" src="b20.jpg" alt="Item 6">
-        <h3>Foundation Pro</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 5,200.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item7" src="bm1.jpg" alt="Item 7">
-        <h3>Fenty Glow</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>4 Sizes</p>
-        <p class="price">KSH 2,500.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item8" src="skinca.jpg" alt="Item 8">
-        <h3>Skin Cream</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 6,800.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-    </div>
-</div>
-
 
 
 
@@ -645,6 +663,140 @@ $conn->close();
 
     </div>
 </div>
+
+
+
+
+
+<button class="nav-arrow left" id="leftBtn" aria-label="Scroll Left">⇐ </button>
+<button class="nav-arrow right" id="rightBtn" aria-label="Scroll Right">⇒ </button>
+
+
+
+<div class="classic-container">
+    <div class="classic-scroll" id="classicScroll">
+      <div class="classic-item">
+        <img id="item1" src="b7.jpg" alt="Item 1">
+        <h3>Diamond Bomb</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>2 Sizes</p>
+        <p class="price">KSH 4,800.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item2" src="drop.jpg" alt="Item 2">
+        <h3>Eaze Drop Lit</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>2 Sizes</p>
+        <p class="price">KSH 3,300.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item3" src="lip.jpg" alt="Item 3">
+        <h3>Fenty Icon Lipstick</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>5 Sizes</p>
+        <p class="price">KSH 3,300.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item4" src="bm3.jpg" alt="Item 4">
+        <h3>Travel-Sized Set</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>2 Sizes</p>
+        <p class="price">KSH 4,000.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item5" src="g.jpg" alt="Item 5">
+        <h3>Flash Nap</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>3 Sizes</p>
+        <p class="price">KSH 1,100.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item6" src="b20.jpg" alt="Item 6">
+        <h3>Foundation Pro</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>2 Sizes</p>
+        <p class="price">KSH 5,200.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item7" src="bm1.jpg" alt="Item 7">
+        <h3>Fenty Glow</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>4 Sizes</p>
+        <p class="price">KSH 2,500.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+
+      <div class="classic-item">
+        <img id="item8" src="skinca.jpg" alt="Item 8">
+        <h3>Skin Cream</h3>
+        <div class="stars">
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star black"></div>
+            <div class="star half"></div>
+        </div>
+        <p>2 Sizes</p>
+        <p class="price">KSH 6,800.00</p>
+        <button class="ezra-button">Quick Shop</button>
+      </div>
+    </div>
+</div>
+
 
 
 

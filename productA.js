@@ -199,8 +199,7 @@ document.querySelectorAll('.classic-item img').forEach(itemImage => {
         changeImage(itemId, imageSources[itemId].original);  // Revert to original image
     });
 });
-
-
+  
 
 
 
@@ -433,3 +432,13 @@ document.getElementById('icon1').addEventListener('click', showBlockCheck);
 
 // Event listener to show Block Check when the nav-icon3 is clicked
 document.getElementById('icon2').addEventListener('click', showBlockCheck);
+
+
+
+
+
+    // JavaScript function to change the image in the right-class
+    function changeImage(imagePath) {
+        const mainImage = document.getElementById('main-image');
+        mainImage.src = imagePath; // Update the source of the main image
+    }
