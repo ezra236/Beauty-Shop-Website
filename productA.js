@@ -442,3 +442,90 @@ document.getElementById('icon2').addEventListener('click', showBlockCheck);
         const mainImage = document.getElementById('main-image');
         mainImage.src = imagePath; // Update the source of the main image
     }
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollDisplay = document.querySelector(".scroll-display");
+        const inform = document.querySelector(".inform");
+    
+        let informScrolledToBottom = false;
+    
+        // Check if the element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+        }
+    
+        // Handle scroll event on the window
+        function handleScroll(event) {
+            if (isInViewport(scrollDisplay) && !informScrolledToBottom) {
+                event.preventDefault(); // Prevent default scrolling behavior
+                inform.scrollTop += 30; // Move `.inform` down
+                if (inform.scrollTop + inform.clientHeight >= inform.scrollHeight) {
+                    informScrolledToBottom = true; // Mark as scrolled to the bottom
+                }
+            }
+        }
+    
+        // Handle keydown events
+        function handleKeydown(event) {
+            if (isInViewport(scrollDisplay)) {
+                if (!informScrolledToBottom && event.key === "ArrowDown") {
+                    event.preventDefault(); // Prevent default arrow key scrolling
+                    inform.scrollTop += 30; // Scroll `.inform` down
+                    if (inform.scrollTop + inform.clientHeight >= inform.scrollHeight) {
+                        informScrolledToBottom = true; // Mark as scrolled to the bottom
+                    }
+                } else if (informScrolledToBottom && event.key === "ArrowUp") {
+                    event.preventDefault(); // Prevent default arrow key scrolling
+                    inform.scrollTop -= 30; // Scroll `.inform` up
+                    if (inform.scrollTop === 0) {
+                        informScrolledToBottom = false; // Mark as scrolled to the top
+                    }
+                }
+            }
+        }
+    
+        // Handle mouse wheel scrolling
+        function handleWheel(event) {
+            if (isInViewport(scrollDisplay)) {
+                event.preventDefault(); // Prevent default scroll behavior
+                
+                // When inform is not at the bottom, scroll down within .inform
+                if (!informScrolledToBottom) {
+                    inform.scrollTop += 30; // Scroll `.inform` down
+                    if (inform.scrollTop + inform.clientHeight >= inform.scrollHeight) {
+                        informScrolledToBottom = true; // Mark as scrolled to the bottom
+                    }
+                } 
+                // When inform is at the bottom, allow scrolling outside of .scroll-display
+                else {
+                    inform.scrollTop -= 30; // Scroll `.inform` up
+                    if (inform.scrollTop === 0) {
+                        informScrolledToBottom = false; // Mark as scrolled to the top
+                    } else {
+                        // If inform is already at the bottom, allow scroll to leave .scroll-display
+                        window.scrollBy(0, event.deltaY); // Scroll outside .scroll-display
+                    }
+                }
+            }
+        }
+    
+        // Add event listeners for scroll, keydown, and wheel
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("keydown", handleKeydown);
+        window.addEventListener("wheel", handleWheel, { passive: false }); // Add mouse wheel listener
+    
+        // Reset behavior when `.scroll-display` goes out of viewport
+        window.addEventListener("scroll", function () {
+            if (!isInViewport(scrollDisplay)) {
+                informScrolledToBottom = false;
+            }
+        });
+    });
+    
+    
