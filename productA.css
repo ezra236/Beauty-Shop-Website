@@ -1,11 +1,17 @@
 /* styles.css */
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: white;
     height: 100%; /* Ensure full height for the body */
     overflow-x: hidden; /* Prevent horizontal scroll on the entire page */
   }
+
+  * {
+    box-sizing: border-box;
+}
+
   
   .navbar {
     display: flex;
@@ -863,9 +869,9 @@ body {
     height: 600px;
     overflow-y: auto;
     margin-top: 140px;
-/* Hide scrollbar for modern browsers */
-scrollbar-width: none; /* Firefox */
--ms-overflow-style: none; /* IE 10+ */
+    /* Hide scrollbar for modern browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
 }
 
 .scroll-display::-webkit-scrollbar {
