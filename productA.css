@@ -183,8 +183,8 @@ body {
     border-bottom: 1px solid #ddd;
     background-color: #ffffff;
     position: fixed;
-    padding: 10px;
-    height: 25px;
+    padding: 15px;
+    height: 40px;
     top: 65px;
     left: 0;
     width: 100%;
@@ -194,7 +194,7 @@ body {
   .menu-item {
     position: relative;
     height: 100%;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
   }
   
@@ -1576,13 +1576,15 @@ display: none; /* Chrome, Safari, Edge */
     height: 350px;
     border-radius: 0px;
     cursor: pointer;
-    transition: opacity 0.1s ease;
-  }
-  
-  img.fade-out {
-    opacity: 0;
-  }
-  
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover effect for image */
+.classic-item img:hover {
+    opacity: 1; /* Fade out the original image */
+}
+
+
 
   .classic-item h3 {
     font-size: 16px;

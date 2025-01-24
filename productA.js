@@ -155,53 +155,27 @@ document.addEventListener("DOMContentLoaded", function () {
         classicScroll.scrollLeft += scrollAmount;  // Scroll right by the set amount
     });
 
-    
 
-
-
-// Store the original and hover image sources in an object
-const imageSources = {
-    item1: { original: 'b7.jpg', hover: 'ap.jpg' },
-    item2: { original: 'drop.jpg', hover: 'b11.jpg' }, // Adjust hover image path as needed
-    item3: { original: 'lip.jpg', hover: 'lip2.jpg' }, // Adjust hover image path as needed
-    item4: { original: 'bm3.jpg', hover: 'ap2.jpg' }, // Adjust hover image path as needed
-    item5: { original: 'g.jpg', hover: 'ap3.jpg' }, // Adjust hover image path as needed
-    item6: { original: 'b20.jpg', hover: 'ap1.jpg' }, // Adjust hover image path as needed
-    item7: { original: 'bm1.jpg', hover: 'lips.jpg' }, // Adjust hover image path as needed
-    item8: { original: 'skinca.jpg', hover: 'ap3.jpg' } // Adjust hover image path as needed
-};
-
-// Function to change the image source after fading out
-function changeImage(itemId, newSrc) {
-    const itemImage = document.getElementById(itemId);
-    
-    // Fade out the image
-    itemImage.classList.add('fade-out');
-    
-    // Wait for the fade-out transition to finish before changing the image
-    setTimeout(function() {
-        itemImage.src = newSrc; // Change the image source
-        itemImage.classList.remove('fade-out'); // Fade in the new image
-    }, 100); // Matches the transition duration
-}
-
-// Add event listeners for hover effect on each item image
-document.querySelectorAll('.classic-item img').forEach(itemImage => {
-    const itemId = itemImage.id;
-
-    // Mouse enter event to change to hover image
-    itemImage.addEventListener('mouseenter', function() {
-        changeImage(itemId, imageSources[itemId].hover);  // Change to hover image
-    });
-
-    // Mouse leave event to revert to original image
-    itemImage.addEventListener('mouseleave', function() {
-        changeImage(itemId, imageSources[itemId].original);  // Revert to original image
-    });
-});
   
 
 
+    const items = document.querySelectorAll('.classic-item img');
+
+    items.forEach(item => {
+        const originalSrc = item.src;
+        const hoverSrc = item.getAttribute('data-hover');
+        
+        item.addEventListener('mouseenter', () => {
+            item.src = hoverSrc;
+        });
+    
+        item.addEventListener('mouseleave', () => {
+            item.src = originalSrc;
+        });
+    });
+
+    
+    
 
 
 const carouselTrack = document.getElementById('carouselTrack');

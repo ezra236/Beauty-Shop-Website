@@ -675,127 +675,130 @@ $conn->close();
 
 <div class="classic-container">
     <div class="classic-scroll" id="classicScroll">
-      <div class="classic-item">
-        <img id="item1" src="b7.jpg" alt="Item 1">
-        <h3>Diamond Bomb</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 4,800.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item2" src="drop.jpg" alt="Item 2">
-        <h3>Eaze Drop Lit</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item1" src="b7.jpg" alt="Item 1" data-hover="ap.jpg">
+            <h3>Diamond Bomb</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 4,800.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 3,300.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item3" src="lip.jpg" alt="Item 3">
-        <h3>Fenty Icon Lipstick</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item2" src="drop.jpg" alt="Item 2" data-hover="b11.jpg">
+            <h3>Eaze Drop Lit</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 3,300.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>5 Sizes</p>
-        <p class="price">KSH 3,300.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item4" src="bm3.jpg" alt="Item 4">
-        <h3>Travel-Sized Set</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item3" src="lip.jpg" alt="Item 3" data-hover="lip2.jpg">
+            <h3>Fenty Icon Lipstick</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>5 Sizes</p>
+            <p class="price">KSH 3,300.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 4,000.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item5" src="g.jpg" alt="Item 5">
-        <h3>Flash Nap</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item4" src="bm3.jpg" alt="Item 4" data-hover="ap2.jpg">
+            <h3>Travel-Sized Set</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 4,000.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>3 Sizes</p>
-        <p class="price">KSH 1,100.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item6" src="b20.jpg" alt="Item 6">
-        <h3>Foundation Pro</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item5" src="g.jpg" alt="Item 5" data-hover="ap3.jpg">
+            <h3>Flash Nap</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>3 Sizes</p>
+            <p class="price">KSH 1,100.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 5,200.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item7" src="bm1.jpg" alt="Item 7">
-        <h3>Fenty Glow</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item6" src="b20.jpg" alt="Item 6" data-hover="ap1.jpg">
+            <h3>Foundation Pro</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 5,200.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>4 Sizes</p>
-        <p class="price">KSH 2,500.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
 
-      <div class="classic-item">
-        <img id="item8" src="skinca.jpg" alt="Item 8">
-        <h3>Skin Cream</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
+        <div class="classic-item">
+            <img id="item7" src="bm1.jpg" alt="Item 7" data-hover="lips.jpg">
+            <h3>Fenty Glow</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>4 Sizes</p>
+            <p class="price">KSH 2,500.00</p>
+            <button class="ezra-button">Quick Shop</button>
         </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 6,800.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
+
+        <div class="classic-item">
+            <img id="item8" src="skinca.jpg" alt="Item 8" data-hover="ap3.jpg">
+            <h3>Skin Cream</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 6,800.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
     </div>
 </div>
+
 
 
 
