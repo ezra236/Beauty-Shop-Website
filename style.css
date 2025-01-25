@@ -7,6 +7,128 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll on the entire page */
 }
 
+
+
+.sign-in-block {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 35%;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.5s ease; /* Animate left property */
+  z-index: 11500;
+}
+
+.sign-in-block.active {
+  left: 0; /* Move into the viewport */
+}
+
+.sign-in-block h2 {
+  margin-top: 0;
+}
+
+.sign-in-block form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-block input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.sig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Close Button Styles */
+.close-btnp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.9rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-btnp:hover {
+  color: #007bff;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 0px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-container h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.form-container p {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.form-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.sig label {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.form-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+.form-container button {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.form-container button:hover {
+  background-color: #333;
+}
+.form-container small {
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+.form-container small a {
+  color: #0073e6;
+  text-decoration: none;
+}
+.form-container small a:hover {
+  text-decoration: underline;
+}
+
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -1830,13 +1952,14 @@ img.fade-out {
   .mobile-exceptional-container {
       position: relative;
       width: 100%;
-      height: 70vh;
+      height: 75vh;
       display: flex;
       align-items: center;
       overflow-x: scroll;
       background-color: white;
       padding: 10px;
       margin-top: 80px;
+      box-sizing: border-box;
   }
 
   .mobile-exceptional {
@@ -1844,24 +1967,25 @@ img.fade-out {
       gap: 25px;
       height: 100%;
       transition: transform 0.5s ease;
+      margin-left: 40px;
   }
 
   .mobile-exceptional-item {
-      flex: 0 0 80%; /* Each item occupies 80% of the screen width */
+    flex: 0 0 80%;
       height: 90%;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      border-radius: 20px;
+      border-radius: 15px;
       background-color: black;
       position: relative;
   }
 
   .mobile-exceptional-item:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       z-index: 10;
-      border-radius: 20px;
+      border-radius: 15px;
       overflow: hidden;
       transition: transform 0.3s ease, z-index 0s;
   }

@@ -635,3 +635,22 @@ document.getElementById('icon1').addEventListener('click', showBlockCheck);
 
 // Event listener to show Block Check when the nav-icon3 is clicked
 document.getElementById('icon2').addEventListener('click', showBlockCheck);
+
+
+
+
+
+
+// Open the block
+document.getElementById('signInLink').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor behavior
+    const signInBlock = document.getElementById('signInBlock');
+    signInBlock.classList.add('active'); // Add the "active" class
+});
+
+
+// Close the block
+document.getElementById('closeBtns').addEventListener('click', function () {
+    const signInBlock = document.getElementById('signInBlock');
+    signInBlock.classList.remove('active'); // Remove the "active" class
+});

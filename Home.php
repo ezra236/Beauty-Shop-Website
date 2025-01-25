@@ -14,6 +14,31 @@
 </head>
 <body>
 
+<div class="sign-in-block" id="signInBlock">
+<button class="close-btnp" id="closeBtns">&times;</button>
+        <h2>Welcome</h2>
+    <div class="form-container">
+        <h1>Sign in or sign up to unlock free standard shipping on all U.S. orders.</h1>
+    <form>
+      <input type="email" placeholder="Email" required>
+      <div class="sig">
+      <label>
+        <input type="checkbox">
+        Email me with updates and offers
+      </label>
+      </div>
+      <button type="submit">Sign In</button>
+      <small>
+        By signing up for an account with or subscribing to Fenty Beauty, you agree to our 
+        <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. If you sign up for 
+        our email list, you also consent to receive a varying number of marketing messages via email. Consent is not a condition of any purchase. California residents: Please also see our 
+        <a href="#">Financial Incentive Terms</a>.
+      </small>
+    </form>
+  </div>
+</div>
+
+
 
 <header class="navbar">
         <div class="center-section">
@@ -25,7 +50,7 @@
             <span>Kenya </span>
         </div>
         <div class="right-section">
-            <a href="#" class="nav-link">Sign In</a>
+        <a href="#" class="nav-link" id="signInLink">Sign In</a>
             <a href="#" class="nav-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                     <path d="M10 2a8 8 0 0 1 8 8 8 8 0 0 1-1.69 4.91l4.09 4.09a1 1 0 0 1-1.41 1.41l-4.09-4.09A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/>

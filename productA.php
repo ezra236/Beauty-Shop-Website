@@ -43,6 +43,30 @@ $conn->close();
 </head>
 <body>
 
+<div class="sign-in-block" id="signInBlock">
+<button class="close-btnp" id="closeBtns">&times;</button>
+        <h2>Welcome</h2>
+    <div class="form-container">
+        <h1>Sign in or sign up to unlock free standard shipping on all U.S. orders.</h1>
+    <form>
+      <input type="email" placeholder="Email" required>
+      <div class="sig">
+      <label>
+        <input type="checkbox">
+        Email me with updates and offers
+      </label>
+      </div>
+      <button type="submit">Sign In</button>
+      <small>
+        By signing up for an account with or subscribing to Fenty Beauty, you agree to our 
+        <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. If you sign up for 
+        our email list, you also consent to receive a varying number of marketing messages via email. Consent is not a condition of any purchase. California residents: Please also see our 
+        <a href="#">Financial Incentive Terms</a>.
+      </small>
+    </form>
+  </div>
+</div>
+
 
 <header class="navbar">
         <div class="center-section">
@@ -54,7 +78,7 @@ $conn->close();
             <span>Kenya </span>
         </div>
         <div class="right-section">
-            <a href="#" class="nav-link">Sign In</a>
+            <a href="#" class="nav-link" id="signInLink">Sign In</a>
             <a href="#" class="nav-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                     <path d="M10 2a8 8 0 0 1 8 8 8 8 0 0 1-1.69 4.91l4.09 4.09a1 1 0 0 1-1.41 1.41l-4.09-4.09A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/>
@@ -344,30 +368,30 @@ $conn->close();
 <div class="small-scroll">
     <div class="left-class">
         <div class="scroll-containers">
-            <div class="scroll-items" onclick="changeImage('mod1.jpg')">
+            <div class="scroll-items" data-image="mod1.jpg">
                 <img src="mod1.jpg" alt="Image 1">
             </div>
-            <div class="scroll-items" onclick="changeImage('mod2.jpg')">
+           <div class="scroll-items" data-image="mod2.jpg">
                 <img src="mod2.jpg" alt="Image 2">
             </div>
-            <div class="scroll-items" onclick="changeImage('lips.jpg')">
+            <div class="scroll-items" data-image="lips.jpg">
                 <img src="lips.jpg" alt="Image 3">
             </div>
-            <div class="scroll-items" onclick="changeImage('pip.jpeg')">
+            <div class="scroll-items" data-image="pip.jpeg">
                 <img src="pip.jpeg" alt="Image 4">
             </div>
-            <div class="scroll-items" onclick="changeImage('li.jpeg')">
-                <img src="li.jpeg" alt="Image 5">
+            <div class="scroll-items" data-image="mod.jpg">
+                <img src="mod.jpg" alt="Image 5">
             </div>
-            <div class="scroll-items" onclick="changeImage('Pink lip gloss💗.jpg')">
+            <div class="scroll-items" data-image="Pink lip gloss💗.jpg">
                 <img src="Pink lip gloss💗.jpg" alt="Image 6">
             </div>
         </div>
     </div>
     <div class="right-class">
-        <!-- Display the image -->
-        <img id="main-image" src="<?php echo $image_path; ?>" alt="Home Content Image" style="width: 100%; height: 550px;">
-    </div>
+    <!-- Display the image -->
+    <img id="main-image" src="<?php echo $image_path; ?>" alt="Home Content Image">
+</div>
 </div>
 
 <div class="inform">
@@ -483,45 +507,6 @@ $conn->close();
 
 </div>
 </div>
-
-
-
-
-<div class="how-to-use-section">
-    <div class="header">
-      <h2>HOW TO USE IT</h2>
-      <p>STEP 1: Lather. Brighten. De-slick—quick.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <img src="st.jpeg" alt="Step 1 - Cleanse">
-        <h3>STEP 1</h3>
-        <p>Cleanse</p>
-      </div>
-      <div class="step">
-        <img src="st1.jpeg" alt="Step 2 - Tone">
-        <h3>STEP 2</h3>
-        <p>Tone</p>
-      </div>
-      <div class="step">
-        <img src="st2.jpeg" alt="Step 3 - Protect">
-        <h3>STEP 3</h3>
-        <p>Protect</p>
-      </div>
-      <div class="step">
-        <img src="st2.jpeg" alt="Step 4 - Invisimatte">
-        <h3>STEP 4</h3>
-        <p>Invisimatte</p>
-      </div>
-    </div>
-    <div class="instructions">
-      <h3>HOW TO APPLY</h3>
-      <p>Wet skin, lather, rinse, then pat dry. Avoid eye area.</p>
-      <h3>WHEN TO APPLY</h3>
-      <p>Use day and night to remove dirt, oil, impurities, sunscreen, and makeup.</p>
-    </div>
-  </div>
-
 
 
 
@@ -834,6 +819,310 @@ $conn->close();
 
 
 
+<div class="how-to-use-section">
+    <div class="header">
+      <h2>HOW TO USE IT</h2>
+      <p>STEP 1: Lather. Brighten. De-slick—quick.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <img src="st.jpeg" alt="Step 1 - Cleanse">
+        <h3>STEP 1</h3>
+        <p>Cleanse</p>
+      </div>
+      <div class="step">
+        <img src="st1.jpeg" alt="Step 2 - Tone">
+        <h3>STEP 2</h3>
+        <p>Tone</p>
+      </div>
+      <div class="step">
+        <img src="st2.jpeg" alt="Step 3 - Protect">
+        <h3>STEP 3</h3>
+        <p>Protect</p>
+      </div>
+      <div class="step">
+        <img src="st2.jpeg" alt="Step 4 - Invisimatte">
+        <h3>STEP 4</h3>
+        <p>Invisimatte</p>
+      </div>
+    </div>
+    <div class="instructions">
+      <h3>HOW TO APPLY</h3>
+      <p>Wet skin, lather, rinse, then pat dry. Avoid eye area.</p>
+      <h3>WHEN TO APPLY</h3>
+      <p>Use day and night to remove dirt, oil, impurities, sunscreen, and makeup.</p>
+    </div>
+  </div>
+
+
+
+<div class="d">
+  <table>
+        <tr>
+            <th>COMPARE OUR CLEANSERS</th>
+            <th class="product-cell product-1">
+                <img src="lips.jpg" alt="Cherry Dub" class="product-imagep"><p>Cherry Dub Pore Purify'r + Aloe Juice</p><p>KSh5,500.00</p>
+            </th>
+            <th class="product-cell product-2">
+                <img src="lipss.jpg" alt="Total Cleans'r Remove-It-All Cleanser" class="product-imagep"><p>Total Cleans'r Remove-It-All Cleanser with Barbados</p> <p>KSh2,600.00</p>
+            </th>
+            <th class="product-cell product-3">
+                <img src="bl.jpg" alt="Melt Awf Jelly Oil Makeup-Melting Cleanser" class="product-imagep"><p>Melt Awf Jelly Oil Makeup-Melting Cleanser</p><p> Ksh500.00</p>
+            </th>
+            <th class="product-cell product-4">
+                <img src="lipglosses 👄💋.jpg" alt="Cocoa Cleans'r Soothing Bar" class="product-imagep"><p>Cocoa Cleans'r Soothing All-Over Coconut Oil + Shea</p><p>KSh2,500.00</p>
+            </th>
+        </tr>
+        <tr>
+            <td class="rating-cell">RATING</td>
+            <td class="rating-1">
+    <div class="rating-container">
+        <div class="starss">
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+        </div>
+        <div class="reviewss">14 Reviews</div>
+    </div>
+</td>
+<td class="rating-2">
+    <div class="rating-container">
+        <div class="starss">
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+        </div>
+        <div class="reviewss">14 Reviews</div>
+    </div>
+</td>
+<td class="rating-3">
+    <div class="rating-container">
+        <div class="starss">
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+        </div>
+        <div class="reviewss">14 Reviews</div>
+    </div>
+</td>
+<td class="rating-4">
+    <div class="rating-container">
+        <div class="starss">
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+        </div>
+        <div class="reviewss">14 Reviews</div>
+    </div>
+</td>
+        </tr>
+        <tr>
+            <td  class="rating-cell">SKIN TYPE</td>
+            <td class="rating-1">
+                    <div class="rating-container">
+                            <div class="reviewss">Oily, blemish-prone skin</div>
+                    </div>
+            </td>
+            <td class="rating-2">
+                    <div class="rating-container">
+                            <div class="reviewss">Oily, blemish-prone skin</div>
+                    </div>
+            </td>
+            <td class="rating-3">
+                     <div class="rating-container">
+                            <div class="reviewss">Oily, blemish-prone skin</div>
+                    </div>
+            </td>
+            <td class="rating-4">
+                    <div class="rating-container">
+                            <div class="reviewss">Oily, blemish-prone skin</div>
+                    </div>
+            </td>
+        </tr>
+        <tr>
+            <td  class="rating-cell">FORMULATION</td>
+            <td class="rating-1">
+                    <div class="rating-container">
+                            <div class="reviewsss">Foaming gel lather</div>
+                    </div>
+            </td>
+            <td class="rating-2">
+                    <div class="rating-container">
+                            <div class="reviewsss">Foaming plush lather</div>
+                    </div>
+            </td>
+            <td class="rating-3">
+                     <div class="rating-container">
+                            <div class="reviewsss">Unique jelly texture transforms to a lightweight oil</div>
+                    </div>
+            </td>
+            <td class="rating-4">
+                    <div class="rating-container">
+                            <div class="reviewsss">Bar soap transforms to a decadent plush lather</div>
+                    </div>
+            </td>
+        </tr>
+        <tr>
+            <td  class="rating-cell">GOALS</td>
+            <td class="rating-1">
+                    <div class="rating-container">
+                            <div class="reviewsss">Keeps surface oil under control, brightens + deeply cleanses</div>
+                    </div>
+            </td>
+            <td class="rating-2">
+                    <div class="rating-container">
+                            <div class="reviewsss">Deep cleansing, purifying</div>
+                    </div>
+            </td>
+            <td class="rating-3">
+                     <div class="rating-container">
+                            <div class="reviewsss">Removes longwear + waterproof makeup, non-stripping, hydrating</div>
+                    </div>
+            </td>
+            <td class="rating-4">
+                    <div class="rating-container">
+                            <div class="reviewsss">Nourishing, purifying</div>
+                    </div>
+            </td>
+        </tr>
+        <tr>
+            <td  class="rating-cell">USAGE</td>
+            <td class="rating-1">
+                    <div class="rating-container">
+                            <div class="reviewss">Face</div>
+                    </div>
+            </td>
+            <td class="rating-2">
+                    <div class="rating-container">
+                            <div class="reviewss">Face</div>
+                    </div>
+            </td>
+            <td class="rating-3">
+                     <div class="rating-container">
+                            <div class="reviewss">Face</div>
+                    </div>
+            </td>
+            <td class="rating-4">
+                    <div class="rating-container">
+                            <div class="reviewss">Face + Body</div>
+                    </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+<div class="comment">
+    <div class="comment-left">
+        <div class="up">
+          <div class="ratings-containerp">
+             <h2 class="ratings-titlep">RATINGS AND REVIEWS</h2>
+          <div class="r1">
+          <div class="r">
+          <div class="rats">
+            <span class="starp">&#9733;</span>
+            <span class="starp">&#9733;</span>
+            <span class="starp">&#9733;</span>
+            <span class="starp">&#9733;</span>
+            <span class="starp">&#9733;</span>
+          </div>
+           <p class="reviews-count">14 Reviews</p>
+           </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="down">
+        <div class="filter-container">
+        <h2 class="filter-title">FILTER REVIEWS</h2>
+        <div class="dropdown">
+            <select id="ratingp" name="rating">
+                <option value="" disabled selected>Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+        </div>
+        <div class="dropdown">
+            <select id="age" name="age">
+                <option value="" disabled selected>Age</option>
+                <option value="under-18">Under 18</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45-54">45-54</option>
+                <option value="55-plus">55+</option>
+            </select>
+        </div>
+       </div>
+
+        </div>
+    </div>
+    <div class="comment-right">
+        <div class="upp">
+          <div class="button-containert">
+            <button class="review-buttont">WRITE A REVIEW</button>
+          </div>
+        </div>
+        <div class="downn">
+
+        <div class="review-card">
+        <div class="review-header">
+            <div>SEPHORA-FA...</div>
+            <div>01/21/25</div>
+         </div>
+        <div class="starsr">★★★★★</div>
+        <div class="review-titler">Love It!!</div>
+        <div class="review-body">
+      I love this as I got at my local Sephora store and really love it. I just tried it in the morning. I made my skin feel so nice and awake as well. It was very calming and refreshing on my face. Can't wait to get another one once I am done with this. Love the cherry scent also for February - <a href="#">Read more</a>
+        </div>
+        <div class="review-details">
+        <div class="des">Recommend To A Friend:</div>
+  <div class="dez">Yes</div>
+  <div class="des">Age:</div>
+  <div class="dez">35-44</div>
+  <div class="des">Gender:</div>
+  <div class="dez">she/her</div>
+  <div class="des">Shade Number:</div>
+  <div class="dez">Not sure</div>
+        </div>
+        <div class="see-more">See more</div>
+       <div class="dividerr"></div>
+  </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="review-block" id="review-block">
+    <button class="close-btnr" id="close-btnr">&times;</button>
+
+    <div class="review-form">
+    <form action="#" method="post">
+      <label for="review">Write a review *</label>
+      <textarea id="review" name="review" placeholder="Tell us what you like or dislike" required></textarea>
+      
+      <label for="headline">Add a headline *</label>
+      <input type="text" id="headline" name="headline" placeholder="Summarize your experience" required>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-btnt">SEND</button>
+      <p class="required-fields">* required fields</p>
+    </form>
+  </div>
+</div>
+
+  
 
 
 <footer class="footer">
