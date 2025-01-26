@@ -47,6 +47,62 @@
 
 
 
+    <h1>Change Scroll Item Image</h1>
+    <form action="change_imagee.php" method="POST" enctype="multipart/form-data">
+        <label for="item-id">Select Item:</label>
+        <select name="item_id" id="item-id" required>
+            <?php
+            // Fetch available scroll items from the database
+            $conn = new mysqli("localhost", "root", "", "website_db");
+            $sql = "SELECT id, image_name FROM scroll_items";
+            $result = $conn->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+                echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['image_name']) . '</option>';
+            }
+
+            $conn->close();
+            ?>
+        </select>
+        <br><br>
+
+        <label for="new-image">Upload New Image:</label>
+        <input type="file" name="new_image" id="new-image" accept="image/*" required>
+        <br><br>
+
+        <button type="submit">Update Image</button>
+    </form>
+
+
+
+    <h1>Change Scroll Item Image</h1>
+    <form action="change_imagee2.php" method="POST" enctype="multipart/form-data">
+        <label for="item-id">Select Item:</label>
+        <select name="item_id" id="item-id" required>
+            <?php
+            // Fetch available scroll items from the database
+            $conn = new mysqli("localhost", "root", "", "website_db");
+            $sql = "SELECT id, image_name FROM scroll_items2";
+            $result = $conn->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+                echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['image_name']) . '</option>';
+            }
+
+            $conn->close();
+            ?>
+        </select>
+        <br><br>
+
+        <label for="new-image">Upload New Image:</label>
+        <input type="file" name="new_image" id="new-image" accept="image/*" required>
+        <br><br>
+
+        <button type="submit">Update Image</button>
+    </form>
+
+
+
     <h1>Update Promo 3 Content</h1>
     <form action="update_contents.php" method="POST" enctype="multipart/form-data">
         <label for="heading">Heading (H1):</label><br>
@@ -62,6 +118,33 @@
         <input type="file" id="image" name="image" accept="image/*" required><br><br>
 
         <button type="submit">Update Promo Content</button>
+    </form>
+
+
+    <h1>Change Scroll Item Image</h1>
+    <form action="change_imagee4.php" method="POST" enctype="multipart/form-data">
+        <label for="item-id">Select Item:</label>
+        <select name="item_id" id="item-id" required>
+            <?php
+            // Fetch available scroll items from the database
+            $conn = new mysqli("localhost", "root", "", "website_db");
+            $sql = "SELECT id, image_name FROM scroll_items4";
+            $result = $conn->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+                echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['image_name']) . '</option>';
+            }
+
+            $conn->close();
+            ?>
+        </select>
+        <br><br>
+
+        <label for="new-image">Upload New Image:</label>
+        <input type="file" name="new_image" id="new-image" accept="image/*" required>
+        <br><br>
+
+        <button type="submit">Update Image</button>
     </form>
 
 
@@ -83,6 +166,33 @@
         <button type="submit">Update Promo Content</button>
     </form>
 
+
+
+    <h1>Change Scroll Item Image</h1>
+    <form action="change_imagee3.php" method="POST" enctype="multipart/form-data">
+        <label for="item-id">Select Item:</label>
+        <select name="item_id" id="item-id" required>
+            <?php
+            // Fetch available scroll items from the database
+            $conn = new mysqli("localhost", "root", "", "website_db");
+            $sql = "SELECT id, image_name FROM scroll_items3";
+            $result = $conn->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+                echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['image_name']) . '</option>';
+            }
+
+            $conn->close();
+            ?>
+        </select>
+        <br><br>
+
+        <label for="new-image">Upload New Image:</label>
+        <input type="file" name="new_image" id="new-image" accept="image/*" required>
+        <br><br>
+
+        <button type="submit">Update Image</button>
+    </form>
 
 
     <h1>Update Promo 5 Content</h1>

@@ -368,24 +368,37 @@ $conn->close();
 <div class="small-scroll">
     <div class="left-class">
         <div class="scroll-containers">
-            <div class="scroll-items" data-image="mod1.jpg">
-                <img src="mod1.jpg" alt="Image 1">
-            </div>
-           <div class="scroll-items" data-image="mod2.jpg">
-                <img src="mod2.jpg" alt="Image 2">
-            </div>
-            <div class="scroll-items" data-image="lips.jpg">
-                <img src="lips.jpg" alt="Image 3">
-            </div>
-            <div class="scroll-items" data-image="pip.jpeg">
-                <img src="pip.jpeg" alt="Image 4">
-            </div>
-            <div class="scroll-items" data-image="mod.jpg">
-                <img src="mod.jpg" alt="Image 5">
-            </div>
-            <div class="scroll-items" data-image="Pink lip gloss💗.jpg">
-                <img src="Pink lip gloss💗.jpg" alt="Image 6">
-            </div>
+        <?php
+        // Database connection
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "website_db";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Fetch images from the database
+        $sql = "SELECT * FROM scroll_items2";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Loop through the results and display each image
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="scroll-items" data-image="' . htmlspecialchars($row['image_path']) . '">';
+                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="' . htmlspecialchars($row['image_name']) . '">';
+                echo '</div>';
+            }
+        } else {
+            echo "<p>No images found in the database.</p>";
+        }
+
+        $conn->close();
+        ?>
         </div>
     </div>
     <div class="right-class">
