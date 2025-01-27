@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
                 <img src="' . htmlspecialchars($row['image_path']) . '" alt="Product Image">
                 <h3>' . htmlspecialchars($row['heading']) . '</h3>
                 <p>' . htmlspecialchars($row['description']) . '</p>
-                <a href="#">SHOP NOW</a>
+                <a href="All-products.html">SHOP NOW</a>
               </div>';
     }
 } else {

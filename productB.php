@@ -409,7 +409,6 @@ $conn->close();
     <div class="right-class">
     <?php if ($imagePath1 && $imagePath2): ?>
         <img src="<?php echo htmlspecialchars($imagePath1); ?>" alt="Promo Image 1">
-        <img src="<?php echo htmlspecialchars($imagePath2); ?>" alt="Promo Image 2">
     <?php else: ?>
         <p>No promotional images available.</p>
     <?php endif; ?>
@@ -461,30 +460,10 @@ $conn->close();
     </div>
   </div>
 
-  <div class="purchase-section">
-    <div class="subscribe-options">
-      <h3>Subscribe:</h3>
-      <label>
-        <input type="radio" name="purchase-type" checked>
-        One-time purchase
-      </label>
-      <label>
-        <input type="radio" name="purchase-type">
-        Subscribe to save 10% on every recurring order + free shipping!
-      </label>
-      <div class="delivery-frequency">
-        Delivery every 
-        <select>
-          <option>1 month</option>
-          <option>2 months</option>
-          <option selected>3 months</option>
-          <option>4 months</option>
-        </select>
-      </div>
-      <a href="#" class="subscription-details">Subscription Details</a>
-    </div>
+  <hr>
 
-    <hr>
+  <div class="purchase-section">
+
 
     <div class="add-to-cart">
       <button class="add-to-cart-btn">ADD TO CART</button>
@@ -1250,4 +1229,3 @@ $conn->close();
 <script src="productB.js"></script>
 </body>
 </html>
-

@@ -255,7 +255,7 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>Hair</h2>
-            <a href="#" class="sidebar-link"><p>Shampoo </p></a>
+            <a href="Shampoo.html" class="sidebar-link"><p>Shampoo </p></a>
             <a href="#" class="sidebar-link"><p>Condition</p></a>
         </div>
         
@@ -785,7 +785,7 @@
 
     $conn->close();
     ?>
-    <button>SHOP NOW</button>
+  <button>SHOP NOW</button>
 </div>
 <div class="imagek">
     <?php

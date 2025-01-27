@@ -452,30 +452,10 @@ $conn->close();
     </div>
   </div>
 
-  <div class="purchase-section">
-    <div class="subscribe-options">
-      <h3>Subscribe:</h3>
-      <label>
-        <input type="radio" name="purchase-type" checked>
-        One-time purchase
-      </label>
-      <label>
-        <input type="radio" name="purchase-type">
-        Subscribe to save 10% on every recurring order + free shipping!
-      </label>
-      <div class="delivery-frequency">
-        Delivery every 
-        <select>
-          <option>1 month</option>
-          <option>2 months</option>
-          <option selected>3 months</option>
-          <option>4 months</option>
-        </select>
-      </div>
-      <a href="#" class="subscription-details">Subscription Details</a>
-    </div>
+  
+  <hr>
 
-    <hr>
+  <div class="purchase-section">
 
     <div class="add-to-cart">
       <button class="add-to-cart-btn">ADD TO CART</button>

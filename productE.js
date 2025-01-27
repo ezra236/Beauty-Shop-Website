@@ -444,7 +444,12 @@ document.getElementById('closeBtns').addEventListener('click', function () {
 
 function changeImage(imagePath) {
     const mainImage = document.getElementById('main-image');
+    
+    // Add the fade-in class to trigger the animation
+    mainImage.classList.remove('fade-in');
+    void mainImage.offsetWidth; // Trigger reflow to restart the animation
     mainImage.src = imagePath; // Update the source of the main image
+    mainImage.classList.add('fade-in');
 }
 
 // Adding event listeners for mobile and desktop

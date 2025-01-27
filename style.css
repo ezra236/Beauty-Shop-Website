@@ -136,7 +136,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-bottom: 1px solid #0605055a;
   background-color: #fff; /* Ensures the navbar has a background */
   position: fixed; 
@@ -302,9 +302,9 @@ body {
   border-bottom: 1px solid #ddd;
   background-color: #ffffff;
   position: fixed;
-  padding: 5px;
+  padding: 0px;
   height: 40px;
-  top: 65px;
+  top: 60px;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -313,7 +313,7 @@ body {
 .menu-item {
   position: relative;
   height: 100%;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -1968,26 +1968,27 @@ img.fade-out {
 
   .mobile-exceptional {
       display: flex;
-      gap: 25px;
+      gap: 5px;
       height: 100%;
       transition: transform 0.5s ease;
-      margin-left: 40px;
+      margin-left: 30px;
   }
 
   .mobile-exceptional-item {
-    flex: 0 0 80%;
+    flex: 0 0 90%;
       height: 90%;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       border-radius: 15px;
-      background-color: black;
+      background-color: transparent;
       position: relative;
+      padding: 15px;
   }
 
   .mobile-exceptional-item:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
       z-index: 10;
       border-radius: 15px;
       overflow: hidden;

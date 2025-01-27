@@ -138,9 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
     const classicScroll = document.getElementById('classicScroll');
     const leftBtn = document.getElementById('leftBtn');
     const rightBtn = document.getElementById('rightBtn');
@@ -154,27 +151,55 @@ document.addEventListener("DOMContentLoaded", function () {
     rightBtn.addEventListener('click', function() {
         classicScroll.scrollLeft += scrollAmount;  // Scroll right by the set amount
     });
-
-
-  
-
-
-    const items = document.querySelectorAll('.classic-item img');
-
-    items.forEach(item => {
-        const originalSrc = item.src;
-        const hoverSrc = item.getAttribute('data-hover');
-        
-        item.addEventListener('mouseenter', () => {
-            item.src = hoverSrc;
-        });
     
-        item.addEventListener('mouseleave', () => {
-            item.src = originalSrc;
-        });
+    
+
+
+
+// Store the original and hover image sources in an object
+const imageSources = {
+    item1: { original: 'b7.jpg', hover: 'ap.jpg' },
+    item2: { original: 'drop.jpg', hover: 'b11.jpg' }, // Adjust hover image path as needed
+    item3: { original: 'lip.jpg', hover: 'lip2.jpg' }, // Adjust hover image path as needed
+    item4: { original: 'bm3.jpg', hover: 'ap2.jpg' }, // Adjust hover image path as needed
+    item5: { original: 'g.jpg', hover: 'ap3.jpg' }, // Adjust hover image path as needed
+    item6: { original: 'b20.jpg', hover: 'ap1.jpg' }, // Adjust hover image path as needed
+    item7: { original: 'bm1.jpg', hover: 'lips.jpg' }, // Adjust hover image path as needed
+    item8: { original: 'skinca.jpg', hover: 'ap3.jpg' } // Adjust hover image path as needed
+};
+
+// Function to change the image source after fading out
+function changeImage(itemId, newSrc) {
+    const itemImage = document.getElementById(itemId);
+    
+    // Fade out the image
+    itemImage.classList.add('fade-out');
+    
+    // Wait for the fade-out transition to finish before changing the image
+    setTimeout(function() {
+        itemImage.src = newSrc; // Change the image source
+        itemImage.classList.remove('fade-out'); // Fade in the new image
+    }, 100); // Matches the transition duration
+}
+
+// Add event listeners for hover effect on each item image
+document.querySelectorAll('.classic-item img').forEach(itemImage => {
+    const itemId = itemImage.id;
+
+    // Mouse enter event to change to hover image
+    itemImage.addEventListener('mouseenter', function() {
+        changeImage(itemId, imageSources[itemId].hover);  // Change to hover image
     });
 
-    
+    // Mouse leave event to revert to original image
+    itemImage.addEventListener('mouseleave', function() {
+        changeImage(itemId, imageSources[itemId].original);  // Revert to original image
+    });
+});
+
+
+
+
 
 
 
@@ -242,7 +267,7 @@ function showBlockPay(name, price, imageSrc) {
 
 // Close the Block Pay div when the close button is clicked
 document.getElementById('closeBlockPay').addEventListener('click', function() {
-    document.getElementById('blockPay').style.right = '-150%';
+    document.getElementById('blockPay').style.right = '-100%';
 });
 
 // Attach the event listeners to all Quick Shop buttons
@@ -411,20 +436,6 @@ document.getElementById('icon2').addEventListener('click', showBlockCheck);
 
 
 
-const reviewButton = document.querySelector('.review-buttont');
-    const reviewBlock = document.getElementById('review-block');
-    const closeBtn = document.getElementById('close-btnr');
-
-    reviewButton.addEventListener('click', () => {
-      reviewBlock.classList.add('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      reviewBlock.classList.remove('open');
-    });
-
-
-
 
 // Open the block
 document.getElementById('signInLink').addEventListener('click', function (e) {
@@ -439,27 +450,3 @@ document.getElementById('closeBtns').addEventListener('click', function () {
     const signInBlock = document.getElementById('signInBlock');
     signInBlock.classList.remove('active'); // Remove the "active" class
 });
-
-
-
-
-function changeImage(imagePath) {
-    const mainImage = document.getElementById('main-image');
-    
-    // Add the fade-in class to trigger the animation
-    mainImage.classList.remove('fade-in');
-    void mainImage.offsetWidth; // Trigger reflow to restart the animation
-    mainImage.src = imagePath; // Update the source of the main image
-    mainImage.classList.add('fade-in');
-}
-
-// Adding event listeners for mobile and desktop
-const scrollItems = document.querySelectorAll('.scroll-items');
-scrollItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const imagePath = item.getAttribute('data-image');
-        changeImage(imagePath);
-    });
-});
-
-

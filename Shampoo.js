@@ -410,22 +410,6 @@ document.getElementById('icon2').addEventListener('click', showBlockCheck);
 
 
 
-
-const reviewButton = document.querySelector('.review-buttont');
-    const reviewBlock = document.getElementById('review-block');
-    const closeBtn = document.getElementById('close-btnr');
-
-    reviewButton.addEventListener('click', () => {
-      reviewBlock.classList.add('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      reviewBlock.classList.remove('open');
-    });
-
-
-
-
 // Open the block
 document.getElementById('signInLink').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor behavior
@@ -442,15 +426,9 @@ document.getElementById('closeBtns').addEventListener('click', function () {
 
 
 
-
 function changeImage(imagePath) {
     const mainImage = document.getElementById('main-image');
-    
-    // Add the fade-in class to trigger the animation
-    mainImage.classList.remove('fade-in');
-    void mainImage.offsetWidth; // Trigger reflow to restart the animation
     mainImage.src = imagePath; // Update the source of the main image
-    mainImage.classList.add('fade-in');
 }
 
 // Adding event listeners for mobile and desktop
@@ -463,3 +441,17 @@ scrollItems.forEach(item => {
 });
 
 
+
+
+
+const video = document.getElementById('video');
+    const playButton = document.getElementById('play');
+    const pauseButton = document.getElementById('pause');
+
+    playButton.addEventListener('click', () => {
+      video.play();
+    });
+
+    pauseButton.addEventListener('click', () => {
+      video.pause();
+    });
