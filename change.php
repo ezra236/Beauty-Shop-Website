@@ -284,5 +284,47 @@ $result = $conn->query($sql);
     </form>
     
 
+
+    <h1> Update shampoo</h1>
+    <form action="change_imagey.php" method="POST" enctype="multipart/form-data">
+        <label for="image_id">Select Image to Replace:</label>
+        <select name="image_id" id="image_id">
+            <!-- Fetch the list of images from the database -->
+            <?php
+            $conn = new mysqli("localhost", "root", "", "website_db");
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT * FROM shampoo";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['id'] . "'>" . $row['image_path'] . "</option>";
+                }
+            }
+            $conn->close();
+            ?>
+        </select>
+
+        <label for="new_image">Upload New Image:</label>
+        <input type="file" name="new_image" id="new_image" required>
+
+        <button type="submit" name="submit">Change Image</button>
+    </form>
+
+
+
+    <h1>Change Image</h1>
+
+<form action="changel.php" method="post" enctype="multipart/form-data">
+    <label for="image">Select image:</label>
+    <input type="file" name="image" id="image" required><br><br>
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+
 </body>
 </html>
