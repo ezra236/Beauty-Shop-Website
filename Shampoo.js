@@ -455,3 +455,39 @@ const video = document.getElementById('video');
     pauseButton.addEventListener('click', () => {
       video.pause();
     });
+
+
+
+// Get all the scroll-items and the image in the right-class
+const scrollItemss = document.querySelectorAll('.scroll-items img');
+const rightClassImage = document.querySelector('.right-class img');
+
+// Add click event listeners to each scroll-item
+scrollItemss.forEach(item => {
+    item.addEventListener('click', () => {
+        // Fade out the current image
+        rightClassImage.style.opacity = 0;
+
+        // Wait for the fade-out to complete, then update the src and fade in
+        setTimeout(() => {
+            rightClassImage.src = item.src;
+            rightClassImage.style.opacity = 1; // Fade-in the new image
+        }, 300); // Delay matches the fade-out time
+    });
+});
+
+
+
+
+document.querySelectorAll('.review-box').forEach((box) => {
+    const toggleButton = box.querySelector('.rt');
+    const reviewDetails = box.querySelector('.review-details');
+
+    toggleButton.addEventListener('click', () => {
+        // Toggle the visibility of the review details
+        reviewDetails.classList.toggle('show');
+
+        // Change the text between "+" and "-"
+        toggleButton.textContent = toggleButton.textContent === '+' ? '-' : '+';
+    });
+});

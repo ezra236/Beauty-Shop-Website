@@ -1075,8 +1075,13 @@ display: none; /* Chrome, Safari, Edge */
 }
 
 .right-class img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease; /* Fade-in effect */
+}
+
+.right-class img.show {
+  opacity: 1; /* Makes the image visible */
 }
 
 @media (max-width: 768px) {
@@ -1965,6 +1970,7 @@ display: none; /* Chrome, Safari, Edge */
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  margin-left: auto; /* Pushes .rt to the far right */
 }
 
 .review-header h2 {
@@ -1973,9 +1979,16 @@ display: none; /* Chrome, Safari, Edge */
 }
 
 .review-details {
-    margin-top: 15px;
-    list-style: disc;
-    padding-left: 20px;
+  margin-top: 15px;
+  list-style: disc;
+  padding-left: 20px;
+  max-height: 0; /* Initially hidden */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; /* Smooth top-to-bottom transition */
+}
+
+.review-details.show {
+  max-height: 300px; /* Allow space for the list to expand */
 }
 
 .percentage {
@@ -1988,6 +2001,22 @@ display: none; /* Chrome, Safari, Edge */
     border-top: 1px solid #ddd;
     margin: 15px 0;
 }
+
+.image {
+  width: 40%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.image img {
+  width: 90%;
+  height: 300px;
+}
+
+
 
 
 .l {
@@ -2003,16 +2032,22 @@ display: none; /* Chrome, Safari, Edge */
   width: 95%;
   height: 85vh;
   max-width: 100%;
-  background: url('b21.jpg') no-repeat center center;
-  background-size: 100% 100%;
   overflow: hidden;
   border-radius: 0px;
+  padding: 1px;
 }
 
 video {
-  width: 100%;
-  height: 100%;
+  width: 100%; 
+  height: 100%; 
   display: block;
+}
+
+video[poster] {
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover; 
+  object-position: center;
 }
 
 .controls {
@@ -2050,6 +2085,7 @@ height: 600px;
 flex-direction: row;
 margin-bottom: 50px;
 margin-top: 50px;
+cursor: pointer;
 }
 
 .first {
@@ -2123,7 +2159,7 @@ transition: transform 0.3s ease-in-out;
 }
 
 .grid-item:hover img {
-transform: scale(1.1);
+transform: scale(1.2);
 }
 
 .grid-containerr {
@@ -2144,7 +2180,7 @@ height: 100%;
   }
   
   .grid-itemm:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2);
   }
 
 
