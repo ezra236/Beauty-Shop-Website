@@ -1012,6 +1012,12 @@ display: none; /* Chrome, Safari, Edge */
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  .left-class {
+      display: none; 
+  }
+}
+
 /* Scroll container inside left-class */
 .scroll-containers {
     flex: 1;
@@ -1038,19 +1044,6 @@ display: none; /* Chrome, Safari, Edge */
 }
 
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .scroll-containers {
-      overflow-x: auto; /* Enable horizontal scrolling on mobile */
-      overflow-y: unset; /* Disable vertical scroll */
-      display: flex;
-      flex-direction: row;
-  }
-  .scroll-items {
-      margin-right: 10px; /* Add margin between items for horizontal layout */
-      width: 55%; /* Set a fixed width for each item */
-  }
-}
 
 
 .scroll-items {
@@ -1073,6 +1066,13 @@ display: none; /* Chrome, Safari, Edge */
     padding: 10px;
     height: 100%;
 }
+
+@media (max-width: 768px) {
+  .right-class {
+      width: 100%; 
+  }
+}
+
 
 .right-class img {
   width: 100%;
@@ -1097,43 +1097,18 @@ display: none; /* Chrome, Safari, Edge */
     padding: 10px;
 }
 
-/* Media query for mobile */
 @media (max-width: 768px) {
   .scroll-display {
-      flex-direction: column; /* Stack children vertically */
-      height: auto; /* Adjust height for stacked layout */
+      flex-direction: column; 
   }
 
   .small-scroll {
-      height: auto; /* Let sections adjust naturally */
-      flex-direction: column;
-  }
-
-  .right-class {
-    flex: unset; /* Reset flex values for proper stacking */
-    width: 100%; /* Make them take full width */
-    height: auto; /* Adjust height for content */
-    order: 1;
-}
-
-.left-class {
-  order: 2;
+    width: 100%; 
 }
 
   .inform {
-    height: auto; /* Let sections adjust naturally */
-}
-}
-
-#main-image {
-  width: 100%;
-  height: 780px;
-}
-
-/* Media query for mobile */
-@media (max-width: 768px) {
-  #main-image {
-      height: 100%;
+      width: 100%; /* Make both elements take full width */
+      overflow-y: visible;
   }
 }
 
@@ -1971,6 +1946,7 @@ display: none; /* Chrome, Safari, Edge */
   align-items: flex-end;
   justify-content: flex-end;
   margin-left: auto; /* Pushes .rt to the far right */
+  cursor: pointer;
 }
 
 .review-header h2 {
@@ -2016,6 +1992,21 @@ display: none; /* Chrome, Safari, Edge */
   height: 300px;
 }
 
+
+@media (max-width: 768px) {
+  .s {
+      flex-direction: column; /* Stack items vertically */
+  }
+
+  .container  {
+    width: 100%; /* Make both elements take full width */
+    padding: 5px;
+}
+
+  .image {
+      width: 100%; /* Make both elements take full width */
+  }
+}
 
 
 
