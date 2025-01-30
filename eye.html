@@ -8,7 +8,7 @@
         <meta http-equiv="refresh" content="32000">
         <link rel="icon" href="ckayy.jpg" type="image/png">
         <title>Ckary Beauty</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="eye.css">
     </head>
     
 </head>
@@ -39,7 +39,6 @@
 </div>
 
 
-
 <header class="navbar">
         <div class="center-section">
             <img src="ckayy.jpg">
@@ -50,7 +49,7 @@
             <span>Kenya </span>
         </div>
         <div class="right-section">
-        <a href="#" class="nav-link" id="signInLink">Sign In</a>
+            <a href="#" class="nav-link" id="signInLink">Sign In</a>
             <a href="#" class="nav-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                     <path d="M10 2a8 8 0 0 1 8 8 8 8 0 0 1-1.69 4.91l4.09 4.09a1 1 0 0 1-1.41 1.41l-4.09-4.09A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/>
@@ -115,8 +114,8 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>New + Bestsellers</h2>
-            <a href="new.html" class="sidebar-link"><p>New Arrivals </p></a>
-            <a href="Bestsellers.html" class="sidebar-link"><p>Bestsellers  </p></a>
+            <a href="#" class="sidebar-link"><p>New Arrivals </p></a>
+            <a href="#" class="sidebar-link"><p>Bestsellers  </p></a>
         </div>
         
         <div class="contentr">
@@ -154,13 +153,13 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>Makeup</h2>
-            <a href="lipG.html" class="sidebar-link"><p>Lip Gloss  </p></a>
-            <a href="lipL.html" class="sidebar-link"><p>Lip Liner </p></a>
-            <a href="lipS.html" class="sidebar-link"><p>Lipstick </p></a>
-            <a href="foundation.html" class="sidebar-link"><p>Foundation </p></a>
-            <a href="concealer.html" class="sidebar-link"><p>Concealer </p></a>
-            <a href="blush.html" class="sidebar-link"><p>Blush + Highlighter   </p></a>
-            <a href="eye.html" class="sidebar-link"><p>Eye Makeup   </p></a>
+            <a href="#" class="sidebar-link"><p>Lip Gloss  </p></a>
+            <a href="#" class="sidebar-link"><p>Lip Liner </p></a>
+            <a href="#" class="sidebar-link"><p>Lipstick </p></a>
+            <a href="#" class="sidebar-link"><p>Foundation </p></a>
+            <a href="#" class="sidebar-link"><p>Concealer </p></a>
+            <a href="#" class="sidebar-link"><p>Blush + Highlighter   </p></a>
+            <a href="#" class="sidebar-link"><p>Eye Makeup   </p></a>
             <a href="#" class="sidebar-link button-link"><p>Shop All Makeup</p></a>
         </div>
         
@@ -255,8 +254,8 @@
     <div class="containerp">
         <div class="sidebar">
             <h2>Hair</h2>
-            <a href="Shampoo.php" class="sidebar-link"><p>Shampoo </p></a>
-            <a href="condition.html" class="sidebar-link"><p>Condition</p></a>
+            <a href="#" class="sidebar-link"><p>Shampoo </p></a>
+            <a href="#" class="sidebar-link"><p>Condition</p></a>
         </div>
         
         <div class="contentr">
@@ -334,277 +333,25 @@
 
 
 
+<div class="breadcrumb">
+    <a href="Home.php">Home</a> <span>/</span> <span>Eye Makeup</span>
+</div>
 
-<div class="scroll-container">
-    <div class="promo-container">
-        <div class="promo-text5">
-            <?php
-            // PHP Code to Fetch Content
-            $conn = new mysqli('localhost', 'root', '', 'website_db');
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
 
-            $sql = "SELECT * FROM home_content WHERE id=1"; // Fetch content with ID 1
-            $result = $conn->query($sql);
+<div class="prod">
+    <div class="boxx">
+        <h1>FREE 2 PIECE GIFT</h1>
+        <p>Who doesnt love a brighter lips</p>
 
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
-                echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
-                echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
-            } else {
-                echo '<h4>Default Subheading</h4>';
-                echo '<h1>Default Heading</h1>';
-                echo '<p>Default description content goes here.</p>';
-            }
-
-            $conn->close();
-            ?>
-            <a href="productA.php" class="promo-button">SHOP NOW</a>
-        </div>
-        <div class="promo-images">
-            <?php
-            // PHP Code to Display Image
-            if (!empty($row['image_path'])) {
-                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promotional Image">';
-            } else {
-                echo '<img src="default.jpg" alt="Default Image">';
-            }
-            ?>
-        </div>
-
-        <div class="nav-dots">
-            <div class="dot" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
-        </div>
+        <button class="bt">Shop Now</button>
     </div>
-  
-    <div class="promo-container">
-        <div class="promo-text1">
-        <?php
-        // PHP Code to Fetch Promo Content
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM promo_content WHERE id=1"; // Fetch content with ID 1
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
-            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
-            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
-        } else {
-            echo '<h4>Default Subheading</h4>';
-            echo '<h1>Default Heading</h1>';
-            echo '<p>Default description content goes here.</p>';
-        }
-
-        $conn->close();
-        ?>
-        <a href="productB.php" class="promo-button">SHOP NOW</a>
-    </div>
-    <div class="promo-imagee">
-        <?php
-        // PHP Code to Display Images
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        $sql = "SELECT * FROM promo_content WHERE id=1";
-        $result = $conn->query($sql);
-        
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            if (!empty($row['image_path1']) && !empty($row['image_path2'])) {
-                echo '<img src="' . htmlspecialchars($row['image_path1']) . '" alt="Promo Image 1">';
-                echo '<img src="' . htmlspecialchars($row['image_path2']) . '" alt="Promo Image 2">';
-            } else {
-                echo '<img src="default.jpg" alt="Default Image 1">';
-                echo '<img src="default.jpg" alt="Default Image 2">';
-            }
-        }
-        $conn->close();
-        ?>
-        </div>
-
-        <div class="nav-dots">
-            <div class="dot" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
-        </div>
-    </div>
-
-    <div class="promo-container">
-        <div class="promo-text">
-        <?php
-        // PHP Code to Fetch Promo Content
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM promo_contents WHERE id=1"; // Fetch content with ID 1
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
-            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
-            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
-        } else {
-            echo '<h4>Default Subheading</h4>';
-            echo '<h1>Default Heading</h1>';
-            echo '<p>Default description content goes here.</p>';
-        }
-
-        $conn->close();
-        ?>
-        <a href="productE.php" class="promo-button">SHOP NOW</a>
-    </div>
-    <div class="promo-image">
-        <?php
-        // PHP Code to Display Image
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        $sql = "SELECT * FROM promo_contents WHERE id=1";
-        $result = $conn->query($sql);
-        
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            if (!empty($row['image_path'])) {
-                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
-            } else {
-                echo '<img src="default.jpg" alt="Default Promo Image">';
-            }
-        }
-        $conn->close();
-        ?>
-        </div>
-
-        <div class="nav-dots">
-            <div class="dot" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
-        </div>
-    </div>
-
-    <div class="promo-container">
-        <div class="promo-text0">
-        <?php
-        // PHP Code to Fetch Promo Content
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM promo_content4 WHERE id=1"; // Fetch content with ID 1
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
-            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
-            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
-        } else {
-            echo '<h4>Default Subheading</h4>';
-            echo '<h1>Default Heading</h1>';
-            echo '<p>Default description content goes here.</p>';
-        }
-
-        $conn->close();
-        ?>
-        <a href="productD.php" class="promo-button">SHOP NOW</a>
-    </div>
-    <div class="promo-image0">
-        <?php
-        // PHP Code to Display Image
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        $sql = "SELECT * FROM promo_content4 WHERE id=1";
-        $result = $conn->query($sql);
-        
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            if (!empty($row['image_path'])) {
-                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
-            } else {
-                echo '<img src="default.jpg" alt="Default Promo Image">';
-            }
-        }
-        $conn->close();
-        ?>
-        </div>
-
-        <div class="nav-dots">
-            <div class="dot" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
-        </div>
-    </div>
-
-    <div class="promo-container">
-        <div class="promo-text2">
-        <?php
-        // PHP Code to Fetch Promo Content
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM promo5 WHERE id=1"; // Fetch content with ID 1
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            echo '<h4>' . htmlspecialchars($row['subheading']) . '</h4>';
-            echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
-            echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
-        } else {
-            echo '<h4>Default Subheading</h4>';
-            echo '<h1>Default Heading</h1>';
-            echo '<p>Default description content goes here.</p>';
-        }
-
-        $conn->close();
-        ?>
-        <a href="productC.html" class="promo-button">SHOP NOW</a>
-    </div>
-    <div class="promo-imageed">
-        <?php
-        // PHP Code to Display Image
-        $conn = new mysqli('localhost', 'root', '', 'website_db');
-        $sql = "SELECT * FROM promo5 WHERE id=1";
-        $result = $conn->query($sql);
-        
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            if (!empty($row['image_path'])) {
-                echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
-            } else {
-                echo '<img src="default.jpg" alt="Default Promo Image">';
-            }
-        }
-        $conn->close();
-        ?>
-        </div>
-
-        <div class="nav-dots">
-            <div class="dot" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
+    <div class="k">
+        <div class="ser">
+            <img src="eye.jpeg">
         </div>
     </div>
 </div>
+
 
 
 <div class="sale-banner">
@@ -612,210 +359,6 @@
     <p>Now’s your chance to save big during the Holiday Hangover Sale.</p>
 </div>
 
-
-<button class="nav-arrow left" id="leftBtn" aria-label="Scroll Left">⇐ </button>
-<button class="nav-arrow right" id="rightBtn" aria-label="Scroll Right">⇒ </button>
-
-
-
-<div class="classic-container">
-    <div class="classic-scroll" id="classicScroll">
-      <div class="classic-item">
-        <img id="item1" src="b7.jpg" alt="Item 1">
-        <h3>Diamond Bomb</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 4,800.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item2" src="drop.jpg" alt="Item 2">
-        <h3>Eaze Drop Lit</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 3,300.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item3" src="lip.jpg" alt="Item 3">
-        <h3>Fenty Icon Lipstick</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>5 Sizes</p>
-        <p class="price">KSH 3,300.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item4" src="bm3.jpg" alt="Item 4">
-        <h3>Travel-Sized Set</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 4,000.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item5" src="g.jpg" alt="Item 5">
-        <h3>Flash Nap</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>3 Sizes</p>
-        <p class="price">KSH 1,100.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item6" src="b20.jpg" alt="Item 6">
-        <h3>Foundation Pro</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 5,200.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item7" src="bm1.jpg" alt="Item 7">
-        <h3>Fenty Glow</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>4 Sizes</p>
-        <p class="price">KSH 2,500.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-
-      <div class="classic-item">
-        <img id="item8" src="skinca.jpg" alt="Item 8">
-        <h3>Skin Cream</h3>
-        <div class="stars">
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star black"></div>
-            <div class="star half"></div>
-        </div>
-        <p>2 Sizes</p>
-        <p class="price">KSH 6,800.00</p>
-        <button class="ezra-button">Quick Shop</button>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<div class="sale-banners">
-    <h1>DIP INTO THESE DEALZ</h1>
-    <p>Better snatch your staples before someone else does.</p>
-</div>
-
-
-
-<?php include 'wonderful.php'; ?>
-
-
-
-<div class="containerd">
-    <div class="contentd">
-    <?php
-    // PHP Code to Fetch Detail Content
-    $conn = new mysqli('localhost', 'root', '', 'website_db');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT * FROM detail WHERE id=1"; // Fetch content with ID 1
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        echo '<h1>' . htmlspecialchars($row['heading']) . '</h1>';
-        echo '<h2>' . htmlspecialchars($row['subheading']) . '</h2>';
-        echo '<p>' . nl2br(htmlspecialchars($row['description'])) . '</p>';
-    } else {
-        echo '<h1>Default Heading</h1>';
-        echo '<h2>Default Subheading</h2>';
-        echo '<p>Default description content goes here.</p>';
-    }
-
-    $conn->close();
-    ?>
-  <button>SHOP NOW</button>
-</div>
-<div class="imagek">
-    <?php
-    // PHP Code to Display Image
-    $conn = new mysqli('localhost', 'root', '', 'website_db');
-    $sql = "SELECT * FROM detail WHERE id=1";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (!empty($row['image_path'])) {
-            echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Promo Image">';
-        } else {
-            echo '<img src="default.jpg" alt="Default Promo Image">';
-        }
-    }
-    $conn->close();
-    ?>
-    </div>
-  </div>
-
-
-
-
-
-
-<div class="sale-banner">
-    <h1>TURN UP THE EXTRA(S)</h1>
-    <p>Add these to make your routine even more special.</p>
-</div>
 
 
 <button class="scroll-arrow left-arrow" id="scrollLeftBtn" aria-label="Scroll Left">⇐</button>
@@ -952,6 +495,144 @@
 
 
 
+
+
+<button class="nav-arrow left" id="leftBtn" aria-label="Scroll Left">⇐ </button>
+<button class="nav-arrow right" id="rightBtn" aria-label="Scroll Right">⇒ </button>
+
+
+
+<div class="classic-container">
+    <div class="classic-scroll" id="classicScroll">
+
+        <div class="classic-item">
+            <img id="item1" src="b7.jpg" alt="Item 1" data-hover="ap.jpg">
+            <h3>Diamond Bomb</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 4,800.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item2" src="drop.jpg" alt="Item 2" data-hover="b11.jpg">
+            <h3>Eaze Drop Lit</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 3,300.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item3" src="lip.jpg" alt="Item 3" data-hover="lip2.jpg">
+            <h3>Fenty Icon Lipstick</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>5 Sizes</p>
+            <p class="price">KSH 3,300.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item4" src="bm3.jpg" alt="Item 4" data-hover="ap2.jpg">
+            <h3>Travel-Sized Set</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 4,000.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item5" src="g.jpg" alt="Item 5" data-hover="ap3.jpg">
+            <h3>Flash Nap</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>3 Sizes</p>
+            <p class="price">KSH 1,100.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item6" src="b20.jpg" alt="Item 6" data-hover="ap1.jpg">
+            <h3>Foundation Pro</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 5,200.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item7" src="bm1.jpg" alt="Item 7" data-hover="lips.jpg">
+            <h3>Fenty Glow</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>4 Sizes</p>
+            <p class="price">KSH 2,500.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+        <div class="classic-item">
+            <img id="item8" src="skinca.jpg" alt="Item 8" data-hover="ap3.jpg">
+            <h3>Skin Cream</h3>
+            <div class="stars">
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star black"></div>
+                <div class="star half"></div>
+            </div>
+            <p>2 Sizes</p>
+            <p class="price">KSH 6,800.00</p>
+            <button class="ezra-button">Quick Shop</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
 <div class="block-pay" id="blockPay">
     <div class="block-pay-header">
         <button id="closeBlockPay">X</button>
@@ -982,88 +663,10 @@
 
 
 
-<div class="container">
-    <div class="box box1" id="box1">
-        <img src="dis4.jpg">
-    </div>
-    <div class="box box2" id="box2">
-        <img src="dis2.jpg">
-    </div>
-    <div class="box box3" id="box3">
-        <img src="drop.jpg">
-    </div>
-    <div class="box box4" id="box4">
-        <img src="dis1.jpg">
-    </div>
-  </div>
-
-
-  <div class="monica" id="monica"></div>
-
-  
-
-
-  <div class="exceptional-container">
-    <div class="exceptional" id="exceptional">
-      <div class="exceptional-item">
-        <video src="vid1.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid2.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid4.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid5.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid6.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid1.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid2.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-      <div class="exceptional-item">
-        <video src="vid3.mp4" autoplay muted loop  disablePictureInPicture></video>
-      </div>
-    </div>
-    <div class="arrows">
-      <button class="arrow" id="leftArrow">&#8592;</button>
-      <button class="arrow" id="rightArrow">&#8594;</button>
-    </div>
-  </div>
 
 
 
-
-  <div class="mobile-exceptional-container">
-    <div class="mobile-exceptional" id="mobileExceptional">
-        <div class="mobile-exceptional-item">
-            <video src="vid1.mp4" loop disablePictureInPicture></video>
-        </div>
-        <div class="mobile-exceptional-item">
-            <video src="vid2.mp4" loop disablePictureInPicture></video>
-        </div>
-        <div class="mobile-exceptional-item">
-            <video src="vid4.mp4" loop disablePictureInPicture></video>
-        </div>
-        <div class="mobile-exceptional-item">
-            <video src="vid5.mp4" loop disablePictureInPicture></video>
-        </div>
-        <div class="mobile-exceptional-item">
-            <video src="vid6.mp4" loop disablePictureInPicture></video>
-        </div>
-    </div>
-</div>
-
-
-
-
-  
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-left">
         <h2>DOWN FOR MORE? WE GOT YOU.</h2>
         <p>All the latest product drops, limited offers, in-store event info–straight to your inbox.</p>
@@ -1163,7 +766,7 @@
       
 </footer>
 
-<script src="script.js"></script>
+<script src="eye.js"></script>
 </body>
 </html>
 

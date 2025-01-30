@@ -217,26 +217,30 @@
 
 
     <h1>Update Scroll Content</h1>
-    <?php
+
+<?php
 // Database connection
 $conn = new mysqli('localhost', 'root', '', 'website_db');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve the list of item IDs
-$sql = "SELECT id FROM wonderful ORDER BY id ASC";  // Fetch IDs ordered from first added to last added
+// Retrieve all records ordered by ID (DESC)
+$sql = "SELECT id, image_path, heading, description FROM wonderful ORDER BY id DESC";
 $result = $conn->query($sql);
 ?>
-
 
 <div class="centered-list">
     <ul>
         <?php
-        // Display the IDs of all items
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<li>" . $row['id'] . "</li>";
+                echo "<li>
+                        <strong>ID:</strong> {$row['id']} <br>
+                        <img src='{$row['image_path']}' alt='Image' width='100' height='100'><br>
+                        <strong>Heading:</strong> {$row['heading']} <br>
+                        <strong>Description:</strong> {$row['description']}
+                      </li><br>";
             }
         } else {
             echo "<li>No items found</li>";
@@ -246,6 +250,8 @@ $result = $conn->query($sql);
         ?>
     </ul>
 </div>
+
+
 
 <form action="change_item.php" method="POST" enctype="multipart/form-data">
     <label for="position">Enter Item Position (1-based):</label>

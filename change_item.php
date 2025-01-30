@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $position = $_POST['position'];
+    $position = intval($_POST['position']); // Ensure it's an integer
     $heading = $_POST['heading'];
     $description = $_POST['description'];
 
@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("File is not an image.");
     }
 
-    // Check file size (optional - 2MB limit here)
-    if ($_FILES["image"]["size"] > 2000000) {
+    // Check file size (optional - 10MB limit)
+    if ($_FILES["image"]["size"] > 10000000) {
         die("Sorry, your file is too large.");
     }
 
@@ -37,21 +37,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Delete item at the given position (1-based index)
-        $deleteSql = "DELETE FROM wonderful WHERE id = $position";
-        if ($conn->query($deleteSql) === TRUE) {
-            // Insert new item
-            $insertSql = "INSERT INTO wonderful (image_path, heading, description) 
-                          VALUES ('$targetFile', '$heading', '$description')";
-            if ($conn->query($insertSql) === TRUE) {
-                echo "Promo item updated successfully!";
-            } else {
-                echo "Error inserting new item: " . $conn->error;
-            }
+        // Update existing item at the given position
+        $updateSql = "UPDATE wonderful 
+                      SET image_path = ?, heading = ?, description = ? 
+                      WHERE id = ?";
+        
+        $stmt = $conn->prepare($updateSql);
+        $stmt->bind_param("sssi", $targetFile, $heading, $description, $position);
+
+        if ($stmt->execute()) {
+            echo "Promo item updated successfully!";
         } else {
-            echo "Error deleting item: " . $conn->error;
+            echo "Error updating item: " . $stmt->error;
         }
 
+        $stmt->close();
         $conn->close();
     } else {
         echo "Sorry, there was an error uploading your file.";
