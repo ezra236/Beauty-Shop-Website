@@ -427,3 +427,52 @@ document.getElementById('closeBtns').addEventListener('click', function () {
 
 
 
+
+
+
+document.querySelector(".btnd").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    document.querySelector(".prod-block").classList.add("show");
+});
+
+document.querySelector(".close-btnr").addEventListener("click", function () {
+    document.querySelector(".prod-block").classList.remove("show");
+});
+
+
+
+
+function increaseQuantity() {
+    let quantityElement = document.getElementById("quantity");
+    let quantity = parseInt(quantityElement.textContent);
+    quantityElement.textContent = quantity + 1;
+}
+function decreaseQuantity() {
+    let quantityElement = document.getElementById("quantity");
+    let quantity = parseInt(quantityElement.textContent);
+    if (quantity > 1) {
+        quantityElement.textContent = quantity - 1;
+    }
+}
+
+
+
+
+
+function buyNow() {
+    let imageSrc = document.getElementById("product-image").src;
+    let title = document.getElementById("product-title").innerText;
+    let price = document.getElementById("product-price").innerText.replace("KSh ", "");
+    let quantity = parseInt(document.getElementById("quantity").innerText);
+    let totalPrice = parseInt(price) * quantity;
+
+    // Create URL with query string parameters
+    let url = new URL("pay2.html", window.location.href);
+    url.searchParams.append("image", encodeURIComponent(imageSrc));
+    url.searchParams.append("title", encodeURIComponent(title));
+    url.searchParams.append("price", encodeURIComponent("KSh " + totalPrice));
+    url.searchParams.append("quantity", encodeURIComponent(quantity));
+
+    // Redirect to pay2.html with parameters in URL
+    window.location.href = url;
+}

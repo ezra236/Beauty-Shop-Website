@@ -56,42 +56,14 @@ body {
 
 .display {
 width: 50%;
+display: flex;
+align-items: flex-start;
+flex-direction: column;
 }
 
-.payment-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.item {
-  display: flex;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-}
-.item img {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-}
-.item-info {
-  flex-grow: 1;
-}
-.total-price {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.checkout-button {
-  display: none;
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  width: 100%;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
+.display img {
+    width: 200px;
+    height: 200px;
 }
 
 @media screen and (max-width: 768px) {

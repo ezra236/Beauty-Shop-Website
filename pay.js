@@ -52,3 +52,10 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
 
 // Initialize page content
 displayItems();
+
+
+
+
+
+
+
