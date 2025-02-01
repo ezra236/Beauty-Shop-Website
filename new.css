@@ -1066,8 +1066,8 @@ body {
   padding: 10px 20px;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 }
-
 
 .prod-block {
   position: fixed;
@@ -1077,7 +1077,7 @@ body {
   height: 60%;
   background: white;
   border-radius: 0px;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 100%); /* Initially hide the block */
   transition: transform 0.5s ease-in-out;
   text-align: center;
   padding: 20px;
@@ -1086,16 +1086,20 @@ body {
   flex-direction: column;
   justify-content: center;
   z-index: 50000;
+  opacity: 0; /* Initially hidden */
 }
 
 .prod-block.show {
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Bring the block to center */
+  opacity: 1; /* Make the block visible */
 }
+
+
 
 @media (max-width: 768px) {
    .prod-block{
      width: 75%;
-     top: 40%;
+     height: 85%;
    }
 }
 

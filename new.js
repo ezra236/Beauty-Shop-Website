@@ -435,6 +435,7 @@ document.querySelector(".btnd").addEventListener("click", function (event) {
     document.querySelector(".prod-block").classList.add("show");
 });
 
+
 document.querySelector(".close-btnr").addEventListener("click", function () {
     document.querySelector(".prod-block").classList.remove("show");
 });
