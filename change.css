@@ -65,18 +65,37 @@ button:hover {
 
 .centered-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next row if necessary */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Adds spacing between items */
     padding: 20px;
 }
 
 .centered-list ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allows multiple items per row */
+    justify-content: center;
 }
 
 .centered-list li {
-    margin: 5px;
-    font-size: 18px;
+    flex: 1 1 250px; /* Flex-grow: 1, Flex-shrink: 1, Minimum width: 250px */
+    max-width: 300px; /* Ensures items don’t grow too wide */
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.centered-list img {
+    max-width: 100%; /* Makes sure images don't exceed their container */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }

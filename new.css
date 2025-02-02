@@ -1077,8 +1077,8 @@ body {
   height: 60%;
   background: white;
   border-radius: 0px;
-  transform: translate(-50%, 100%); /* Initially hide the block */
-  transition: transform 0.5s ease-in-out;
+  transform: translate(-50%, 100%); /* Start off-screen */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   text-align: center;
   padding: 20px;
   display: flex;
@@ -1086,22 +1086,30 @@ body {
   flex-direction: column;
   justify-content: center;
   z-index: 50000;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
+  visibility: hidden; /* Hides interaction when closed */
+  will-change: transform, opacity;
 }
 
 .prod-block.show {
-  transform: translate(-50%, -50%); /* Bring the block to center */
-  opacity: 1; /* Make the block visible */
+  transform: translate(-50%, -50%); /* Move to center */
+  opacity: 1;
+  visibility: visible; /* Allow interaction */
 }
 
-
+.prod-block.hide { 
+  transform: translate(-50%, 100%); /* Move down when closing */
+  opacity: 0;
+}
 
 @media (max-width: 768px) {
-   .prod-block{
-     width: 75%;
-     height: 85%;
-   }
+  .prod-block {
+    width: 80%; /* Adjust width for mobile */
+    height: 85%;
+  }
 }
+
+
 
 .close-btnr {
   position: absolute;  /* Position it relative to the .prod-block */
@@ -1133,7 +1141,7 @@ body {
 @media (max-width: 768px) {
   .product-container {
     flex-direction: column;
-    gap: 20px;  /* Adjust the gap between items for mobile */
+    gap: 5px;  /* Adjust the gap between items for mobile */
   }
 }
 

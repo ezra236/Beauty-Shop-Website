@@ -502,6 +502,28 @@ $conn->close();
 </div>
 
 
+<div class="prod-block">
+    <button class="close-btnrt">X</button>
+    
+    <div class="product-container">
+        <img id="product-image" src="b22.jpg" alt="Product Image">
+        <div class="product-info">
+            <h2 id="product-title">Glycolic Acid Solution</h2>
+            <p id="product-price">KSh 1500.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity()">-</button>
+                <span id="quantity">1</span>
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+            <div class="cart-buttons">
+                <button class="buy-now" onclick="buyNow()">Buy it now</button>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+
 
 <div class="sale-banner">
     <h1>UP TO 60% OFF SELECT ITEMS</h1>

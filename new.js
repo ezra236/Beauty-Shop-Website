@@ -429,16 +429,21 @@ document.getElementById('closeBtns').addEventListener('click', function () {
 
 
 
-
 document.querySelector(".btnd").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    document.querySelector(".prod-block").classList.add("show");
+    event.preventDefault(); // Prevent default behavior
+    let prodBlock = document.querySelector(".prod-block");
+    prodBlock.classList.remove("hide"); // Ensure it's not in hiding mode
+    prodBlock.style.visibility = "visible"; // Make it interactive
+    prodBlock.classList.add("show"); // Animate opening
 });
-
 
 document.querySelector(".close-btnr").addEventListener("click", function () {
-    document.querySelector(".prod-block").classList.remove("show");
+    let prodBlock = document.querySelector(".prod-block");
+    prodBlock.classList.remove("show");
+    prodBlock.classList.add("hide"); // Start closing animation
+
 });
+
 
 
 
