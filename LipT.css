@@ -1009,61 +1009,58 @@ body {
 }
 
 
-
-
-.banner {
-  position: relative;
-  width: 100%;
-  height: 700px;
-  background: url('dis4.jpg');
-  background-size: 100% 100%;
+.prod {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin-top: 5px;
 }
 
-.contentp {
-  position: absolute;
-  left: 5%;
-  top: 45%;
-  background-color: plum;
-  color: white;
-  padding: 40px;
-  text-align: center;
-  width: 500px;
+.boxx {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    background-color: transparent;
+}
+
+.boxx p {
+    color: #000;
+    font-weight: bold;
+}
+
+.k {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: rgb(250, 194, 167);
+}
+
+.ser {
+    width: 50%;
+    height: 350px;
 }
 
 @media screen and (max-width: 768px) {
-  .contentp {
-    top: 45%;
-    left: 0%;
-    width: 100%;
+  .ser {
+      width: 100%;
   }
 }
 
-.contentp h2 {
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+.ser img {
+    width: 100%;
+    height: 100%;
 }
 
-.contentp h1 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.contentp p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.btnd {
-  display: inline-block;
-  background: white;
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
+.prod .bt {
+    padding: 12px 50px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;    
+    align-items: center;       /* Center text vertically */
+    justify-content: center;  
+    text-decoration: none;
 }
 
 
@@ -1194,62 +1191,6 @@ body {
   background: rgb(73, 2, 2);
   border: 1px solid black;
 }
-
-
-.prod {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    margin-top: 100px;
-}
-
-.boxx {
-    position: absolute;
-    left: 10%;
-    top: 30%;
-    background-color: transparent;
-}
-
-.boxx p {
-    color: #000;
-    font-weight: bold;
-}
-
-.k {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    background-color: rgb(251, 141, 177);
-}
-
-.ser {
-    width: 50%;
-    height: 350px;
-}
-
-@media screen and (max-width: 768px) {
-  .ser {
-      width: 100%;
-  }
-}
-
-.ser img {
-    width: 100%;
-    height: 100%;
-}
-
-.prod .bt {
-    padding: 12px 50px;
-    background-color: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;    
-    align-items: center;       /* Center text vertically */
-    justify-content: center;  
-    text-decoration: none;
-}
-
 
 
 .sale-banner {
@@ -1492,7 +1433,7 @@ body {
     width: 95%;
     margin: 20px auto;
     overflow: hidden;
-    margin-top: 140px;
+    margin-top: 170px;
     margin-bottom: 80px;
   }
   
@@ -1579,7 +1520,7 @@ body {
   
   .nav-arrow {
     position: absolute;
-    margin-top: 80px;
+    margin-top: 50px;
     transform: translateY(-50%);
     background: transparent;
     border: none;
@@ -1705,153 +1646,6 @@ body {
   }
 
 
-
-  .exceptional-container {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background-color:  white;
-    padding-top: 80px;
-    padding-left: 30px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .exceptional-container {
-        display: none;
-    }
-  }
-  
-  .exceptional {
-    display: flex;
-    transition: transform 0.5s ease;
-    height: 100%;
-    gap: 30px;
-  }
-  
-  .exceptional-item {
-    flex: 0 0 20%; 
-    height: 90%; /* Full height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
-    border-radius: 30px; 
-    position: relative; 
-    background-color: black;
-  }
-  
-  .exceptional-item:hover {
-    transform: scale(1.05); 
-    z-index: 10; 
-    border-radius: 30px; 
-    overflow: hidden; 
-    transition: transform 0.3s ease, z-index 0s; /* Maintain smoothness */
-  }
-  
-  .exceptional-item video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; /* Ensures video covers the container */
-    border-radius: inherit;
-    transition: transform 0.3s ease;
-  }
-  
-  
-  .arrows {
-    position: absolute;
-    top: 10px;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-  }
-  
-  @media (max-width: 768px) {
-    .arrows {
-      width: 85% !important; 
-    }
-  }
-  
-  .arrow {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 30px;
-    border-radius: 50%;
-    outline: none;
-  }
-  
-  .arrow:hover {
-    background-color: rgba(255, 255, 255, 1);
-  }
-  
-  
-  
-  /* Default - Hide the mobile container on larger screens */
-  .mobile-exceptional-container {
-    display: none;
-  }
-  
-  /* Mobile-specific styles */
-  @media screen and (max-width: 768px) {
-    /* Show the mobile container only on small screens */
-    .mobile-exceptional-container {
-        position: relative;
-        width: 100%;
-        height: 75vh;
-        display: flex;
-        align-items: center;
-        overflow-x: scroll;
-        background-color: white;
-        padding: 10px;
-        margin-top: 80px;
-        box-sizing: border-box;
-    }
-  
-    .mobile-exceptional {
-        display: flex;
-        gap: 5px;
-        height: 100%;
-        transition: transform 0.5s ease;
-        margin-left: 30px;
-    }
-  
-    .mobile-exceptional-item {
-      flex: 0 0 90%;
-        height: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        border-radius: 15px;
-        background-color: transparent;
-        position: relative;
-        padding: 15px;
-    }
-  
-    .mobile-exceptional-item:hover {
-        transform: scale(1.05);
-        z-index: 10;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: transform 0.3s ease, z-index 0s;
-    }
-  
-    .mobile-exceptional-item video {
-        height: 100%;
-        width: 100%;
-        object-fit: cover; /* Ensures video covers the container */
-        border-radius: inherit;
-        transition: transform 0.3s ease;
-    }
-  }
-  
 
   
   .footer {

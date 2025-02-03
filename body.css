@@ -1009,32 +1009,39 @@ body {
 }
 
 
-
-
 .banner {
   position: relative;
   width: 100%;
   height: 700px;
-  background: url('dis4.jpg');
+  background: url('skin.jpeg');
   background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contentp {
-  position: absolute;
-  left: 5%;
-  top: 45%;
-  background-color: plum;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+  background-color: #6A1B1A;
   color: white;
   padding: 40px;
   text-align: center;
   width: 500px;
 }
 
+
 @media screen and (max-width: 768px) {
-  .contentp {
-    top: 45%;
-    left: 0%;
-    width: 100%;
+  .banner {
+    align-items: flex-end; 
+    padding-bottom: 5px; 
+  }
+
+    .contentp {
+      top: 45%;
+      left: 0%;
+      width: 100%;
   }
 }
 
@@ -1065,7 +1072,6 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-
 
 .prod-block {
   position: fixed;
@@ -1196,59 +1202,60 @@ body {
 }
 
 
-.prod {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    margin-top: 100px;
-}
 
-.boxx {
-    position: absolute;
-    left: 10%;
-    top: 30%;
-    background-color: transparent;
-}
-
-.boxx p {
-    color: #000;
-    font-weight: bold;
-}
-
-.k {
+.l {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    background-color: rgb(251, 141, 177);
-}
-
-.ser {
-    width: 50%;
-    height: 350px;
-}
-
-@media screen and (max-width: 768px) {
-  .ser {
-      width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
-}
-
-.ser img {
-    width: 100%;
-    height: 100%;
-}
-
-.prod .bt {
-    padding: 12px 50px;
-    background-color: #000;
-    color: white;
-    border: none;
+  
+  .video-container {
+    position: relative;
+    width: 95%;
+    height: 85vh;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 0px;
+    padding: 1px;
+  }
+  
+  video {
+    width: 100%; 
+    height: 100%; 
+    display: block;
+  }
+  
+  video[poster] {
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover; 
+    object-position: center;
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .controls button {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
-    display: inline-flex;    
-    align-items: center;       /* Center text vertically */
-    justify-content: center;  
-    text-decoration: none;
-}
+    transition: background-color 0.3s;
+  }
+  
+  .controls button:hover {
+    background: #ddd;
+  }  
 
 
 
@@ -1492,7 +1499,7 @@ body {
     width: 95%;
     margin: 20px auto;
     overflow: hidden;
-    margin-top: 140px;
+    margin-top: 150px;
     margin-bottom: 80px;
   }
   
@@ -1579,7 +1586,7 @@ body {
   
   .nav-arrow {
     position: absolute;
-    margin-top: 80px;
+    margin-top: 100px;
     transform: translateY(-50%);
     background: transparent;
     border: none;
@@ -1706,153 +1713,144 @@ body {
 
 
 
-  .exceptional-container {
-    position: relative;
+  .containery {
+    padding: 20px;
+}
+.quote {
+    font-size: 24px;
+    font-weight: bold;
+}
+.subtext {
+    font-size: 16px;
+    color: #080808;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+      grid-template-columns: 1fr; /* Single column layout */
+  }
+}
+
+.grid-item {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+.grid-item img {
     width: 100%;
-    height: 70vh;
-    margin-top: 50px;
+    height: 250px;
+    display: block;
+}
+
+.shop-text {
+  display: block;
+  text-align: center; 
+  font-size: 16px; 
+  font-weight: bold; /* Make text bold */
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color */
+  background-color: black; 
+  padding: 10px 0; 
+  border-radius: 0px; /* Rounded corners */
+  margin-top: 30px;
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+.shop-text:hover {
+  background-color: #ff4081; 
+}
+
+
+
+.fs {
+    width: 100%;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    background-color:  white;
-    padding-top: 80px;
-    padding-left: 30px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .exceptional-container {
+    justify-content: center;
+}
+
+.containerm {
+    display: flex;
+    width: 100%;
+    margin: 50px auto;
+    background: white;
+    height: 550px;
+}
+
+@media (max-width: 768px) {
+    .containerm {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.image-section {
+    width: 50%;
+    background: url('skin2.jpeg');
+    background-size: 100% 100%;
+}
+
+@media (max-width: 768px) {
+    .image-section {
         display: none;
     }
-  }
-  
-  .exceptional {
-    display: flex;
-    transition: transform 0.5s ease;
-    height: 100%;
-    gap: 30px;
-  }
-  
-  .exceptional-item {
-    flex: 0 0 20%; 
-    height: 90%; /* Full height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
-    border-radius: 30px; 
-    position: relative; 
-    background-color: black;
-  }
-  
-  .exceptional-item:hover {
-    transform: scale(1.05); 
-    z-index: 10; 
-    border-radius: 30px; 
-    overflow: hidden; 
-    transition: transform 0.3s ease, z-index 0s; /* Maintain smoothness */
-  }
-  
-  .exceptional-item video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; /* Ensures video covers the container */
-    border-radius: inherit;
-    transition: transform 0.3s ease;
-  }
-  
-  
-  .arrows {
-    position: absolute;
-    top: 10px;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-  }
-  
-  @media (max-width: 768px) {
-    .arrows {
-      width: 85% !important; 
-    }
-  }
-  
-  .arrow {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 30px;
-    border-radius: 50%;
-    outline: none;
-  }
-  
-  .arrow:hover {
-    background-color: rgba(255, 255, 255, 1);
-  }
-  
-  
-  
-  /* Default - Hide the mobile container on larger screens */
-  .mobile-exceptional-container {
-    display: none;
-  }
-  
-  /* Mobile-specific styles */
-  @media screen and (max-width: 768px) {
-    /* Show the mobile container only on small screens */
-    .mobile-exceptional-container {
-        position: relative;
-        width: 100%;
-        height: 75vh;
-        display: flex;
-        align-items: center;
-        overflow-x: scroll;
-        background-color: white;
-        padding: 10px;
-        margin-top: 80px;
-        box-sizing: border-box;
-    }
-  
-    .mobile-exceptional {
-        display: flex;
-        gap: 5px;
-        height: 100%;
-        transition: transform 0.5s ease;
-        margin-left: 30px;
-    }
-  
-    .mobile-exceptional-item {
-      flex: 0 0 90%;
-        height: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        border-radius: 15px;
-        background-color: transparent;
-        position: relative;
-        padding: 15px;
-    }
-  
-    .mobile-exceptional-item:hover {
-        transform: scale(1.05);
-        z-index: 10;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: transform 0.3s ease, z-index 0s;
-    }
-  
-    .mobile-exceptional-item video {
-        height: 100%;
-        width: 100%;
-        object-fit: cover; /* Ensures video covers the container */
-        border-radius: inherit;
-        transition: transform 0.3s ease;
-    }
-  }
-  
+}
 
+.j {
+    width: 50%;
+    padding-left: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .j {
+        width: 100%;
+    }
+}
+
+.text-section {
+    padding: 0px;
+    background: white;
+}
+
+.text-section .cv {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.text-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    width: 80%;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.shop-btn {
+    display: inline-block;
+    background: black;
+    color: white;
+    text-decoration: none;
+    padding: 12px 84px;
+    font-size: 16px;
+    border-radius: 0px;
+}
+.shop-btn:hover {
+    background: #2f2424;
+}
   
   .footer {
     display: flex;

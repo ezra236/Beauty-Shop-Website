@@ -1022,7 +1022,7 @@ body {
 .contentp {
   position: absolute;
   left: 5%;
-  top: 50%;
+  top: 45%;
   background-color: rgb(38, 16, 7);
   color: white;
   padding: 40px;
@@ -1032,7 +1032,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .contentp {
-    top: 48%;
+    top: 45%;
     left: 0%;
     width: 100%;
   }
