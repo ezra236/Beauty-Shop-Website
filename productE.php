@@ -1021,6 +1021,28 @@ $conn->close();
 
 
 
+<?php
+$servername = "localhost";
+$username = "root"; // Change if needed
+$password = ""; // Change if needed
+$database = "review_db"; // Your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch only the latest review from the database
+$sql = "SELECT review, headline, name, age_range, gender, created_at FROM reviews2 ORDER BY id DESC LIMIT 1";
+$result = $conn->query($sql);
+
+$row = $result->fetch_assoc(); // Fetch only one row
+?>
+
+
 
 
 <div class="comment">
@@ -1080,25 +1102,32 @@ $conn->close();
         <div class="downn">
 
         <div class="review-card">
+        <?php if ($row): ?>
         <div class="review-header">
-            <div>SEPHORA-FA...</div>
-            <div>01/21/25</div>
-         </div>
+            <div><?php echo htmlspecialchars($row['name']); ?></div>
+            <div><?php echo htmlspecialchars($row['created_at']); ?></div>
+        </div>
         <div class="starsr">★★★★★</div>
-        <div class="review-titler">Love It!!</div>
+        <div class="review-titler">
+            <?php echo htmlspecialchars($row['headline']); ?>
+        </div>
         <div class="review-body">
-      I love this as I got at my local Sephora store and really love it. I just tried it in the morning. I made my skin feel so nice and awake as well. It was very calming and refreshing on my face. Can't wait to get another one once I am done with this. Love the cherry scent also for February - <a href="#">Read more</a>
+            <?php echo htmlspecialchars($row['review']); ?>
         </div>
         <div class="review-details">
-        <div class="des">Recommend To A Friend:</div>
-  <div class="dez">Yes</div>
-  <div class="des">Age:</div>
-  <div class="dez">35-44</div>
-  <div class="des">Gender:</div>
-  <div class="dez">she/her</div>
-  <div class="des">Shade Number:</div>
-  <div class="dez">Not sure</div>
+            <div class="des">Recommend To A Friend:</div>
+            <div class="dez">Yes</div>
+            <div class="des">Age:</div>
+            <div class="dez"><?php echo htmlspecialchars($row['age_range']); ?></div>
+            <div class="des">Gender:</div>
+            <div class="dez"><?php echo htmlspecialchars($row['gender']); ?></div>
+            <div class="des">Shade Number:</div>
+            <div class="dez">Not sure</div>
         </div>
+    <?php else: ?>
+        <div>No reviews available</div>
+    <?php endif; ?>
+
         <div class="see-more">See more</div>
        <div class="dividerr"></div>
   </div>
@@ -1113,7 +1142,7 @@ $conn->close();
     <button class="close-btnr" id="close-btnr">&times;</button>
 
     <div class="review-form">
-    <form action="#" method="post">
+    <form action="review2.php" method="post">
       <label for="review">Write a review *</label>
       <textarea id="review" name="review" placeholder="Tell us what you like or dislike" required></textarea>
       
@@ -1129,7 +1158,35 @@ $conn->close();
           <label for="email">Your email *</label>
           <input type="email" id="email" name="email" required>
         </div>
+
       </div>
+
+      <!-- Age Range Selection -->
+<div>
+    <p class="question">What is your age range? <span class="subtext">Choose 1</span></p>
+    <div class="options" id="age-options">
+        <div class="option" data-value="18-24">18-24</div>
+        <div class="option" data-value="25-34">25-34</div>
+        <div class="option" data-value="35-44">35-44</div>
+        <div class="option" data-value="45-54">45-54</div>
+        <div class="option" data-value="55-64">55-64</div>
+        <div class="option" data-value="65+">65+</div>
+    </div>
+    <input type="hidden" name="age_range" id="selected-age">
+</div>
+
+<!-- Gender Selection -->
+<div style="margin-top: 20px;">
+    <p class="question">What is your gender? <span class="subtext">Choose 1</span></p>
+    <div class="options" id="gender-options">
+        <div class="option" data-value="he/him">he/him</div>
+        <div class="option" data-value="she/her">she/her</div>
+        <div class="option" data-value="they/them">they/them</div>
+        <div class="option" data-value="Other">Other</div>
+    </div>
+    <input type="hidden" name="gender" id="selected-gender">
+</div>
+
       
       <button type="submit" class="submit-btnt">SEND</button>
       <p class="required-fields">* required fields</p>

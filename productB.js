@@ -519,3 +519,30 @@ function buyNow() {
     // Redirect to pay2.html with parameters in URL
     window.location.href = url;
 }
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    function handleSelection(containerId, hiddenInputId) {
+        const options = document.querySelectorAll(`#${containerId} .option`);
+        const hiddenInput = document.getElementById(hiddenInputId);
+
+        options.forEach(option => {
+            option.addEventListener("click", function () {
+                // Remove 'selected' class from all options
+                options.forEach(opt => opt.classList.remove("selected"));
+
+                // Add 'selected' class to the clicked option
+                this.classList.add("selected");
+
+                // Update hidden input value
+                hiddenInput.value = this.getAttribute("data-value");
+            });
+        });
+    }
+
+    handleSelection("age-options", "selected-age");
+    handleSelection("gender-options", "selected-gender");
+});

@@ -2551,6 +2551,42 @@ th:first-child {
 }
 
 
+.question {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subtext {
+  font-size: 12px;
+  color: gray;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.option {
+  background: #b58787;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.option:hover {
+  background: #bbb;
+}
+
+.option:active {
+  background: #999;
+}
+
 .review-block {
   position: fixed;
   top: 0;
