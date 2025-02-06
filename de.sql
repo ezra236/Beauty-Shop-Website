@@ -1,0 +1,53 @@
+CREATE DATABASE review_db;
+
+USE review_db;
+
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    review TEXT NOT NULL,
+    headline VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    age_range VARCHAR(10) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+USE review_db;
+
+CREATE TABLE reviews1 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    review TEXT NOT NULL,
+    headline VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    age_range VARCHAR(10) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE reviews2 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    review TEXT NOT NULL,
+    headline VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    age_range VARCHAR(10) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE reviews3 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    review TEXT NOT NULL,
+    headline VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    age_range VARCHAR(10) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
