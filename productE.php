@@ -37,6 +37,7 @@ $conn->close();
         <meta http-equiv="refresh" content="32000">
         <link rel="icon" href="ckayy.jpg" type="image/png">
         <title>Ckary Beauty</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="productE.css">
     </head>
     
@@ -1035,11 +1036,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch only the latest review from the database
+// Fetch the latest review by default
 $sql = "SELECT review, headline, name, age_range, gender, created_at FROM reviews2 ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
-
-$row = $result->fetch_assoc(); // Fetch only one row
+$row = $result->fetch_assoc();
 ?>
 
 
@@ -1099,34 +1099,26 @@ $row = $result->fetch_assoc(); // Fetch only one row
             <button class="review-buttont">WRITE A REVIEW</button>
           </div>
         </div>
-        <div class="downn">
+        <div class="downn" id="review-container">
 
-        <div class="review-card">
-        <?php if ($row): ?>
-        <div class="review-header">
-            <div><?php echo htmlspecialchars($row['name']); ?></div>
-            <div><?php echo htmlspecialchars($row['created_at']); ?></div>
-        </div>
-        <div class="starsr">★★★★★</div>
-        <div class="review-titler">
-            <?php echo htmlspecialchars($row['headline']); ?>
-        </div>
-        <div class="review-body">
-            <?php echo htmlspecialchars($row['review']); ?>
-        </div>
-        <div class="review-details">
-            <div class="des">Recommend To A Friend:</div>
-            <div class="dez">Yes</div>
-            <div class="des">Age:</div>
-            <div class="dez"><?php echo htmlspecialchars($row['age_range']); ?></div>
-            <div class="des">Gender:</div>
-            <div class="dez"><?php echo htmlspecialchars($row['gender']); ?></div>
-            <div class="des">Shade Number:</div>
-            <div class="dez">Not sure</div>
-        </div>
-    <?php else: ?>
-        <div>No reviews available</div>
-    <?php endif; ?>
+<div class="review-card">
+<?php if ($row): ?>
+<div class="review-header">
+    <div><?php echo htmlspecialchars($row['name']); ?></div>
+    <div><?php echo htmlspecialchars($row['created_at']); ?></div>
+</div>
+<div class="starsr">★★★★★</div>
+<div class="review-titler"><?php echo htmlspecialchars($row['headline']); ?></div>
+<div class="review-body"><?php echo htmlspecialchars($row['review']); ?></div>
+<div class="review-details">
+    <div class="des">Recommend To A Friend:</div><div class="dez">Yes</div>
+    <div class="des">Age:</div><div class="dez"><?php echo htmlspecialchars($row['age_range']); ?></div>
+    <div class="des">Gender:</div><div class="dez"><?php echo htmlspecialchars($row['gender']); ?></div>
+    <div class="des">Shade Number:</div><div class="dez">Not sure</div>
+</div>
+<?php else: ?>
+<div>No reviews available</div>
+<?php endif; ?>
 
         <div class="see-more">See more</div>
        <div class="dividerr"></div>

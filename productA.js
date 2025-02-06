@@ -548,3 +548,18 @@ document.addEventListener("DOMContentLoaded", function () {
     handleSelection("age-options", "selected-age");
     handleSelection("gender-options", "selected-gender");
 });
+
+
+$(document).ready(function() {
+    $('#age').on('change', function() {
+        var selectedAge = $(this).val();
+        $.ajax({
+            url: 'fetch_review.php', 
+            method: 'POST',
+            data: { age_range: selectedAge },
+            success: function(response) {
+                $('#review-container').html(response);
+            }
+        });
+    });
+});
