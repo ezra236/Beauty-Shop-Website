@@ -141,125 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Get all dots and promo containers
-const dots = document.querySelectorAll('.dot');
-const promoContainers = document.querySelectorAll('.promo-container');
-const scrollContainer = document.querySelector('.scroll-container');
-
-// Function to handle dot click and scroll to corresponding promo container
-dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        const index = dot.getAttribute('data-index');
-        const targetPosition = promoContainers[index].offsetLeft;
-        scrollContainer.scrollTo({
-            left: targetPosition,
-            behavior: 'smooth'
-        });
-
-        // Set active class on clicked dot
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-    });
-});
-
-// Function to update the active dot as user scrolls through the containers
-scrollContainer.addEventListener('scroll', () => {
-    let index = Math.round(scrollContainer.scrollLeft / window.innerWidth);
-    dots.forEach(d => d.classList.remove('active'));
-    if (dots[index]) {
-        dots[index].classList.add('active');
-    }
-});
-
-
-
-const box1 = document.getElementById('box1');
-const box2 = document.getElementById('box2');
-const box3 = document.getElementById('box3');
-const box4 = document.getElementById('box4');
-const monica = document.getElementById('monica');
-
-let lastClickedBox = null; // Track the last clicked box
-
-// Function to update Monica content
-function updateMonicaContent(headerText, paragraphText, buttonLink) {
-    monica.innerHTML = `
-      <h1>${headerText}</h1>
-      <p>${paragraphText}</p>
-      <button class="shop1" onclick="window.location.href='${buttonLink}'">Shop Now</button>
-    `;
-  }
-  
-  // Update each box with a unique link
-  function toggleBox(clickedBox) {
-    if (clickedBox === lastClickedBox) {
-      const boxes = [box1, box2, box3, box4];
-      const currentIndex = boxes.indexOf(clickedBox);
-      const nextBox = boxes[(currentIndex + 1) % boxes.length];
-      toggleBox(nextBox);
-      return;
-    }
-  
-    clickedBox.classList.add('clicked');
-  
-    [box1, box2, box3, box4].forEach(box => {
-      if (box !== clickedBox) {
-        box.classList.remove('clicked');
-      }
-    });
-  
-    if (clickedBox.classList.contains('clicked')) {
-      monica.style.display = 'block';
-      if (clickedBox === box1) {
-        monica.style.left = '5%';
-        updateMonicaContent('YOUR WINNING ROUTINE', 'Whether you got dry, oil or combo skin', 'lipG.html');
-      } else if (clickedBox === box2) {
-        monica.style.left = '21%';
-        updateMonicaContent('ALWAYS BETTER TOGETHER', 'Its legendary lipcare', 'Shampoo.php');
-      } else if (clickedBox === box3) {
-        monica.style.left = '38%';
-        updateMonicaContent('HAIR FOR THE HYDRATION', 'Secure Our reparative lineup', 'body.html');
-      } else if (clickedBox === box4) {
-        monica.style.left = '55%';
-        updateMonicaContent('BOLD SCENT YOU WONT FORGET', 'Step out in Ckay spicy', 'All-products.html');
-      }
-    }
-  
-    lastClickedBox = clickedBox;
-  }
-  
-  // Load default content on page load
-  window.addEventListener('load', () => {
-    box1.classList.add('clicked');
-    monica.style.display = 'block';
-    monica.style.left = '5%';
-    updateMonicaContent('YOUR WINNING ROUTINE', 'Whether you got dry, oil or combo skin', 'lipG.html');
-    lastClickedBox = box1;
-  });
-  
-
-// Add event listeners for the boxes
-box1.addEventListener('click', function() {
-  toggleBox(box1);
-});
-
-box2.addEventListener('click', function() {
-  toggleBox(box2);
-});
-
-box3.addEventListener('click', function() {
-  toggleBox(box3);
-});
-
-box4.addEventListener('click', function() {
-  toggleBox(box4);
-});
-
-
-
-
-
-
     const classicScroll = document.getElementById('classicScroll');
     const leftBtn = document.getElementById('leftBtn');
     const rightBtn = document.getElementById('rightBtn');
@@ -273,133 +154,27 @@ box4.addEventListener('click', function() {
     rightBtn.addEventListener('click', function() {
         classicScroll.scrollLeft += scrollAmount;  // Scroll right by the set amount
     });
-    
-    
-    
-
-    const exceptional = document.getElementById('exceptional');
-    const leftArrow = document.getElementById('leftArrow');
-    const rightArrow = document.getElementById('rightArrow');
-    const items = exceptional.children;
-    const totalItems = items.length;
-    
-    let currentIndex = 0;
-    
-    // Function to update the scroll position
-    function updateScroll() {
-      const offset = -currentIndex * 80; // Calculate the offset for scrolling
-      exceptional.style.transform = `translateX(${offset}%)`;
-    }
-    
-    // Event listener for the left arrow
-    leftArrow.addEventListener('click', () => {
-      if (currentIndex > 0) { // Allow scroll only if there is something to scroll back to
-        currentIndex--;
-        updateScroll();
-      }
-    });
-    
-    // Event listener for the right arrow
-    rightArrow.addEventListener('click', () => {
-      if (currentIndex === 0) { // Allow scroll only once to the right
-        currentIndex++;
-        updateScroll();
-      }
-    });
-    
-    // Add event listeners to unmute/play the video on hover
-    Array.from(items).forEach(item => {
-      const video = item.querySelector('video');
-    
-      item.addEventListener('mouseover', () => {
-        video.muted = false; // Unmute the video
-        video.play(); // Ensure the video plays on hover
-      });
-    
-      item.addEventListener('mouseout', () => {
-        video.muted = true; // Mute the video back
-        video.pause(); // Pause the video when the mouse leaves
-      });
-    });
-    
 
 
-
-// Store the original and hover image sources in an object
-const imageSources = {
-    item1: { original: 'b7.jpg', hover: 'ap.jpg' },
-    item2: { original: 'drop.jpg', hover: 'b11.jpg' }, // Adjust hover image path as needed
-    item3: { original: 'lip.jpg', hover: 'lip2.jpg' }, // Adjust hover image path as needed
-    item4: { original: 'bm3.jpg', hover: 'ap2.jpg' }, // Adjust hover image path as needed
-    item5: { original: 'g.jpg', hover: 'ap3.jpg' }, // Adjust hover image path as needed
-    item6: { original: 'b20.jpg', hover: 'ap1.jpg' }, // Adjust hover image path as needed
-    item7: { original: 'bm1.jpg', hover: 'lips.jpg' }, // Adjust hover image path as needed
-    item8: { original: 'skinca.jpg', hover: 'ap3.jpg' } // Adjust hover image path as needed
-};
-
-// Function to change the image source after fading out
-function changeImage(itemId, newSrc) {
-    const itemImage = document.getElementById(itemId);
-    
-    // Fade out the image
-    itemImage.classList.add('fade-out');
-    
-    // Wait for the fade-out transition to finish before changing the image
-    setTimeout(function() {
-        itemImage.src = newSrc; // Change the image source
-        itemImage.classList.remove('fade-out'); // Fade in the new image
-    }, 100); // Matches the transition duration
-}
-
-// Add event listeners for hover effect on each item image
-document.querySelectorAll('.classic-item img').forEach(itemImage => {
-    const itemId = itemImage.id;
-
-    // Mouse enter event to change to hover image
-    itemImage.addEventListener('mouseenter', function() {
-        changeImage(itemId, imageSources[itemId].hover);  // Change to hover image
-    });
-
-    // Mouse leave event to revert to original image
-    itemImage.addEventListener('mouseleave', function() {
-        changeImage(itemId, imageSources[itemId].original);  // Revert to original image
-    });
-});
+  
 
 
+    const items = document.querySelectorAll('.classic-item img');
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileExceptionalItems = document.querySelectorAll('.mobile-exceptional-item');
-
-    mobileExceptionalItems.forEach(item => {
-        const video = item.querySelector('video');
-
-        // Play and unmute video on hover
-        item.addEventListener('mouseover', () => {
-            video.muted = false; // Unmute the video
-            video.play();        // Play the video
+    items.forEach(item => {
+        const originalSrc = item.src;
+        const hoverSrc = item.getAttribute('data-hover');
+        
+        item.addEventListener('mouseenter', () => {
+            item.src = hoverSrc;
         });
-
-        // Pause and mute video when mouse leaves
-        item.addEventListener('mouseout', () => {
-            video.muted = true;  // Mute the video
-            video.pause();       // Pause the video
-        });
-
-        // Toggle play/pause on click
-        item.addEventListener('click', () => {
-            if (video.paused) {
-                video.muted = false; // Unmute when playing
-                video.play();
-            } else {
-                video.muted = true; // Mute when paused
-                video.pause();
-            }
+    
+        item.addEventListener('mouseleave', () => {
+            item.src = originalSrc;
         });
     });
-});
 
+    
 
 
 
@@ -467,7 +242,7 @@ function showBlockPay(name, price, imageSrc) {
 
 // Close the Block Pay div when the close button is clicked
 document.getElementById('closeBlockPay').addEventListener('click', function() {
-    document.getElementById('blockPay').style.right = '-100%';
+    document.getElementById('blockPay').style.right = '-150%';
 });
 
 // Attach the event listeners to all Quick Shop buttons
@@ -636,7 +411,6 @@ document.getElementById('icon2').addEventListener('click', showBlockCheck);
 
 
 
-
 // Open the block
 document.getElementById('signInLink').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor behavior
@@ -650,3 +424,63 @@ document.getElementById('closeBtns').addEventListener('click', function () {
     const signInBlock = document.getElementById('signInBlock');
     signInBlock.classList.remove('active'); // Remove the "active" class
 });
+
+
+
+
+
+
+
+document.querySelector(".bt").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default behavior
+    let prodBlock = document.querySelector(".prod-block");
+    prodBlock.classList.remove("hide"); // Ensure it's not in hiding mode
+    prodBlock.style.visibility = "visible"; // Make it interactive
+    prodBlock.classList.add("show"); // Animate opening
+});
+
+document.querySelector(".close-btnr").addEventListener("click", function () {
+    let prodBlock = document.querySelector(".prod-block");
+    prodBlock.classList.remove("show");
+    prodBlock.classList.add("hide"); // Start closing animation
+
+});
+
+
+
+
+
+function increaseQuantity() {
+    let quantityElement = document.getElementById("quantity");
+    let quantity = parseInt(quantityElement.textContent);
+    quantityElement.textContent = quantity + 1;
+}
+function decreaseQuantity() {
+    let quantityElement = document.getElementById("quantity");
+    let quantity = parseInt(quantityElement.textContent);
+    if (quantity > 1) {
+        quantityElement.textContent = quantity - 1;
+    }
+}
+
+
+
+
+
+function buyNow() {
+    let imageSrc = document.getElementById("product-image").src;
+    let title = document.getElementById("product-title").innerText;
+    let price = document.getElementById("product-price").innerText.replace("KSh ", "");
+    let quantity = parseInt(document.getElementById("quantity").innerText);
+    let totalPrice = parseInt(price) * quantity;
+
+    // Create URL with query string parameters
+    let url = new URL("pay2.html", window.location.href);
+    url.searchParams.append("image", encodeURIComponent(imageSrc));
+    url.searchParams.append("title", encodeURIComponent(title));
+    url.searchParams.append("price", encodeURIComponent("KSh " + totalPrice));
+    url.searchParams.append("quantity", encodeURIComponent(quantity));
+
+    // Redirect to pay2.html with parameters in URL
+    window.location.href = url;
+}

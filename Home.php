@@ -785,7 +785,7 @@
 
     $conn->close();
     ?>
-  <button>SHOP NOW</button>
+<button onclick="window.location.href='ckary_lip.html'">SHOP NOW</button>
 </div>
 <div class="imagek">
     <?php
