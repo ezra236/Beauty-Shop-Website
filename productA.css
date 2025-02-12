@@ -948,12 +948,19 @@ background-color: #052d56; /* Darker blue on hover */
   cursor: pointer;
 }
 
-#mobile-menu .close-btn {
+.close-btn {
   position: absolute;
   top: 5px; /* Positioning from the top */
-  right: 20px; /* Positioning from the right */
+  right: 25px; /* Positioning from the right */
   font-size: 18px;
   cursor: pointer;
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .close-btn {
+    display: block;
+  }
 }
 
 #mobile-menu h3 {
@@ -2678,6 +2685,46 @@ color: #666;
 
 
 
+
+
+.submission-block {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -55%;           /* Initially hidden below the screen */
+  height: 50%;
+  background-color: #ed8e5e;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.5s ease-in-out;
+  z-index: 1000;          /* Ensure it appears on top */
+  padding: 0 20px;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* When visible, slide the block up */
+.submission-block.visible {
+  bottom: 0;
+}
+
+.submission-block::after {
+  content: "X";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #060505;
+  cursor: pointer;
+}
+
+.submission-block p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -2982,6 +3029,12 @@ box-sizing: border-box;
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .footer-item {
+    display: none;
+  }
+}
+
 .footer-item img {
   width: 20px;
   height: 15px;
@@ -3003,6 +3056,12 @@ box-sizing: border-box;
 .divider {
   color: white;
   margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .divider {
+    display: none;
+  }
 }
 
 .highlight {
