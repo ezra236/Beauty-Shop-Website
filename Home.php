@@ -19,7 +19,7 @@
         <h2>Welcome</h2>
     <div class="form-container">
         <h1>Sign in or sign up to unlock free standard shipping on all U.S. orders.</h1>
-    <form>
+    <form  id="signInForm">
       <input type="email" placeholder="Email" required>
       <div class="sig">
       <label>
@@ -30,9 +30,8 @@
       <button type="submit">Sign In</button>
       <small>
         By signing up for an account with or subscribing to Fenty Beauty, you agree to our 
-        <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. If you sign up for 
-        our email list, you also consent to receive a varying number of marketing messages via email. Consent is not a condition of any purchase. California residents: Please also see our 
-        <a href="#">Financial Incentive Terms</a>.
+        <a href="Tou.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>. If you sign up for 
+        our email list, you also consent to receive a varying number of marketing messages via email. Consent is not a condition of any purchase.
       </small>
     </form>
   </div>
@@ -112,6 +111,7 @@
 
 <!-- Blocks to display -->
 <div id="block2" class="content-block">
+<p class="close-btn">X</p>
     <div class="containerp">
         <div class="sidebar">
             <h2>New + Bestsellers</h2>
@@ -151,6 +151,7 @@
 </div>
 
 <div id="block3" class="content-block">
+<p class="close-btn">X</p>
     <div class="containerp">
         <div class="sidebar">
             <h2>Makeup</h2>
@@ -203,6 +204,7 @@
 </div>
 
 <div id="block4" class="content-block">
+<p class="close-btn">X</p>
     <div class="containerp">
         <div class="sidebar">
             <h2>SkinCare</h2>
@@ -252,6 +254,7 @@
 </div>
 
 <div id="block5" class="content-block">
+<p class="close-btn">X</p>
     <div class="containerp">
         <div class="sidebar">
             <h2>Hair</h2>
@@ -308,7 +311,6 @@
 <!-- Sliding Navigation Menu -->
 <div id="mobile-menu">
     <p class="back-btn">Back</p>
-    <p class="close-btn">X</p>
 
     <div class="menu-items" data-target="block2">
         <img src="sp2.jpg" alt="Image 2" class="menu-icon">
@@ -1061,6 +1063,17 @@
 
 
 
+<div id="phone-block" class="submission-block">
+    <p>You are officially a Member</p>
+    <p>Thank you for your phone submission!</p>
+  </div>
+
+  <div id="email-block" class="submission-block">
+    <p>You are officially a Member</p>
+    <p>Thank you for your email submission!</p>
+  </div>
+
+
 
   
   <footer class="footer">
@@ -1149,12 +1162,12 @@
                 <span class="divider">|</span>
                 <div class="footer-item">English</div>
                 <span class="divider">|</span>
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Terms of Use</a>
-                <a href="#" class="footer-link">Refund Policy</a>
-                <a href="#" class="footer-link">Accessibility</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
+                <a href="Tou.html" class="footer-link">Terms of Use</a>
+                <a href="r-policy.html" class="footer-link">Refund Policy</a>
+                <a href="Accesibility.html" class="footer-link">Accessibility</a>
                 <div class="footer-item highlight">
-                  <a href="#" class="highlight-link">Privacy Settings</a>
+                  <a href="Home.php" class="highlight-link">Privacy Settings</a>
                 </div>
               </div>
           </div>

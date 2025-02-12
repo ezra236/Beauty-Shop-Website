@@ -413,21 +413,6 @@ document.getElementById('icon2').addEventListener('click', showBlockCheck);
 
 
 
-const reviewButton = document.querySelector('.review-buttont');
-    const reviewBlock = document.getElementById('review-block');
-    const closeBtn = document.getElementById('close-btnr');
-
-    reviewButton.addEventListener('click', () => {
-      reviewBlock.classList.add('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      reviewBlock.classList.remove('open');
-    });
-
-
-
-
 // Open the block
 document.getElementById('signInLink').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor behavior
@@ -444,31 +429,11 @@ document.getElementById('closeBtns').addEventListener('click', function () {
 
 
 
-function changeImage(imagePath) {
-    // Select the first image in the right-class container
-    const promoImages = document.querySelector('.right-class img');
-    if (promoImages) {
-        promoImages.src = imagePath; // Update the source of the first promo image
-    }
-}
-
-// Adding event listeners for mobile and desktop
-const scrollItems = document.querySelectorAll('.scroll-items');
-scrollItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const imagePath = item.getAttribute('data-image');
-        changeImage(imagePath); // Call the function to update the image
-    });
-});
 
 
 
 
-
-
-
-
-document.querySelector(".add-to-cart-btn").addEventListener("click", function (event) {
+document.querySelector(".bt").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default behavior
     let prodBlock = document.querySelector(".prod-block");
     prodBlock.classList.remove("hide"); // Ensure it's not in hiding mode
@@ -476,7 +441,7 @@ document.querySelector(".add-to-cart-btn").addEventListener("click", function (e
     prodBlock.classList.add("show"); // Animate opening
 });
 
-document.querySelector(".close-btnrt").addEventListener("click", function () {
+document.querySelector(".close-btnr").addEventListener("click", function () {
     let prodBlock = document.querySelector(".prod-block");
     prodBlock.classList.remove("show");
     prodBlock.classList.add("hide"); // Start closing animation
@@ -521,55 +486,6 @@ function buyNow() {
     // Redirect to pay2.html with parameters in URL
     window.location.href = url;
 }
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    function handleSelection(containerId, hiddenInputId) {
-        const options = document.querySelectorAll(`#${containerId} .option`);
-        const hiddenInput = document.getElementById(hiddenInputId);
-
-        options.forEach(option => {
-            option.addEventListener("click", function () {
-                // Remove 'selected' class from all options
-                options.forEach(opt => opt.classList.remove("selected"));
-
-                // Add 'selected' class to the clicked option
-                this.classList.add("selected");
-
-                // Update hidden input value
-                hiddenInput.value = this.getAttribute("data-value");
-            });
-        });
-    }
-
-    handleSelection("age-options", "selected-age");
-    handleSelection("gender-options", "selected-gender");
-});
-
-
-
-
-$(document).ready(function() {
-    $('#age').on('change', function() {
-        var selectedAge = $(this).val();
-        $.ajax({
-            url: 'fetch_review1.php', 
-            method: 'POST',
-            data: { age_range: selectedAge },
-            success: function(response) {
-                $('#review-container').html(response);
-            }
-        });
-    });
-});
-
-
-
-
-
 
 
 
@@ -731,5 +647,4 @@ document.querySelectorAll('.submission-block').forEach(block => {
       });
     });
   });
-  
   

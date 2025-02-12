@@ -76,14 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     // Toggle content blocks based on menu items
     document.querySelectorAll('.menu-items').forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent event bubbling
             const targetBlock = document.getElementById(item.getAttribute('data-target'));
             
             // Hide all content blocks first
             document.querySelectorAll('.content-block').forEach(block => {
                 block.classList.remove('show');
             });
-
+  
             // Show the clicked block
             targetBlock.classList.add('show');
             
@@ -92,17 +93,18 @@ document.addEventListener("DOMContentLoaded", function () {
             targetBlock.querySelector('.sidebar').style.display = 'block';
         });
     });
-
-    // Close button functionality to hide all content blocks
-    const closeButton = document.querySelector('.close-btn'); // Select the close button
-
-    closeButton.addEventListener('click', function() {
-        // Hide all content blocks when the 'X' button is clicked
-        document.querySelectorAll('.content-block').forEach(block => {
-            block.classList.remove('show');
+  
+    // Close only the clicked content block
+    document.querySelectorAll('.close-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent event bubbling
+            const contentBlock = this.closest('.content-block');
+            if (contentBlock) {
+                contentBlock.classList.remove('show');
+            }
         });
     });
-});
+  });
 
 
 
@@ -484,3 +486,170 @@ function buyNow() {
     // Redirect to pay2.html with parameters in URL
     window.location.href = url;
 }
+
+
+
+
+
+
+
+
+
+// Handle the email form submission
+const emailForm = document.querySelector('.email-form');
+const emailBlock = document.getElementById('email-block');
+
+emailForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Get the email value
+  const emailInput = document.getElementById('email');
+  const emailValue = emailInput.value;
+
+  // Send the email data to the server via fetch
+  fetch('submit_email.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: emailValue })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      // On successful insertion, slide up the notification block
+      emailBlock.classList.add('visible');
+    } else {
+      alert('Error: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+  });
+});
+
+// Handle the phone form submission
+const phoneForm = document.querySelector('.phone-form');
+const phoneBlock = document.getElementById('phone-block');
+
+phoneForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get the phone value
+  const phoneInput = document.getElementById('phone');
+  const phoneValue = phoneInput.value;
+
+  // Send the phone data to the server via fetch
+  fetch('submit_phone.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ phone: phoneValue })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      // On successful insertion, slide up the notification block
+      phoneBlock.classList.add('visible');
+    } else {
+      alert('Error: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+  });
+});
+
+
+
+
+
+// Attach click listeners to each submission block
+document.querySelectorAll('.submission-block').forEach(block => {
+    block.addEventListener('click', function(event) {
+      // Get the bounding rectangle of the block
+      const rect = block.getBoundingClientRect();
+      // Calculate click coordinates relative to the block
+      const relativeX = event.clientX - rect.left;
+      const relativeY = event.clientY - rect.top;
+      
+      // Define the clickable area for the pseudo-element "X"
+      // Here, we assume an area of 50px x 50px in the top-right corner.
+      if (relativeX >= rect.width - 50 && relativeY <= 50) {
+        // Remove the 'visible' class to hide the block
+        block.classList.remove('visible');
+      }
+    });
+  });
+
+  
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the form element (using its ID for specificity)
+    const signInForm = document.getElementById('signInForm');
+  
+    // Listen for the form's submit event
+    signInForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+  
+      // Get the email and checkbox values from the form
+      const emailInput = signInForm.querySelector('input[type="email"]');
+      const checkboxInput = signInForm.querySelector('input[type="checkbox"]');
+  
+      // Prepare the data to send
+      const formData = {
+        email: emailInput.value,
+        updates_opt_in: checkboxInput.checked ? 1 : 0
+      };
+  
+      // Send the form data to the server using fetch
+      fetch('submit_sign_in.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Instead of alert("Sign in successful!"), display a centered box
+          const successBox = document.createElement('div');
+          successBox.textContent = "Sign in successful!";
+          
+          // Style the box to appear in the center
+          successBox.style.position = "fixed";
+          successBox.style.top = "50%";
+          successBox.style.left = "50%";
+          successBox.style.transform = "translate(-50%, -50%)";
+          successBox.style.padding = "20px";
+          successBox.style.backgroundColor = "#fff";
+          successBox.style.border = "12px solid rgb(184, 83, 15)";
+          successBox.style.boxShadow = "0 2px 10px rgb(184, 83, 15)";
+          successBox.style.zIndex = "10000";
+          
+          // Append the box to the body
+          document.body.appendChild(successBox);
+          
+          // Remove the box after 3 seconds
+          setTimeout(() => {
+            successBox.remove();
+          }, 3000);
+        } else {
+          alert("Error: " + data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred. Please try again later.");
+      });
+    });
+  });
+  
+  
